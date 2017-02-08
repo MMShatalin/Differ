@@ -13,19 +13,19 @@ namespace Converter
         public double ValueTimeForDAT;
     }
 
-    public class Sencors: IComparable
+    public class Sensors: IComparable
     {
         int L;
         public string KKS_Name { get; set; }
         public List<Record> MyListRecordsForOneKKS;
-        public Sencors()
+        public Sensors()
         {
             this.MyListRecordsForOneKKS = new List<Record>();
             L = this.MyListRecordsForOneKKS.Count;
 
         }
 
-        public Sencors(string sss)
+        public Sensors(string sss)
         {
             Record OneRecord = new Record();
             OneRecord.DateTime = Convert.ToDateTime(sss.Split('\t')[0].Replace('.', '/').Replace(',', '.').Trim());//line.Split('\t')[0]//для вывода с милисекундами
@@ -37,11 +37,11 @@ namespace Converter
         }
         public int CompareTo(object other)
         {
-            var oth = other as Sencors;
+            var oth = other as Sensors;
             return this.KKS_Name.CompareTo(oth.KKS_Name);
         }
 
-        public static int getOneKKSByIndex(string checkName, List<Sencors> MyList)
+        public static int getOneKKSByIndex(string checkName, List<Sensors> MyList)
         {
             int index = 0;
             for (int i = 0; i < MyList.Count; i++)

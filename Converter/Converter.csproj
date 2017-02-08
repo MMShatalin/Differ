@@ -57,6 +57,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Graph.cs" />
     <Compile Include="MyConst.cs" />
     <Compile Include="MyListOfSensors.cs" />
     <Compile Include="MyVirtualClass.cs" />

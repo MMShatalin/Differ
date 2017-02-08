@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace Converter
 {
-    class MyListOfSensors : List<Sencors>
+    class MyListOfSensors : List<Sensors>
     {
 
-        public Sencors getSensorByKKSName(string kks)
+        public static Sensors getSensorByKKSName(string kks, List<Sensors> MyAllSensors)
         {
-            foreach (Sencors item in this)
+            foreach (Sensors item in MyAllSensors)
             {
                 if (item.KKS_Name == kks)
                 {
@@ -22,12 +22,12 @@ namespace Converter
             }
             return null;
         }
-        public Sencors getOneKKSByIndex(int index)
+        public static Sensors getOneKKSByIndex(int index, List<Sensors> MyAllSensors)
         {
-            return this[index];
+            return MyAllSensors[index];
         }
 
-        private int DetectType(string filename)
+        private static int DetectType(string filename)
         {
             string[] temp = filename.Split('.');
             switch (temp[1])
@@ -49,23 +49,23 @@ namespace Converter
             return -1;
         }
 
-        public void LoadFromFile(string filename,MyListOfSensors y)
+        public static void LoadFromFile(string filename, List<Sensors> y)
         {
             if (DetectType(filename) != -1)
             {
                 switch (DetectType(filename))
                 {
                     case 1:
-                        this.LoadAPIK(filename,  y);
+                        LoadAPIK(filename, y);
                         break;             
                    case 2:
-                        this.LoadDATnvaes2(filename,  y);
+                        LoadDATnvaes2(filename,  y);
                         break;
                     case 3:
-                        this.LoadBusherFile(filename,  y);
+                        LoadBusherFile(filename,  y);
                         break;
                     case 4:
-                        this.LoadEx(filename, y);
+                        LoadEx(filename, y);
                         break;
 
                     default:
@@ -74,50 +74,9 @@ namespace Converter
             }
         }
 
-        public void LoadEx(string filename, MyListOfSensors p)
-        {
-            string line = "";
-            StreamReader MyFile = new StreamReader(filename, Encoding.GetEncoding("Windows-1251"));
-            MyListOfSensors MyList = new MyListOfSensors();
-            MyList.Clear();
+       
 
-            List<string> KKS = new List<string>();
-            line = MyFile.ReadLine();
-            KKS = line.Split('\t').ToList();
-
-      
-      
-            int i2 = 0;
-            foreach (string item in KKS)
-            {
-                i2++;
-                if (i2 > 1 && item!="")
-                {
-                    Sencors myonekks = new Sencors();
-                    myonekks.KKS_Name = item;
-                    MyList.Add(myonekks);
-                }
-            }
-    
-            while ((line = MyFile.ReadLine())!=null)
-            {
-                KKS.Clear();
-                KKS = line.Split('\t').ToList();
-                for (int i = 1; i < MyList.Count+1; i++)
-                {
-                    Record myRec = new Record();
-                 //   MessageBox.Show(KKS[0]);
-                    myRec.ValueTimeForDAT = double.Parse(KKS[0].Replace(",","."));
-                    myRec.DateTime = new DateTime(1970, 1, 1).AddSeconds(double.Parse(KKS[0].Replace(",",".").Trim()));
-                    myRec.Value = double.Parse(KKS[i].Replace(",", "."));
-                    MyList[i-1].MyListRecordsForOneKKS.Add(myRec);
-                }
-            }
-            p.AddRange(MyList);
-            MyFile.Close();  
-        }
-
-        public void LoadAPIK(string filename, MyListOfSensors p)
+        public static void LoadAPIK(string filename, List<Sensors> p)
         {
             string line = "";
             StreamReader mysr = new StreamReader(filename, Encoding.GetEncoding("Windows-1251"));
@@ -141,7 +100,7 @@ namespace Converter
                 // i2++;
                 if (i2 >= 0)
                 {
-                    Sencors myonekks = new Sencors();
+                    Sensors myonekks = new Sensors();
                     myonekks.KKS_Name = item;
                     MyList.Add(myonekks);
                 }
@@ -183,7 +142,7 @@ namespace Converter
             TimeSpan diff = date - origin;
             return diff.TotalSeconds;
         }
-        private void LoadDATnvaes2(string filename,  MyListOfSensors p)
+        private static void LoadDATnvaes2(string filename, List<Sensors> p)
         {
             MyListOfSensors MyList = new MyListOfSensors();
             MyList.Clear();
@@ -200,7 +159,7 @@ namespace Converter
   
                 for (int i = 1; i < OriginalKKS.Count; i++)
                 {
-                    Sencors myonekks = new Sencors();
+                    Sensors myonekks = new Sensors();
                     myonekks.KKS_Name = OriginalKKS[i];
                     myonekks.MyListRecordsForOneKKS = new List<Record>();
                     MyList.Add(myonekks);
@@ -237,10 +196,54 @@ namespace Converter
              //   MyRecord.Close();
         
         }
+        public static void LoadEx(string filename, List<Sensors> p)
+        {
+            string line = "";
+            StreamReader MyFile = new StreamReader(filename, Encoding.GetEncoding("Windows-1251"));
+            MyListOfSensors MyList = new MyListOfSensors();
+            MyList.Clear();
+
+            List<string> KKS = new List<string>();
+            line = MyFile.ReadLine();
+            KKS = line.Split('\t').ToList();
 
 
 
-        private void LoadBusherFile(string filename, MyListOfSensors p)
+            int i2 = 0;
+            foreach (string item in KKS)
+            {
+                i2++;
+                if (i2 > 1 && item != "")
+                {
+                    Sensors myonekks = new Sensors();
+                    myonekks.KKS_Name = item;
+                    MyList.Add(myonekks);
+                }
+            }
+
+            while ((line = MyFile.ReadLine()) != null)
+            {
+                KKS.Clear();
+                KKS = line.Split('\t').ToList();
+                //  foreach (var item in KKS)
+                // {
+                //    MessageBox.Show(item);
+                // }
+                for (int i = 1; i < MyList.Count + 1; i++)
+                {
+                    Record myRec = new Record();
+                    myRec.ValueTimeForDAT = double.Parse(KKS[0].Replace(".", ","));
+                    myRec.DateTime = new DateTime(1970, 1, 1).AddSeconds(double.Parse(KKS[0].Replace(".", ",").Trim()));
+                    myRec.Value = double.Parse(KKS[i].Replace(".", ","));
+                    MyList[i - 1].MyListRecordsForOneKKS.Add(myRec);
+                }
+            }
+            p.AddRange(MyList);
+            MyFile.Close();
+        }
+
+
+        private static void LoadBusherFile(string filename, List<Sensors> p)
         {
             MyListOfSensors MyList = new MyListOfSensors();
             MyList.Clear();
@@ -257,7 +260,7 @@ namespace Converter
 
             for (int i = 1; i < 6; i++)
             {
-                Sencors myonekks = new Sencors();
+                Sensors myonekks = new Sensors();
                 myonekks.KKS_Name = OriginalKKS[i];
                 myonekks.MyListRecordsForOneKKS = new List<Record>();
                 MyList.Add(myonekks);
