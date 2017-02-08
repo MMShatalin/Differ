@@ -1,0 +1,377 @@
+C:\Users\admin\Desktop\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\Converter\Converter\obj\Debug\Converter.Form2.resources
+I:\Converter\Converter\bin\Debug\Converter.exe.config
+I:\Converter\Converter\obj\Debug\Converter.exe
+I:\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Мои проги по С#\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+F:\Converter\Converter\bin\Debug\Converter.exe.config
+F:\Converter\Converter\obj\Debug\Converter.exe
+F:\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Converter\Converter\obj\Debug\Converter.Form2.resources
+I:\Converter\Converter\bin\Debug\Converter.exe
+I:\Converter\Converter\bin\Debug\Converter.pdb
+I:\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+I:\Converter\Converter\obj\Debug\Converter.Form1.resources
+I:\Converter\Converter\obj\Debug\Converter.Form2.resources
+I:\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+I:\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+F:\ДОКУМЕНТЫ\Converter\Converter\bin\Debug\Converter.exe.config
+F:\ДОКУМЕНТЫ\Converter\Converter\obj\Debug\Converter.exe
+F:\ДОКУМЕНТЫ\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Трогать запрещено\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху)\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 1\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+F:\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\bin\Debug\Converter.exe.config
+F:\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\obj\Debug\Converter.exe
+F:\Работа с Конвертором (подписи осей Y сверху)\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\Трогать запрещено\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Трогать запрещено\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Трогать запрещено\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 2 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 3 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 4 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (подписи осей Y сверху) Версия 5 Рабочая (finish)\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия)\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 1\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 2\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Работа с Конвертором (конечная версия) 23\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\bin\Debug\Converter.exe.config
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.exe
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.pdb
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\bin\Debug\Converter.exe
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\bin\Debug\Converter.pdb
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.Form1.resources
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.Form2.resources
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+F:\Трогать запрещено\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Работа с Конвертором (конечная версия) 4 end debug\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\dffgdg\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\dffgdg 1\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\dffgdg 2\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\dffgdg 3\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Удача\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+I:\Удача\Converter\Converter\bin\Debug\Converter.exe.config
+I:\Удача\Converter\Converter\obj\Debug\Converter.exe
+I:\Удача\Converter\Converter\obj\Debug\Converter.pdb
+I:\Удача\Converter\Converter\bin\Debug\Converter.exe
+I:\Удача\Converter\Converter\bin\Debug\Converter.pdb
+I:\Удача\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+I:\Удача\Converter\Converter\obj\Debug\Converter.Form1.resources
+I:\Удача\Converter\Converter\obj\Debug\Converter.Form2.resources
+I:\Удача\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+I:\Удача\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Удача\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Удача\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Удача\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Удача\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Удача\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Удача\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Удача\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Удача\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Удача\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Удача\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Удача 1\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Удача 2\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Grath\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Grath\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Grath\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\NewProgramm\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\ППВ\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\ППВ 0\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\bin\Debug\Converter.exe.config
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Debug\Converter.exe
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Debug\Converter.pdb
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\bin\Debug\Converter.exe
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\bin\Debug\Converter.pdb
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Debug\Converter.Form1.resources
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Debug\Converter.Form2.resources
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Debug\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+D:\GitHub\Differ\Converter\bin\Debug\Converter.exe.config
+D:\GitHub\Differ\Converter\obj\Debug\Converter.exe
+D:\GitHub\Differ\Converter\obj\Debug\Converter.pdb
+D:\GitHub\Differ\Converter\bin\Debug\Converter.exe
+D:\GitHub\Differ\Converter\bin\Debug\Converter.pdb
+D:\GitHub\Differ\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.cache
+D:\GitHub\Differ\Converter\obj\Debug\Converter.Form1.resources
+D:\GitHub\Differ\Converter\obj\Debug\Converter.Properties.Resources.resources
+D:\GitHub\Differ\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache

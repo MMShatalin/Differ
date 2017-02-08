@@ -1,0 +1,87 @@
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Release\Converter.exe.config
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Release\Converter.exe
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Release\Converter.pdb
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.Form1.resources
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.Form2.resources
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.exe
+C:\Users\admin\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.pdb
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\bin\Release\Converter.exe.config
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.exe
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.pdb
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.Form1.resources
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.Form2.resources
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\bin\Release\Converter.exe
+C:\Users\admin\Desktop\С#\Grafic filter TXTtoExcel\Converter\Converter\bin\Release\Converter.pdb
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Release\Converter.exe.config
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.exe
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.Form1.resources
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.Form2.resources
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.Properties.Resources.resources
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Release\Converter.exe
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\bin\Release\Converter.pdb
+C:\Users\Михаил\Desktop\Grafic filter TXTtoExcel\Converter\Converter\obj\Release\Converter.pdb
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.exe.config
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.exe
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.pdb
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.exe
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.pdb
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Form1.resources
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Form2.resources
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
+D:\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.exe.config
+D:\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.exe
+D:\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.pdb
+D:\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.exe
+D:\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.pdb
+D:\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+D:\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Form1.resources
+D:\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Form2.resources
+D:\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Properties.Resources.resources
+D:\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
+H:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.exe.config
+H:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.exe
+H:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.pdb
+H:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.exe
+H:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.pdb
+H:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+H:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Form1.resources
+H:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Properties.Resources.resources
+H:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
+F:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.exe.config
+F:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.exe
+F:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.pdb
+F:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.exe
+F:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.pdb
+F:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+F:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Form1.resources
+F:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.Properties.Resources.resources
+F:\Остальное\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
+D:\Флешка MMSHATALIN\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\bin\Release\Converter.exe.config
+D:\Флешка MMSHATALIN\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.exe
+D:\Флешка MMSHATALIN\ОСНОВНЫЕ ДОКУМЕНТЫ для НВАЭС-2\Готовые проекты\DAT Viewer\Converter\Converter\obj\Release\Converter.pdb
+C:\Users\admin\Desktop\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\bin\Release\Converter.exe.config
+C:\Users\admin\Desktop\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.exe
+C:\Users\admin\Desktop\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.pdb
+C:\Users\admin\Desktop\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.Form1.resources
+C:\Users\admin\Desktop\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.Properties.Resources.resources
+C:\Users\admin\Desktop\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
+D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\bin\Release\Converter.exe.config
+D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.exe
+D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.pdb
+D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.Form1.resources
+D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.Properties.Resources.resources
+D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
+D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\bin\Release\Converter.exe
+D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\bin\Release\Converter.pdb
