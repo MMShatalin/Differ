@@ -1,0 +1,22 @@
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\bin\Debug\SmallPertubation.exe.config
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\bin\Debug\SmallPertubation.exe
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\bin\Debug\SmallPertubation.pdb
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.csprojResolveAssemblyReference.cache
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.Form1.resources
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.Properties.Resources.resources
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.csproj.GenerateResource.Cache
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.exe
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.pdb
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.AxisSettings.resources
+D:\НВАЭС-2\!!!!!Мое ПО для НВАЭС-6\3 _ Обработка дифф эффективности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.DataCompose.resources
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\bin\Debug\SmallPertubation.exe.config
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.exe
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.pdb
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\bin\Debug\SmallPertubation.exe
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\bin\Debug\SmallPertubation.pdb
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.csprojResolveAssemblyReference.cache
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.AxisSettings.resources
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.DataCompose.resources
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.Form1.resources
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.Properties.Resources.resources
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.csproj.GenerateResource.Cache

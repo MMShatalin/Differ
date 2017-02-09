@@ -1,0 +1,10 @@
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\bin\Release\SmallPertubation.exe.config
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\bin\Release\SmallPertubation.exe
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\bin\Release\SmallPertubation.pdb
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Release\SmallPertubation.AxisSettings.resources
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Release\SmallPertubation.DataCompose.resources
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Release\SmallPertubation.Form1.resources
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Release\SmallPertubation.Properties.Resources.resources
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Release\SmallPertubation.csproj.GenerateResource.Cache
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Release\SmallPertubation.exe
+P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Release\SmallPertubation.pdb
