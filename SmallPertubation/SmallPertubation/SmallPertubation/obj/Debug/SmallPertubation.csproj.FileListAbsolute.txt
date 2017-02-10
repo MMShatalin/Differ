@@ -20,3 +20,14 @@ P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКО
 P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.Form1.resources
 P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.Properties.Resources.resources
 P:\phisCommon\МОИ ДОКУМЕНТЫ\Шаталин\от БЕЛОБРОДКОГО\НФХ на мощности\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.csproj.GenerateResource.Cache
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\bin\Debug\SmallPertubation.exe.config
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.exe
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.pdb
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\bin\Debug\SmallPertubation.exe
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\bin\Debug\SmallPertubation.pdb
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.csprojResolveAssemblyReference.cache
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.AxisSettings.resources
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.DataCompose.resources
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.Form1.resources
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.Properties.Resources.resources
+D:\GitHub\Differ\SmallPertubation\SmallPertubation\SmallPertubation\obj\Debug\SmallPertubation.csproj.GenerateResource.Cache

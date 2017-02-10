@@ -174,12 +174,14 @@ namespace Converter
 
         List<string> AllLEGENDS = new List<string>();
 
-
+        private double[] indexTimelist;
         private bool flagAxis = true;
         private void добавитьНаОсьXToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flagAxis = true;
             Graph.CreateLine(MyAllSensors, checkedListBox1.Text, chart1, flagAxis);
+           
+
             button6.Enabled = true;
         }
 
@@ -728,42 +730,13 @@ namespace Converter
         private void button1_Click(object sender, EventArgs e)
         {
             button6.Enabled = true;
-         //   Time_Per.Clear();
-        //    Time_Per.RemoveAt(Time_Per.Count-1);
 
-            chart1.ChartAreas[0].CursorX.Position--;
+            
+      //      chart1.ChartAreas[0].CursorX.Position.
 
             //  indexes.Add(position);
             //кол/личество нарисованных сириосов тоесть колличество выводимых параметров
-            try
-            {
-                for (int j = 0; j < MyAllSensors.Count; j++)
-                {
-                   // if (comboBox2.Text == MyAllSensors[j].KKS_Name)
-                    {
-                        chart1.Series[19].ChartType = SeriesChartType.Point;
-                        chart1.Series[19].Color = Color.Black;
-                        chart1.Series[19].Points.Clear();
-                        position = (int)chart1.ChartAreas[0].CursorX.Position;
 
-                        //MessageBox.Show(((int)chart1.ChartAreas[0].CursorX.Position).ToString());
-                        textBox3.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].ValueTimeForDAT.ToString();
-                        textBox4.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].DateTime.ToString("HH:mm:ss");
-                        DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position, MyAllSensors[j].MyListRecordsForOneKKS[position].Value);
-                        dp.MarkerStyle = MarkerStyle.Cross;
-                        dp.MarkerSize = 10;
-                        dp.IsValueShownAsLabel = true;
-                        chart1.Series[19].Points.Add(dp);
-                    }
-                }
-                //  chart1.ChartAreas[0].CursorX.Position++;
-                position = (int)chart1.ChartAreas[0].CursorX.Position;
-
-            }
-            catch
-            {
-                chart1.ChartAreas[0].CursorX.Position = position;
-            }
         }
         List<int> indexes = new List<int>();
         List<int> BeginIndex = new List<int>();
@@ -776,67 +749,16 @@ namespace Converter
      //   myOneVozmuchenie.N_Per=0;
         private void button5_Click(object sender, EventArgs e)
         {
-            button6.Enabled = true;
-       //     Time_Per.Add(allSensors[0].MyListRecordsForOneKKS[(int)chart1.ChartAreas[0].CursorX.Position].value1);
-          //  chart1.ChartAreas[0].CursorX.SetCursorPixelPosition(e.Y);
-          //  chart1.ChartAreas[0].AxisY2.PixelPositionToValue(e.Y)
-
-        //кол/личество нарисованных сириосов тоесть колличество выводимых параметров
-            try
-            {
-                for (int j = 0; j < MyAllSensors.Count; j++)
-                {
-                   // if (comboBox2.Text == MyAllSensors[j].KKS_Name)
-                    {
-                        chart1.Series[19].ChartType = SeriesChartType.Point;
-                        chart1.Series[19].Color = Color.Black;
-                        chart1.Series[19].Points.Clear();
-                        position = (int)chart1.ChartAreas[0].CursorX.Position;
-
-                        //MessageBox.Show(((int)chart1.ChartAreas[0].CursorX.Position).ToString());
-                        textBox3.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].ValueTimeForDAT.ToString();
-                        textBox4.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].DateTime.ToString("HH:mm:ss");
-                        DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position, MyAllSensors[j].MyListRecordsForOneKKS[position].Value);
-                        dp.MarkerStyle = MarkerStyle.Cross;
-                        dp.MarkerSize = 10;
-                        dp.IsValueShownAsLabel = true;
-                        chart1.Series[19].Points.Add(dp);
-                    }
-                }
-              //  chart1.ChartAreas[0].CursorX.Position++;
-                position = (int)chart1.ChartAreas[0].CursorX.Position;
-     
-            }
-            catch
-            {
-                chart1.ChartAreas[0].CursorX.Position = position;
-            }
-            
-            //if (VozmSeries.Points.Count == 0)
-            //{
-            //    ///найдем индекс
-            //    ///
-            //    this.index = 0;
-            //    do
-            //    {
-            //        index++;
-            //    } while (this.form1Chart1.ChartAreas[0].CursorX.Position > this.myInputData.Data[0][index]);
-            //    this.VozmSeries.Points.AddXY(this.myInputData.Data[0][index], this.myInputData.Data[MyConst.r1][index]);
-            //}
-            //else
-            //{
-            //    index++;
-            //    //удалим последнюю точку
-            //    this.VozmSeries.Points.RemoveAt(this.VozmSeries.Points.Count - 1);
-            //    this.VozmSeries.Points.AddXY(this.myInputData.Data[0][index], this.myInputData.Data[MyConst.r1][index]);
-            //    //this.FixVozmSeries.Points.AddXY(this.myData.Data[0][i], this.myData.Data[MyConst.r1][i]);
-            //}
+            MessageBox.Show(Graph.indexTimelist.Count().ToString());
+            MessageBox.Show((Array.BinarySearch(Graph.indexTimelist, indexPoint).ToString()));
         }
 
         private void sddsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
+
+        private double indexPoint;
         int index;
         int IndexReac()
         {
@@ -852,7 +774,6 @@ namespace Converter
         }
         private void chart1_MouseDown_1(object sender, MouseEventArgs e)
         {
-        //    IndexReac();
             if (e.Button == MouseButtons.Right)
             {
                 button6.Enabled = true;
@@ -860,6 +781,8 @@ namespace Converter
             }
             if (e.Button == MouseButtons.Left)
             {
+                indexPoint = chart1.ChartAreas[0].CursorX.Position;
+                MessageBox.Show(indexPoint.ToString());
                    try
             {
                 for (int j = 0; j < MyAllSensors.Count; j++)

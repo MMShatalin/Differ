@@ -17,6 +17,8 @@ namespace Converter
         public static int _numberseries = 0;
         public static List<double> MinmaxListPrimary  = new List<double>();
         public static List<double> MinmaxListSecondary = new List<double>();
+        private static int _countTime;
+        public static double[] indexTimelist;
         public static void CreateLine(List<Sensors> allSensors, string nameChecked, Chart chart, bool flagAxis)
         {
             for (int j = 0; j < allSensors.Count; j++)
@@ -28,6 +30,12 @@ namespace Converter
                         chart.Series[_numberseries].Points.AddXY(
                             allSensors[j].MyListRecordsForOneKKS[i].ValueTimeForDAT,
                             allSensors[j].MyListRecordsForOneKKS[i].Value);
+                        
+                        if (j > 0)
+                        {
+                            indexTimelist = new double[allSensors[j].MyListRecordsForOneKKS.Count];
+                            indexTimelist[i] = allSensors[j].MyListRecordsForOneKKS[i].ValueTimeForDAT;
+                        }
                         if (flagAxis == true)
                         {
                             MinmaxListPrimary.Add(allSensors[j].MyListRecordsForOneKKS[i].Value);
@@ -44,6 +52,7 @@ namespace Converter
              
                 }
             }
+
 
             chart.Series[_numberseries].BorderWidth = 3;
             if (flagAxis == true)
