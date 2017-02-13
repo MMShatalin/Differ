@@ -203,7 +203,8 @@ namespace Converter
         }
         SD.DataTable TochkaDannih = new SD.DataTable();
         private void Form1_Load(object sender, EventArgs e)
-        {    
+        {
+            button10.Enabled = false;
             chart1.ChartAreas[0].CursorX.IsUserEnabled = true;
             chart1.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
             chart1.ChartAreas[0].CursorY.IsUserEnabled = true;
@@ -1285,7 +1286,13 @@ namespace Converter
         List<double> proba = new List<double>();
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            comboBox1.BackColor = Color.LightBlue;
+
+            if (comboBox2.Text != "" && comboBox3.Text != "")
+            {
+                button10.Enabled = true;
+                button10.BackColor = Color.Yellow;
+            }
         }
         int NOper = -2;
         private OneVozmuchenieData myOneVozmuchenie = new OneVozmuchenieData();
@@ -1505,6 +1512,8 @@ namespace Converter
             {
                 checkedListBox1.Items.Add(item.KKS_Name);
                 comboBox1.Items.Add(item.KKS_Name);
+                comboBox2.Items.Add(item.KKS_Name);
+                comboBox3.Items.Add(item.KKS_Name);
               //  comboBox2.Items.Add(item.KKS_Name);
                // comboBox3.Items.Add(item.KKS_Name);
                // comboBox4.Items.Add(item.KKS_Name);
@@ -1614,6 +1623,28 @@ namespace Converter
                 {
                     textBox14.Text = chart1.ChartAreas[0].AxisY2.PixelPositionToValue(e.Y).ToString();  
                 }
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox2.BackColor = Color.LightBlue;
+
+            if (comboBox1.Text != "" && comboBox3.Text != "")
+            {
+                button10.Enabled = true;
+                button10.BackColor = Color.Yellow;
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox3.BackColor = Color.LightBlue;
+
+            if (comboBox1.Text != "" && comboBox2.Text != "")
+            {
+               button10.Enabled = true;
+                button10.BackColor = Color.Yellow;
             }
         }
     }
