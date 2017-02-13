@@ -238,11 +238,11 @@ namespace Converter
             chart1.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Times New Roman", 14, FontStyle.Regular);
             chart1.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Times New Roman", 14, FontStyle.Regular);
 
-            dataGridView4.Columns.Add("Время", "Время");
-            dataGridView4.Columns.Add("I, A", "I, A");
-            dataGridView4.Columns.Add("\u03F1, beff", "\u03F1, beff");
-            dataGridView4.Columns.Add("H, %", "H, %");
-            dataGridView4.Columns.Add("F", "F");
+            
+     //       dataGridView4.Columns.Add(comboBox2.Text + ", A", comboBox2.Text + ", A");
+          //  dataGridView4.Columns.Add("\u03F1, beff", "\u03F1, beff");
+          //  dataGridView4.Columns.Add("H, %", "H, %");
+         //   dataGridView4.Columns.Add("F", "F");
 
             dataGridView2.Columns.Add("\u03B1(H) \u03B2/см", "\u03B1(H) \u03B2/см");
             dataGridView2.Columns.Add("По пичкам \u03B1(H) \u03B2/см", "По пичкам \u03B1(H) \u03B2/см");
@@ -270,11 +270,8 @@ namespace Converter
             dataGridView1.Columns[0].Width = 200;
             dataGridView1.Columns[1].Width = 200;
 
-            dataGridView4.Columns[0].Width = 200;
-            dataGridView4.Columns[1].Width = 200;
-            dataGridView4.Columns[2].Width = 200;
-            dataGridView4.Columns[3].Width = 200;
-            dataGridView4.Columns[4].Width = 200;
+            label24.Text = "T, \u2103";
+            label1.Text = "\u03C1, %";
         }
         private void dataGridView3_CellValueNeeded(object sender,
      System.Windows.Forms.DataGridViewCellValueEventArgs e)
@@ -1286,9 +1283,25 @@ namespace Converter
         List<double> proba = new List<double>();
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView4.Columns.Add(comboBox1.Text + ", %", comboBox1.Text + ", %");
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox1.Text == MyAllSensors[i].KKS_Name)
+                {
+                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    {
+                        dataGridView4.Rows.Add();//добавляем строки с таблицу
+                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                    }
+                }
+            }
+
+            dataGridView4.Columns[indexData4].Width = 200;
+            indexData4++;
+
             comboBox1.BackColor = Color.LightBlue;
 
-            if (comboBox2.Text != "" && comboBox3.Text != "")
+            if (comboBox2.Text != "" && comboBox3.Text != "" && comboBox4.Text != "" && comboBox5.Text != "")
             {
                 button10.Enabled = true;
                 button10.BackColor = Color.Yellow;
@@ -1507,6 +1520,18 @@ namespace Converter
                 }
             }
 
+            dataGridView4.Columns.Add("Время", "Время");
+       //     dataGridView4.Columns.Add(comboBox2.Text + ", A", comboBox2.Text + ", A");
+
+            for (int j = 0; j < MyAllSensors[0].MyListRecordsForOneKKS.Count; j++)
+            {
+                dataGridView4.Rows.Add(); //добавляем строки с таблицу
+                //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
+                dataGridView4[indexData4, j].Value = MyAllSensors[0].MyListRecordsForOneKKS[j].DateTime.ToString();
+            }
+            dataGridView4.Columns[indexData4].Width = 200;
+            indexData4++;
+
 
             foreach (Sensors item in MyAllSensors)
             {
@@ -1514,12 +1539,10 @@ namespace Converter
                 comboBox1.Items.Add(item.KKS_Name);
                 comboBox2.Items.Add(item.KKS_Name);
                 comboBox3.Items.Add(item.KKS_Name);
-              //  comboBox2.Items.Add(item.KKS_Name);
-               // comboBox3.Items.Add(item.KKS_Name);
-               // comboBox4.Items.Add(item.KKS_Name);
-               // comboBox5.Items.Add(item.KKS_Name);
+                comboBox4.Items.Add(item.KKS_Name);
+                comboBox5.Items.Add(item.KKS_Name);
             }
-            
+
         }
         bool flag = true;
         private void button9_Click_1(object sender, EventArgs e)
@@ -1626,11 +1649,29 @@ namespace Converter
             }
         }
 
+        private int indexData4 = 0;
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView4.Columns.Add(comboBox2.Text + ", A", comboBox2.Text + ", A");
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox2.Text == MyAllSensors[i].KKS_Name)
+                {
+                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    {
+                        dataGridView4.Rows.Add();//добавляем строки с таблицу
+                        //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
+                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                    }
+                }
+            }
+            dataGridView4.Columns[indexData4].Width = 200;
+            indexData4++;
+
+        //    dataGridView4.Columns[1].Width = 200;
             comboBox2.BackColor = Color.LightBlue;
 
-            if (comboBox1.Text != "" && comboBox3.Text != "")
+            if (comboBox1.Text != "" && comboBox3.Text != "" && comboBox5.Text != "" && comboBox4.Text != "")
             {
                 button10.Enabled = true;
                 button10.BackColor = Color.Yellow;
@@ -1639,11 +1680,81 @@ namespace Converter
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView4.Columns.Add(comboBox3.Text + ", МВт", comboBox3.Text + ", МВт");
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox3.Text == MyAllSensors[i].KKS_Name)
+                {
+                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    {
+                        dataGridView4.Rows.Add();//добавляем строки с таблицу
+                        //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
+                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                    }
+                }
+            }
+            dataGridView4.Columns[indexData4].Width = 200;
+            indexData4++;
+
             comboBox3.BackColor = Color.LightBlue;
 
-            if (comboBox1.Text != "" && comboBox2.Text != "")
+            if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox5.Text != "" && comboBox4.Text != "")
             {
                button10.Enabled = true;
+                button10.BackColor = Color.Yellow;
+            }
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridView4.Columns.Add(comboBox5.Text + ", см", comboBox5.Text + ", см");
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox5.Text == MyAllSensors[i].KKS_Name)
+                {
+                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    {
+                        dataGridView4.Rows.Add();//добавляем строки с таблицу
+                        //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
+                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                    }
+                }
+            }
+            dataGridView4.Columns[indexData4].Width = 200;
+            indexData4++;
+
+            comboBox5.BackColor = Color.LightBlue;
+
+            if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "" && comboBox4.Text != "")
+            {
+                button10.Enabled = true;
+                button10.BackColor = Color.Yellow;
+            }
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridView4.Columns.Add(comboBox4.Text + ", \u2103", comboBox4.Text + ", \u2103");
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox4.Text == MyAllSensors[i].KKS_Name)
+                {
+                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    {
+                        dataGridView4.Rows.Add();//добавляем строки с таблицу
+                        //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
+                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                    }
+                }
+            }
+            dataGridView4.Columns[indexData4].Width = 200;
+            indexData4++;
+
+            comboBox4.BackColor = Color.LightBlue;
+
+            if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "" && comboBox5.Text != "")
+            {
+                button10.Enabled = true;
                 button10.BackColor = Color.Yellow;
             }
         }
