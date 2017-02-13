@@ -12,6 +12,8 @@ using System.Windows.Forms.DataVisualization.Charting;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Word;
 using System.Drawing.Printing;
+using System.Net.Configuration;
+using System.Windows.Forms.VisualStyles;
 
 //псевдонимы
 using SD = System.Data;
@@ -174,13 +176,19 @@ namespace Converter
 
         List<string> AllLEGENDS = new List<string>();
 
-        private double[] indexTimelist;
+    //    private double[] indexTimelist;
         private bool flagAxis = true;
+        List<double> TimeList = new List<double>();
         private void добавитьНаОсьXToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flagAxis = true;
             Graph.CreateLine(MyAllSensors, checkedListBox1.Text, chart1, flagAxis);
-           
+
+            TimeList.Clear();
+            for (int i = 0; i < MyAllSensors[0].MyListRecordsForOneKKS.Count; i++)
+            {
+                TimeList.Add(MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
+            }
 
             button6.Enabled = true;
         }
@@ -730,18 +738,31 @@ namespace Converter
         private void button1_Click(object sender, EventArgs e)
         {
             button6.Enabled = true;
-
-            
-      //      chart1.ChartAreas[0].CursorX.Position.
-
-            //  indexes.Add(position);
-            //кол/личество нарисованных сириосов тоесть колличество выводимых параметров
+            indexPositionCursor--;
+            chart1.ChartAreas[0].CursorX.Position =
+            MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT;
+            textBox3.Text = MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].DateTime.ToString();
+            textBox4.Text = chart1.ChartAreas[0].CursorX.Position.ToString();
+            for (int j = 0; j < MyAllSensors.Count; j++)
+            {
+                if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+                {
+                    chart1.Series[19].ChartType = SeriesChartType.Point;
+                    chart1.Series[19].Color = Color.Black;
+                    chart1.Series[19].Points.Clear();
+                    DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position, MyAllSensors[j].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                    dp.MarkerStyle = MarkerStyle.Cross;
+                    dp.MarkerSize = 10;
+                    dp.IsValueShownAsLabel = true;
+                    chart1.Series[19].Points.Add(dp);
+                }
+            }
 
         }
         List<int> indexes = new List<int>();
         List<int> BeginIndex = new List<int>();
         List<int> EndIndex = new List<int>();
-        int position;
+        double position;
         List<double> Time_Per = new List<double>();
         List<double> myTok = new List<double>();
         double beg_per;
@@ -749,8 +770,25 @@ namespace Converter
      //   myOneVozmuchenie.N_Per=0;
         private void button5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Graph.indexTimelist.Count().ToString());
-            MessageBox.Show((Array.BinarySearch(Graph.indexTimelist, indexPoint).ToString()));
+            indexPositionCursor++;
+            chart1.ChartAreas[0].CursorX.Position = 
+            MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT;
+            textBox3.Text = MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].DateTime.ToString();
+            textBox4.Text = chart1.ChartAreas[0].CursorX.Position.ToString();
+            for (int j = 0; j < MyAllSensors.Count; j++)
+            {
+                if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+                {
+                    chart1.Series[19].ChartType = SeriesChartType.Point;
+                    chart1.Series[19].Color = Color.Black;
+                    chart1.Series[19].Points.Clear();
+                    DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position, MyAllSensors[j].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                    dp.MarkerStyle = MarkerStyle.Cross;
+                    dp.MarkerSize = 10;
+                    dp.IsValueShownAsLabel = true;
+                    chart1.Series[19].Points.Add(dp);
+                }
+            }
         }
 
         private void sddsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -772,6 +810,8 @@ namespace Converter
             }
             return index;
         }
+
+        private int indexPositionCursor;
         private void chart1_MouseDown_1(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -781,37 +821,47 @@ namespace Converter
             }
             if (e.Button == MouseButtons.Left)
             {
-                indexPoint = chart1.ChartAreas[0].CursorX.Position;
-                MessageBox.Show(indexPoint.ToString());
-                   try
-            {
-                for (int j = 0; j < MyAllSensors.Count; j++)
-                {
-                    if (comboBox1.Text == MyAllSensors[j].KKS_Name)
-                    {
-                        chart1.Series[19].ChartType = SeriesChartType.Point;
-                        chart1.Series[19].Color = Color.Black;
-                        chart1.Series[19].Points.Clear();
-                        position = (int)chart1.ChartAreas[0].CursorX.Position;
 
-                        //MessageBox.Show(((int)chart1.ChartAreas[0].CursorX.Position).ToString());
-                        textBox3.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].ValueTimeForDAT.ToString();
-                        textBox4.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].DateTime.ToString("HH:mm:ss");
-                        DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position, MyAllSensors[j].MyListRecordsForOneKKS[position].Value);
-                        dp.MarkerStyle = MarkerStyle.Cross;
-                        dp.MarkerSize = 10;
-                        dp.IsValueShownAsLabel = true;
-                        chart1.Series[19].Points.Add(dp);
+                //  MessageBox.Show(indexPoint.ToString());
+           
+
+                    //for (int j = 0; j < MyAllSensors.Count; j++)
+                    //  {
+                    //  if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+                    // {
+                    //    chart1.Series[19].ChartType = SeriesChartType.Point;
+                    //     chart1.Series[19].Color = Color.Black;
+                    //    chart1.Series[19].Points.Clear();
+                    //    position = (int)chart1.ChartAreas[0].CursorX.Position;
+
+                    //    //MessageBox.Show(((int)chart1.ChartAreas[0].CursorX.Position).ToString());
+                    //    textBox3.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].ValueTimeForDAT.ToString();
+                    ////     textBox4.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].DateTime.ToString("HH:mm:ss");
+                    //   DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position, MyAllSensors[j].MyListRecordsForOneKKS[position].Value);
+                    //   dp.MarkerStyle = MarkerStyle.Cross;
+                    //  dp.MarkerSize = 10;
+                    //  dp.IsValueShownAsLabel = true;
+                    //  chart1.Series[19].Points.Add(dp);
+                    //}
+                    // }
+                    //  chart1.ChartAreas[0].CursorX.Position++;
+                try
+                {
+                    position = chart1.ChartAreas[0].CursorX.Position;
+                    //   MessageBox.Show(position.ToString());
+                    List<double> dTDoubles = new List<double>();
+                    dTDoubles.Clear();
+                    for (int i = 0; i < TimeList.Count; i++)
+                    {
+                        dTDoubles.Add(Math.Abs(TimeList[i] - position));
                     }
+                    indexPositionCursor = dTDoubles.IndexOf(dTDoubles.Min());
                 }
-              //  chart1.ChartAreas[0].CursorX.Position++;
-                position = (int)chart1.ChartAreas[0].CursorX.Position;
-     
-            }
-            catch
-            {
-                chart1.ChartAreas[0].CursorX.Position = position;
-            }
+                catch 
+                {
+                    
+                }
+
             }
 
         }
@@ -1184,7 +1234,7 @@ namespace Converter
 
 
 
-            BeginIndex.Add(position);
+      //      BeginIndex.Add(position);
 
             //   if (BeginIndex.Count == 0)
             // {
@@ -1214,7 +1264,7 @@ namespace Converter
         }
         private void button7_Click(object sender, EventArgs e)
         {
-            EndIndex.Add(position);
+         //   EndIndex.Add(position);
             ForERORR.Add(1);
          //  if(EndIndex.Count == 1)
            // {
