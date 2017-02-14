@@ -16,5 +16,9 @@ namespace Converter
             this.value = myValue;
             this.time = myTime;
         }
+        public MyVirtualClass(string myValue)
+        {
+            this.value = myValue;
+        }
     }
 }

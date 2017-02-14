@@ -11,7 +11,7 @@ namespace Converter
     class MyListOfSensors : List<Sensors>
     {
 
-        public static Sensors getSensorByKKSName(string kks, List<Sensors> MyAllSensors)
+        public Sensors getSensorByKKSName(string kks, List<Sensors> MyAllSensors)
         {
             foreach (Sensors item in MyAllSensors)
             {
@@ -22,12 +22,12 @@ namespace Converter
             }
             return null;
         }
-        public static Sensors getOneKKSByIndex(int index, List<Sensors> MyAllSensors)
+        public Sensors getOneKKSByIndex(int index, List<Sensors> MyAllSensors)
         {
             return MyAllSensors[index];
         }
-
-        private static int DetectType(string filename)
+        
+        private int DetectType(string filename)
         {
             string[] temp = filename.Split('.');
             switch (temp[1])
@@ -49,7 +49,7 @@ namespace Converter
             return -1;
         }
 
-        public static void LoadFromFile(string filename, List<Sensors> y)
+        public void LoadFromFile(string filename, MyListOfSensors y)
         {
             if (DetectType(filename) != -1)
             {
@@ -76,7 +76,7 @@ namespace Converter
 
        
 
-        public static void LoadAPIK(string filename, List<Sensors> p)
+        public void LoadAPIK(string filename, List<Sensors> p)
         {
             string line = "";
             StreamReader mysr = new StreamReader(filename, Encoding.GetEncoding("Windows-1251"));
@@ -142,7 +142,7 @@ namespace Converter
             TimeSpan diff = date - origin;
             return diff.TotalSeconds;
         }
-        private static void LoadDATnvaes2(string filename, List<Sensors> p)
+        private void LoadDATnvaes2(string filename, List<Sensors> p)
         {
             MyListOfSensors MyList = new MyListOfSensors();
             MyList.Clear();
@@ -196,7 +196,7 @@ namespace Converter
              //   MyRecord.Close();
         
         }
-        public static void LoadEx(string filename, List<Sensors> p)
+        public void LoadEx(string filename, MyListOfSensors p)
         {
             string line = "";
             StreamReader MyFile = new StreamReader(filename, Encoding.GetEncoding("Windows-1251"));
@@ -243,7 +243,7 @@ namespace Converter
         }
 
 
-        private static void LoadBusherFile(string filename, List<Sensors> p)
+        private void LoadBusherFile(string filename, List<Sensors> p)
         {
             MyListOfSensors MyList = new MyListOfSensors();
             MyList.Clear();

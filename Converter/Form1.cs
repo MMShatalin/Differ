@@ -30,10 +30,40 @@ namespace Converter
 
     public partial class Form1 : Form
     {
-        private System.Collections.ArrayList customers = new System.Collections.ArrayList();
-        private MyVirtualClass customerInEdit;
-        private int rowInEdit = -1;
-        private bool rowScopeCommit = true;
+      private System.Collections.ArrayList customers = new System.Collections.ArrayList();
+      private MyVirtualClass customerInEdit;
+   private int rowInEdit = -1;
+      private bool rowScopeCommit = true;
+
+      private System.Collections.ArrayList customers1 = new System.Collections.ArrayList();
+      private MyVirtualClass customerInEdit1;
+      private int rowInEdit1 = -1;
+      private bool rowScopeCommit1 = true;
+
+      private System.Collections.ArrayList customers2 = new System.Collections.ArrayList();
+      private MyVirtualClass customerInEdit2;
+      private int rowInEdit2 = -1;
+      private bool rowScopeCommit2 = true;
+
+        private System.Collections.ArrayList customers3 = new System.Collections.ArrayList();
+        private MyVirtualClass customerInEdit3;
+        private int rowInEdit3 = -1;
+        private bool rowScopeCommit3 = true;
+
+        private System.Collections.ArrayList customers4 = new System.Collections.ArrayList();
+        private MyVirtualClass customerInEdit4;
+        private int rowInEdit4 = -1;
+        private bool rowScopeCommit4 = true;
+
+        private System.Collections.ArrayList customers5 = new System.Collections.ArrayList();
+        private MyVirtualClass customerInEdit5;
+        private int rowInEdit5 = -1;
+        private bool rowScopeCommit5 = true;
+
+        private System.Collections.ArrayList customers6 = new System.Collections.ArrayList();
+        private MyVirtualClass customerInEdit6;
+        private int rowInEdit6 = -1;
+        private bool rowScopeCommit6 = true;
         public Form1()
         {
             InitializeComponent();
@@ -73,7 +103,7 @@ namespace Converter
           
         }
 
-        List<Sensors> MyAllSensors = new List<Sensors>();
+        MyListOfSensors MyAllSensors = new MyListOfSensors();
 
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -248,6 +278,7 @@ namespace Converter
             dataGridView2.Columns.Add("По пичкам \u03B1(H) \u03B2/см", "По пичкам \u03B1(H) \u03B2/см");
 
             this.dataGridView1.VirtualMode = true;
+            this.dataGridView4.VirtualMode = true;
 
             DataGridViewTextBoxColumn companyNameColumn = new DataGridViewTextBoxColumn();
             companyNameColumn.HeaderText = "Время";
@@ -259,13 +290,8 @@ namespace Converter
             companyNameColumn1.Name = "Значение";
             this.dataGridView1.Columns.Add(companyNameColumn1);
 
-            DataGridViewTextBoxColumn companyNameColumn2 = new DataGridViewTextBoxColumn();
-            companyNameColumn2.HeaderText = "Время";
-            companyNameColumn2.Name = "Время";
+  
 
-            DataGridViewTextBoxColumn companyNameColumn3 = new DataGridViewTextBoxColumn();
-            companyNameColumn3.HeaderText = "Значение";
-            companyNameColumn3.Name = "Значение";
 
             dataGridView1.Columns[0].Width = 200;
             dataGridView1.Columns[1].Width = 200;
@@ -273,38 +299,7 @@ namespace Converter
             label24.Text = "T, \u2103";
             label1.Text = "\u03C1, %";
         }
-        private void dataGridView3_CellValueNeeded(object sender,
-     System.Windows.Forms.DataGridViewCellValueEventArgs e)
-        {
-            //this.dataGridView1.RowCount = 1;
-            // If this is the row for new records, no values are needed.
-            //  if (e.RowIndex == this.dataGridView3.RowCount - 1) return;
-            //   if (e.RowIndex == this.dataGridView3.RowCount - 1) return;
-
-            MyVirtualClass customerTmp = null;
-
-            // Store a reference to the Customer object for the row being painted.
-            if (e.RowIndex == rowInEdit)
-            {
-                customerTmp = this.customerInEdit;
-            }
-            else
-            {
-                customerTmp = (MyVirtualClass)this.customers[e.RowIndex];
-            }
-
-            // Set the cell value to paint using the Customer object retrieved.
-            //switch (this.dataGridView3.Columns[e.ColumnIndex].Name)
-            //{
-            //    case "Время":
-            //        e.Value = customerTmp.time;
-            //        break;
-
-            //    case "Значение":
-            //        e.Value = customerTmp.value;
-            //        break;
-            //}
-        }
+       
         private void dataGridView1_CellValueNeeded(object sender,
         System.Windows.Forms.DataGridViewCellValueEventArgs e)
         {
@@ -337,6 +332,181 @@ namespace Converter
                     break;
             }
         }
+
+        private void dataGridView4_CellValueNeeded(object sender,
+       System.Windows.Forms.DataGridViewCellValueEventArgs e)
+        {
+            //this.dataGridView1.RowCount = 1;
+            // If this is the row for new records, no values are needed.
+            if (e.RowIndex == this.dataGridView4.RowCount - 1) return;
+            //   if (e.RowIndex == this.dataGridView3.RowCount - 1) return;
+
+            MyVirtualClass customerTmp = null;
+
+            // Store a reference to the Customer object for the row being painted.
+            if (e.RowIndex == rowInEdit1)
+            {
+                customerTmp = this.customerInEdit1;
+            }
+            else
+            {
+                customerTmp = (MyVirtualClass)this.customers1[e.RowIndex];
+            }
+
+            // Set the cell value to paint using the Customer object retrieved.
+            switch (this.dataGridView4.Columns[e.ColumnIndex].Name)
+            {
+                case "Время":
+                    e.Value = customerTmp.value;
+                    break;
+            }
+        }
+
+
+
+        private void dataGridView41_CellValueNeeded(object sender,
+      System.Windows.Forms.DataGridViewCellValueEventArgs e)
+        {
+            //this.dataGridView1.RowCount = 1;
+            // If this is the row for new records, no values are needed.
+            if (e.RowIndex == this.dataGridView4.RowCount - 1) return;
+            //   if (e.RowIndex == this.dataGridView3.RowCount - 1) return;
+
+            MyVirtualClass customerTmp = null;
+
+            // Store a reference to the Customer object for the row being painted.
+            if (e.RowIndex == rowInEdit2)
+            {
+                customerTmp = this.customerInEdit2;
+            }
+            else
+            {
+                customerTmp = (MyVirtualClass)this.customers2[e.RowIndex];
+            }
+
+            // Set the cell value to paint using the Customer object retrieved.
+            switch (this.dataGridView4.Columns[e.ColumnIndex].Name)
+            {
+                case "Ток(эксперимент), А":
+                    e.Value = customerTmp.value;
+                    break;
+            }
+        }
+
+        private void dataGridView42_CellValueNeeded(object sender,
+    System.Windows.Forms.DataGridViewCellValueEventArgs e)
+        {
+            //this.dataGridView1.RowCount = 1;
+            // If this is the row for new records, no values are needed.
+            if (e.RowIndex == this.dataGridView4.RowCount - 1) return;
+            //   if (e.RowIndex == this.dataGridView3.RowCount - 1) return;
+
+            MyVirtualClass customerTmp = null;
+
+            // Store a reference to the Customer object for the row being painted.
+            if (e.RowIndex == rowInEdit3)
+            {
+                customerTmp = this.customerInEdit3;
+            }
+            else
+            {
+                customerTmp = (MyVirtualClass)this.customers3[e.RowIndex];
+            }
+
+            // Set the cell value to paint using the Customer object retrieved.
+            switch (this.dataGridView4.Columns[e.ColumnIndex].Name)
+            {
+                case "\u03C1, %":
+                    e.Value = customerTmp.value;
+                    break;
+            }
+        }
+        private void dataGridView43_CellValueNeeded(object sender,
+    System.Windows.Forms.DataGridViewCellValueEventArgs e)
+        {
+            //this.dataGridView1.RowCount = 1;
+            // If this is the row for new records, no values are needed.
+            if (e.RowIndex == this.dataGridView4.RowCount - 1) return;
+            //   if (e.RowIndex == this.dataGridView3.RowCount - 1) return;
+
+            MyVirtualClass customerTmp = null;
+
+            // Store a reference to the Customer object for the row being painted.
+            if (e.RowIndex == rowInEdit4)
+            {
+                customerTmp = this.customerInEdit4;
+            }
+            else
+            {
+                customerTmp = (MyVirtualClass)this.customers4[e.RowIndex];
+            }
+
+            // Set the cell value to paint using the Customer object retrieved.
+            switch (this.dataGridView4.Columns[e.ColumnIndex].Name)
+            {
+                case "N, МВт":
+                    e.Value = customerTmp.value;
+                    break;
+            }
+        }
+
+        private void dataGridView44_CellValueNeeded(object sender,
+   System.Windows.Forms.DataGridViewCellValueEventArgs e)
+        {
+            //this.dataGridView1.RowCount = 1;
+            // If this is the row for new records, no values are needed.
+            if (e.RowIndex == this.dataGridView4.RowCount - 1) return;
+            //   if (e.RowIndex == this.dataGridView3.RowCount - 1) return;
+
+            MyVirtualClass customerTmp = null;
+
+            // Store a reference to the Customer object for the row being painted.
+            if (e.RowIndex == rowInEdit5)
+            {
+                customerTmp = this.customerInEdit5;
+            }
+            else
+            {
+                customerTmp = (MyVirtualClass)this.customers5[e.RowIndex];
+            }
+
+            // Set the cell value to paint using the Customer object retrieved.
+            switch (this.dataGridView4.Columns[e.ColumnIndex].Name)
+            {
+                case "H12, см":
+                    e.Value = customerTmp.value;
+                    break;
+            }
+        }
+
+        private void dataGridView45_CellValueNeeded(object sender,
+   System.Windows.Forms.DataGridViewCellValueEventArgs e)
+        {
+            //this.dataGridView1.RowCount = 1;
+            // If this is the row for new records, no values are needed.
+            if (e.RowIndex == this.dataGridView4.RowCount - 1) return;
+            //   if (e.RowIndex == this.dataGridView3.RowCount - 1) return;
+
+            MyVirtualClass customerTmp = null;
+
+            // Store a reference to the Customer object for the row being painted.
+            if (e.RowIndex == rowInEdit6)
+            {
+                customerTmp = this.customerInEdit6;
+            }
+            else
+            {
+                customerTmp = (MyVirtualClass)this.customers6[e.RowIndex];
+            }
+
+            // Set the cell value to paint using the Customer object retrieved.
+            switch (this.dataGridView4.Columns[e.ColumnIndex].Name)
+            {
+                case "T, \u2103":
+                    e.Value = customerTmp.value;
+                    break;
+            }
+        }
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -348,8 +518,8 @@ namespace Converter
                 //  List<double> MyParametr = new List<double>();
                 //    MessageBox.Show(MyListSensors.Count.ToString());
                 //    MessageBox.Show(MyListSensors[0].Count.ToString() + " " + MyListSensors[1].Count.ToString());
-             
-                    myOneKKS = MyListOfSensors.getOneKKSByIndex(checkedListBox1.SelectedIndex, MyAllSensors);
+                MyListOfSensors  N = new MyListOfSensors();
+                    myOneKKS = N.getOneKKSByIndex(checkedListBox1.SelectedIndex, MyAllSensors);
 
                     //     List<double> MyParametr = new List<double>();
 
@@ -1283,21 +1453,33 @@ namespace Converter
         List<double> proba = new List<double>();
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView4.Columns.Add(comboBox1.Text + ", %", comboBox1.Text + ", %");
-            for (int i = 0; i < MyAllSensors.Count; i++)
+           dataGridView4.Visible = false;
+
+            this.dataGridView4.CellValueNeeded += new
+                DataGridViewCellValueEventHandler(dataGridView42_CellValueNeeded);
+
+            //   dataGridView4.Rows.Clear();
+            customers3.Clear();
+
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
             {
-                if (comboBox1.Text == MyAllSensors[i].KKS_Name)
+                if (comboBox1.Text == MyAllSensors[k].KKS_Name)
                 {
-                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
                     {
-                        dataGridView4.Rows.Add();//добавляем строки с таблицу
-                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                        this.customers3.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
                     }
                 }
             }
+            if (this.dataGridView4.RowCount == 0)
+            {
+                this.dataGridView4.RowCount = 1;
+            }
 
-            dataGridView4.Columns[indexData4].Width = 200;
-            indexData4++;
+            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+            dataGridView4.Visible = true;
 
             comboBox1.BackColor = Color.LightBlue;
 
@@ -1510,28 +1692,53 @@ namespace Converter
 
         private void button2_Click_2(object sender, EventArgs e)
         {
+            MyListOfSensors N = new MyListOfSensors();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 foreach (var item in openFileDialog1.FileNames)
                 {
-
-                    MyListOfSensors.LoadFromFile(item, MyAllSensors);
-
+                    N.LoadFromFile(item, MyAllSensors);
                 }
             }
-
+         
             dataGridView4.Columns.Add("Время", "Время");
+            dataGridView4.Columns.Add("Ток(эксперимент), А", "Ток(эксперимент), А");
+            dataGridView4.Columns.Add("\u03C1, %", "\u03C1, %");
+            dataGridView4.Columns.Add("N, МВт", "N, МВт");
+            dataGridView4.Columns.Add("H12, см", "H12, см");
+            dataGridView4.Columns.Add("T, \u2103", "T, \u2103");
        //     dataGridView4.Columns.Add(comboBox2.Text + ", A", comboBox2.Text + ", A");
 
-            for (int j = 0; j < MyAllSensors[0].MyListRecordsForOneKKS.Count; j++)
+            try
             {
-                dataGridView4.Rows.Add(); //добавляем строки с таблицу
-                //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
-                dataGridView4[indexData4, j].Value = MyAllSensors[0].MyListRecordsForOneKKS[j].DateTime.ToString();
-            }
-            dataGridView4.Columns[indexData4].Width = 200;
-            indexData4++;
+                dataGridView4.Visible = false;
+              
+                this.dataGridView4.CellValueNeeded += new
+                    DataGridViewCellValueEventHandler(dataGridView4_CellValueNeeded);
 
+                dataGridView4.Rows.Clear();
+                customers1.Clear();
+
+                for (int i = 0; i < MyAllSensors[0].MyListRecordsForOneKKS.Count; i++)
+                {
+                    this.customers1.Add(new MyVirtualClass(MyAllSensors[0].MyListRecordsForOneKKS[i].DateTime.ToString("HH:mm:ss.fff")));
+                }
+
+                if (this.dataGridView4.RowCount == 0)
+                {
+                    this.dataGridView4.RowCount = 1;
+                }
+
+                this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+                dataGridView4.Visible = true;
+            }
+            catch
+            {
+                //  MessageBox.Show(ex0.Message);
+            }
+
+            dataGridView4.Columns[indexData4].Width = 100;
+         //   indexData4++;
 
             foreach (Sensors item in MyAllSensors)
             {
@@ -1650,23 +1857,48 @@ namespace Converter
         }
 
         private int indexData4 = 0;
+
+        private string comboBoxText = null;
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView4.Columns.Add(comboBox2.Text + ", A", comboBox2.Text + ", A");
-            for (int i = 0; i < MyAllSensors.Count; i++)
+
+            //     dataGridView4.Columns.Add(comboBox2.Text + ", A", comboBox2.Text + ", A");
+
+        
+                dataGridView4.Visible = false;
+
+                this.dataGridView4.CellValueNeeded += new
+                    DataGridViewCellValueEventHandler(dataGridView41_CellValueNeeded);
+
+             //   dataGridView4.Rows.Clear();
+                customers2.Clear();
+
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
             {
-                if (comboBox2.Text == MyAllSensors[i].KKS_Name)
+                if (comboBox2.Text == MyAllSensors[k].KKS_Name)
                 {
-                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
                     {
-                        dataGridView4.Rows.Add();//добавляем строки с таблицу
-                        //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
-                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                        this.customers2.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
                     }
                 }
             }
-            dataGridView4.Columns[indexData4].Width = 200;
-            indexData4++;
+            if (this.dataGridView4.RowCount == 0)
+                {
+                    this.dataGridView4.RowCount = 1;
+                }
+
+                this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+                dataGridView4.Visible = true;
+            
+
+
+
+
+
+     
 
         //    dataGridView4.Columns[1].Width = 200;
             comboBox2.BackColor = Color.LightBlue;
@@ -1680,21 +1912,34 @@ namespace Converter
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView4.Columns.Add(comboBox3.Text + ", МВт", comboBox3.Text + ", МВт");
-            for (int i = 0; i < MyAllSensors.Count; i++)
+
+            dataGridView4.Visible = false;
+
+            this.dataGridView4.CellValueNeeded += new
+                DataGridViewCellValueEventHandler(dataGridView43_CellValueNeeded);
+
+            //   dataGridView4.Rows.Clear();
+            customers4.Clear();
+
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
             {
-                if (comboBox3.Text == MyAllSensors[i].KKS_Name)
+                if (comboBox3.Text == MyAllSensors[k].KKS_Name)
                 {
-                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
                     {
-                        dataGridView4.Rows.Add();//добавляем строки с таблицу
-                        //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
-                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                        this.customers4.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
                     }
                 }
             }
-            dataGridView4.Columns[indexData4].Width = 200;
-            indexData4++;
+            if (this.dataGridView4.RowCount == 0)
+            {
+                this.dataGridView4.RowCount = 1;
+            }
+
+            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+            dataGridView4.Visible = true;
 
             comboBox3.BackColor = Color.LightBlue;
 
@@ -1707,21 +1952,33 @@ namespace Converter
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView4.Columns.Add(comboBox5.Text + ", см", comboBox5.Text + ", см");
-            for (int i = 0; i < MyAllSensors.Count; i++)
+            dataGridView4.Visible = false;
+
+            this.dataGridView4.CellValueNeeded += new
+                DataGridViewCellValueEventHandler(dataGridView44_CellValueNeeded);
+
+            //   dataGridView4.Rows.Clear();
+            customers5.Clear();
+
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
             {
-                if (comboBox5.Text == MyAllSensors[i].KKS_Name)
+                if (comboBox5.Text == MyAllSensors[k].KKS_Name)
                 {
-                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
                     {
-                        dataGridView4.Rows.Add();//добавляем строки с таблицу
-                        //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
-                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                        this.customers5.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
                     }
                 }
             }
-            dataGridView4.Columns[indexData4].Width = 200;
-            indexData4++;
+            if (this.dataGridView4.RowCount == 0)
+            {
+                this.dataGridView4.RowCount = 1;
+            }
+
+            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+            dataGridView4.Visible = true;
 
             comboBox5.BackColor = Color.LightBlue;
 
@@ -1734,21 +1991,33 @@ namespace Converter
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView4.Columns.Add(comboBox4.Text + ", \u2103", comboBox4.Text + ", \u2103");
-            for (int i = 0; i < MyAllSensors.Count; i++)
+            dataGridView4.Visible = false;
+
+            this.dataGridView4.CellValueNeeded += new
+                DataGridViewCellValueEventHandler(dataGridView45_CellValueNeeded);
+
+            //   dataGridView4.Rows.Clear();
+            customers6.Clear();
+
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
             {
-                if (comboBox4.Text == MyAllSensors[i].KKS_Name)
+                if (comboBox4.Text == MyAllSensors[k].KKS_Name)
                 {
-                    for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
                     {
-                        dataGridView4.Rows.Add();//добавляем строки с таблицу
-                        //dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].DateTime.ToString();
-                        dataGridView4[indexData4, j].Value = MyAllSensors[i].MyListRecordsForOneKKS[j].Value.ToString();
+                        this.customers6.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
                     }
                 }
             }
-            dataGridView4.Columns[indexData4].Width = 200;
-            indexData4++;
+            if (this.dataGridView4.RowCount == 0)
+            {
+                this.dataGridView4.RowCount = 1;
+            }
+
+            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+            dataGridView4.Visible = true;
 
             comboBox4.BackColor = Color.LightBlue;
 
