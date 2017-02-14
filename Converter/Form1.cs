@@ -234,7 +234,11 @@ namespace Converter
         SD.DataTable TochkaDannih = new SD.DataTable();
         private void Form1_Load(object sender, EventArgs e)
         {
-            button10.Enabled = false;
+            tabPage5.Text = "Все данные";
+            tabPage6.Text = "Данные для поиска ПЭ и J(отн)";
+            tabPage7.Text = "Расчет";
+            tabPage8.Text = "ПЭ";
+           // button10.Enabled = false;
             chart1.ChartAreas[0].CursorX.IsUserEnabled = true;
             chart1.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
             chart1.ChartAreas[0].CursorY.IsUserEnabled = true;
@@ -275,7 +279,6 @@ namespace Converter
          //   dataGridView4.Columns.Add("F", "F");
 
             dataGridView2.Columns.Add("\u03B1(H) \u03B2/см", "\u03B1(H) \u03B2/см");
-            dataGridView2.Columns.Add("По пичкам \u03B1(H) \u03B2/см", "По пичкам \u03B1(H) \u03B2/см");
 
             this.dataGridView1.VirtualMode = true;
             this.dataGridView4.VirtualMode = true;
@@ -1485,8 +1488,8 @@ namespace Converter
 
             if (comboBox2.Text != "" && comboBox3.Text != "" && comboBox4.Text != "" && comboBox5.Text != "")
             {
-                button10.Enabled = true;
-                button10.BackColor = Color.Yellow;
+              //  button10.Enabled = true;
+              //  button10.BackColor = Color.Yellow;
             }
         }
         int NOper = -2;
@@ -1653,16 +1656,7 @@ namespace Converter
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            dataGridView4.Rows.Clear();
-            dataGridView2.Rows.Clear();
-            if (BeginIndex.Count == EndIndex.Count)
-            {
-                ReturnTokAndReactivity();
-            }
-            if(BeginIndex.Count != EndIndex.Count)
-            {
-                MessageBox.Show("Введите конечную точку!");
-            }
+           
 
      //   tempR.Ro = tempR.Ro * MyConst.Rect.Beff;
       //   tempR.aH = tempR.aH * MyConst.Rect.Beff;
@@ -1700,7 +1694,7 @@ namespace Converter
                     N.LoadFromFile(item, MyAllSensors);
                 }
             }
-         
+            dataGridView4.Columns.Clear();
             dataGridView4.Columns.Add("Время", "Время");
             dataGridView4.Columns.Add("Ток(эксперимент), А", "Ток(эксперимент), А");
             dataGridView4.Columns.Add("\u03C1, %", "\u03C1, %");
@@ -1820,6 +1814,8 @@ namespace Converter
                 //   checkedListBox1.Items.Clear();
              //   chart1.Series.Clear();
                 chart1.ChartAreas[0].Position.Auto = true;
+                dataGridView4.Rows.Clear();
+               
 
                 for (int i = 0; i < chart1.Series.Count; i++)
                 {
@@ -1905,8 +1901,8 @@ namespace Converter
 
             if (comboBox1.Text != "" && comboBox3.Text != "" && comboBox5.Text != "" && comboBox4.Text != "")
             {
-                button10.Enabled = true;
-                button10.BackColor = Color.Yellow;
+             //   button10.Enabled = true;
+              //  button10.BackColor = Color.Yellow;
             }
         }
 
@@ -1945,8 +1941,8 @@ namespace Converter
 
             if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox5.Text != "" && comboBox4.Text != "")
             {
-               button10.Enabled = true;
-                button10.BackColor = Color.Yellow;
+             //  button10.Enabled = true;
+              //  button10.BackColor = Color.Yellow;
             }
         }
 
@@ -1984,8 +1980,8 @@ namespace Converter
 
             if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "" && comboBox4.Text != "")
             {
-                button10.Enabled = true;
-                button10.BackColor = Color.Yellow;
+           // button10.Enabled = true;
+           //   button10.BackColor = Color.Yellow;
             }
         }
 
@@ -2023,8 +2019,36 @@ namespace Converter
 
             if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "" && comboBox5.Text != "")
             {
-                button10.Enabled = true;
-                button10.BackColor = Color.Yellow;
+             //   button10.Enabled = true;
+             //   button10.BackColor = Color.Yellow;
+            }
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            dataGridView4.Rows.Clear();
+            dataGridView2.Rows.Clear();
+            if (BeginIndex.Count == EndIndex.Count)
+            {
+                ReturnTokAndReactivity();
+            }
+            if (BeginIndex.Count != EndIndex.Count)
+            {
+                MessageBox.Show("Введите конечную точку!");
+            }
+        }
+
+        private void button8_Click_2(object sender, EventArgs e)
+        {
+            dataGridView4.Rows.Clear();
+            dataGridView2.Rows.Clear();
+            if (BeginIndex.Count == EndIndex.Count)
+            {
+                ReturnTokAndReactivity();
+            }
+            if (BeginIndex.Count != EndIndex.Count)
+            {
+                MessageBox.Show("Введите конечную точку!");
             }
         }
     }
