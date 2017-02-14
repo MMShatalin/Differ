@@ -1701,7 +1701,17 @@ namespace Converter
             dataGridView4.Columns.Add("N, МВт", "N, МВт");
             dataGridView4.Columns.Add("H12, см", "H12, см");
             dataGridView4.Columns.Add("T, \u2103", "T, \u2103");
-       //     dataGridView4.Columns.Add(comboBox2.Text + ", A", comboBox2.Text + ", A");
+
+            dataGridView3.Columns.Clear();
+            dataGridView3.Columns.Add("Время", "Время");
+            dataGridView3.Columns.Add("Ток(эксперимент), А", "Ток(эксперимент), А");
+            dataGridView3.Columns.Add("\u03C1, %", "\u03C1, %");
+            dataGridView3.Columns.Add("N, МВт", "N, МВт");
+            dataGridView3.Columns.Add("H12, см", "H12, см");
+            dataGridView3.Columns.Add("T, \u2103", "T, \u2103");
+            dataGridView3.Columns.Add("Ток(относительный)", "Ток(относительный)");
+            dataGridView3.Columns.Add("ПЭ", "ПЭ");
+
 
             try
             {
@@ -1815,6 +1825,7 @@ namespace Converter
              //   chart1.Series.Clear();
                 chart1.ChartAreas[0].Position.Auto = true;
                 dataGridView4.Rows.Clear();
+                dataGridView3.Rows.Clear();
                
 
                 for (int i = 0; i < chart1.Series.Count; i++)
@@ -2049,6 +2060,78 @@ namespace Converter
             if (BeginIndex.Count != EndIndex.Count)
             {
                 MessageBox.Show("Введите конечную точку!");
+            }
+        }
+
+        private int _indexRow = 0;
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(_indexRow.ToString());
+            List<double> myValue = new List<double>();
+            myValue.Clear();
+            myValue.Add(MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT);
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox2.Text == MyAllSensors[i].KKS_Name)
+                {
+                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                    break;
+                }
+            }
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox1.Text == MyAllSensors[i].KKS_Name)
+                {
+                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                    break;
+                }
+            }
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox3.Text == MyAllSensors[i].KKS_Name)
+                {
+                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                    break;
+                }
+            }
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox5.Text == MyAllSensors[i].KKS_Name)
+                {
+                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                    break;
+                }
+            }
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox4.Text == MyAllSensors[i].KKS_Name)
+                {
+                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                    break;
+                }
+            }
+            dataGridView3.Rows.Add();
+            for (int i = 0; i < myValue.Count; i++)
+            {
+                dataGridView3.Rows[_indexRow].Cells[i].Value = myValue[i];
+
+            }
+            _indexRow++;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+         //   MessageBox.Show(dataGridView3.Rows[0].Cells[3].Value.ToString());
+            
+            List<double> MyIlist = new List<double>();
+            MyIlist.Clear();
+            for (int i = 0; i < dataGridView3.Rows.Count-1; i++)
+            {
+                MyIlist.Add(((double)dataGridView3.Rows[i].Cells[1].Value / (double)dataGridView3.Rows[0].Cells[1].Value) * ((double)dataGridView3.Rows[0].Cells[3].Value / (double)dataGridView3.Rows[i].Cells[3].Value) * (1 + 0.01 * ((double)dataGridView3.Rows[0].Cells[5].Value - (double)dataGridView3.Rows[i].Cells[5].Value)));
+            }
+            for (int i = 0; i < MyIlist.Count; i++)
+            {
+                dataGridView3.Rows[i].Cells[6].Value = MyIlist[i];
             }
         }
     }
