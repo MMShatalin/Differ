@@ -64,6 +64,7 @@ namespace Converter
         private MyVirtualClass customerInEdit6;
         private int rowInEdit6 = -1;
         private bool rowScopeCommit6 = true;
+
         public Form1()
         {
             InitializeComponent();
@@ -1712,6 +1713,13 @@ namespace Converter
             dataGridView3.Columns.Add("Ток(относительный)", "Ток(относительный)");
             dataGridView3.Columns.Add("ПЭ", "ПЭ");
 
+            comboBox6.Items.Clear();
+            comboBox6.Items.Add("Все значения");
+            foreach (string item in MyConst.XintervalNames)
+            {
+                comboBox6.Items.Add(item);
+            }
+            comboBox6.SelectedIndex = 0;
 
             try
             {
@@ -1849,19 +1857,26 @@ namespace Converter
 
         private void chart1_MouseMove(object sender, MouseEventArgs e)
         {
-           if (Graph._numberseries>0)
+            try
             {
-               textBox2.Text = chart1.ChartAreas[0].AxisX.PixelPositionToValue(e.X).ToString();
-                if (checkBox1.Checked == false)
+                if (Graph._numberseries > 0)
                 {
-                    textBox14.Text = chart1.ChartAreas[0].AxisY.PixelPositionToValue(e.Y).ToString();  
-                }
-                if (checkBox1.Checked == true)
-                {
-                    textBox14.Text = chart1.ChartAreas[0].AxisY2.PixelPositionToValue(e.Y).ToString();  
+                    textBox2.Text = chart1.ChartAreas[0].AxisX.PixelPositionToValue(e.X).ToString();
+                    if (checkBox1.Checked == false)
+                    {
+                        textBox14.Text = chart1.ChartAreas[0].AxisY.PixelPositionToValue(e.Y).ToString();
+                    }
+                    if (checkBox1.Checked == true)
+                    {
+                        textBox14.Text = chart1.ChartAreas[0].AxisY2.PixelPositionToValue(e.Y).ToString();
+                    }
                 }
             }
-        }
+            catch (Exception)
+            {
+
+            }
+         }
 
         private int indexData4 = 0;
 
@@ -2121,18 +2136,52 @@ namespace Converter
 
         private void button11_Click(object sender, EventArgs e)
         {
-         //   MessageBox.Show(dataGridView3.Rows[0].Cells[3].Value.ToString());
+            Перевод_величин ChangeParametr = new Перевод_величин();
+            ChangeParametr.Owner = this;
+            ChangeParametr.Show();
+            //   MessageBox.Show(dataGridView3.Rows[0].Cells[3].Value.ToString());
             
             List<double> MyIlist = new List<double>();
             MyIlist.Clear();
             for (int i = 0; i < dataGridView3.Rows.Count-1; i++)
             {
-                MyIlist.Add(((double)dataGridView3.Rows[i].Cells[1].Value / (double)dataGridView3.Rows[0].Cells[1].Value) * ((double)dataGridView3.Rows[0].Cells[3].Value / (double)dataGridView3.Rows[i].Cells[3].Value) * (1 + 0.01 * ((double)dataGridView3.Rows[0].Cells[5].Value - (double)dataGridView3.Rows[i].Cells[5].Value)));
+                if (ChangeParametr.checkBox1.Checked == false)
+                {
+                    MyIlist.Add(((double)dataGridView3.Rows[i].Cells[1].Value / (double)dataGridView3.Rows[0].Cells[1].Value) * ((double)dataGridView3.Rows[0].Cells[3].Value / (double)dataGridView3.Rows[i].Cells[3].Value) * (1 + 0.01 * ((double)dataGridView3.Rows[0].Cells[5].Value - (double)dataGridView3.Rows[i].Cells[5].Value)));
+                }
+                if (ChangeParametr.checkBox1.Checked == true)
+                {
+                    MyIlist.Add(((double)dataGridView3.Rows[i].Cells[1].Value / (double)dataGridView3.Rows[0].Cells[1].Value) * (((double)dataGridView3.Rows[0].Cells[3].Value*32) / ((double)dataGridView3.Rows[i].Cells[3].Value*32)) * (1 + 0.01 * ((double)dataGridView3.Rows[0].Cells[5].Value - (double)dataGridView3.Rows[i].Cells[5].Value)));
+                }
             }
             for (int i = 0; i < MyIlist.Count; i++)
             {
                 dataGridView3.Rows[i].Cells[6].Value = MyIlist[i];
             }
+        }
+        
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Graph._numberseries > 0)
+            {
+                if (comboBox6.SelectedIndex == 0)
+                {
+                    chart1.ChartAreas[0].AxisX.Minimum = chart1.Series[0].Points[0].XValue;
+                    chart1.ChartAreas[0].AxisX.Maximum = chart1.Series[0].Points[chart1.Series[0].Points.Count - 1].XValue;
+                }
+                else
+                {
+                 //   FillChart();
+                    chart1.ChartAreas[0].AxisX.Maximum = chart1.ChartAreas[0].AxisX.Minimum + MyConst.XintervalVal[comboBox6.SelectedIndex];
+                  //  chart1.ChartAreas[0].AxisX.ScrollBar.Enabled = true;
+                   // chart1.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
+                }
+            }
+        }
+
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            
         }
     }
     public struct pertubResult

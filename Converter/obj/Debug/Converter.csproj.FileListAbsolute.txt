@@ -375,3 +375,4 @@ D:\GitHub\Differ\Converter\obj\Debug\Converter.csprojResolveAssemblyReference.ca
 D:\GitHub\Differ\Converter\obj\Debug\Converter.Form1.resources
 D:\GitHub\Differ\Converter\obj\Debug\Converter.Properties.Resources.resources
 D:\GitHub\Differ\Converter\obj\Debug\Converter.csproj.GenerateResource.Cache
+D:\GitHub\Differ\Converter\obj\Debug\Converter.Перевод_величин.resources

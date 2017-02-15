@@ -187,5 +187,10 @@ namespace SmallPertubation
                 chart1.Series[2].Points.AddXY(mydata.Data[0][i], mynewRC.Ro);
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
