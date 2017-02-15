@@ -16,5 +16,10 @@ namespace Converter
         {
             InitializeComponent();
         }
+
+        private void Перевод_величин_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
