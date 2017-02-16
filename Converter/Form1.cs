@@ -9,16 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
-using Microsoft.Office.Interop.Excel;
-using Microsoft.Office.Interop.Word;
-using System.Drawing.Printing;
-using System.Net.Configuration;
-using System.Windows.Forms.VisualStyles;
+
+
 
 //псевдонимы
 using SD = System.Data;
 using Excel = Microsoft.Office.Interop.Excel;
 using SmallPertubation;
+using Cursor = System.Windows.Forms.Cursor;
 
 namespace Converter
 {
@@ -213,10 +211,14 @@ namespace Converter
         List<double> _timeList = new List<double>();
         List<int> _indexList = new List<int>();
 
+        public double Min;
+        public double Max;
         private void добавитьНаОсьXToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flagAxis = true;
             Graph.CreateLine(MyAllSensors, checkedListBox1.Text, chart1, flagAxis);
+            Min = chart1.ChartAreas[0].AxisY.Minimum;
+            Max = chart1.ChartAreas[0].AxisY.Maximum;
 
             _timeList.Clear();
             _indexList.Clear();
@@ -1025,6 +1027,11 @@ namespace Converter
             return index;
         }
 
+        public Chart MaxAxisY()
+        {
+            return chart1;
+        }
+
         private int indexPositionCursor;
       
         private void chart1_MouseDown_1(object sender, MouseEventArgs e)
@@ -1037,11 +1044,17 @@ namespace Converter
             }
             if (e.Button == MouseButtons.Left)
             {
-                if (e.Y < 405 && e.Y > 0 && e.X > 0 && e.X < 117)  // проверка, что курсор ездит строго в под осью ОХ
+                if (e.Y < 450 && e.Y > 0 && e.X > 0 && e.X < 117)  
                 {
-                    MinMaxX ChangeParametrImage = new MinMaxX();
-                    ChangeParametrImage.Owner = this;
-                    ChangeParametrImage.Show();
+                    if (Graph._numberseries>0)
+                    {
+                        MinMaxX ChangeParametrImage = new MinMaxX(); ;
+                        ChangeParametrImage.Show();
+                        ChangeParametrImage.Location = e.Location;
+
+                        ChangeParametrImage.textBox1.Text = chart1.ChartAreas[0].AxisY.Maximum.ToString();
+                        ChangeParametrImage.textBox2.Text = chart1.ChartAreas[0].AxisY.Minimum.ToString();
+                    }
                 }
                 //  MessageBox.Show(indexPoint.ToString());
 
@@ -2327,6 +2340,11 @@ namespace Converter
         private void chart1_AxisScrollBarClicked(object sender, ScrollBarEventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(chart1.ChartAreas[0].AxisY.Minimum.ToString());
         }
     }
     public struct pertubResult
