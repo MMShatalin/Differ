@@ -87,6 +87,7 @@
             this.checkBox2.TabIndex = 1;
             this.checkBox2.Text = "в (МВт)";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // label1
             // 

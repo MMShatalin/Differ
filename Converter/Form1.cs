@@ -225,10 +225,10 @@ namespace Converter
                 _timeList.Add(MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
                 _indexList.Add(i);
             }
-            hScrollBar1.Minimum = (int) MyAllSensors[0].MyListRecordsForOneKKS[0].ValueTimeForDAT;
-            hScrollBar1.Maximum =
-                (int)
-                MyAllSensors[0].MyListRecordsForOneKKS[MyAllSensors[0].MyListRecordsForOneKKS.Count - 1].ValueTimeForDAT;
+        //    hScrollBar1.Minimum = (int) MyAllSensors[0].MyListRecordsForOneKKS[0].ValueTimeForDAT;
+        //    hScrollBar1.Maximum =
+         //       (int)
+          //      MyAllSensors[0].MyListRecordsForOneKKS[MyAllSensors[0].MyListRecordsForOneKKS.Count - 1].ValueTimeForDAT;
             // hScrollBar1.
             //button6.Enabled = true;
         }
@@ -254,6 +254,8 @@ namespace Converter
             // button10.Enabled = false;
             chart1.ChartAreas[0].CursorX.IsUserEnabled = true;
             chart1.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
+            chart1.ChartAreas[0].AxisX.ScrollBar.Size = 20;
+            chart1.ChartAreas[0].AxisY.ScrollBar.Size = 20;
             chart1.ChartAreas[0].CursorY.IsUserEnabled = true;
             chart1.ChartAreas[0].CursorY.LineColor = Color.Blue;
             chart1.ChartAreas[0].CursorX.LineColor = Color.Blue;
@@ -264,6 +266,7 @@ namespace Converter
             chart1.ChartAreas[0].CursorY.Interval = 0.0000001;
             chart1.ChartAreas[0].CursorX.Interval = 0.0000001;
             chart1.ChartAreas[0].CursorY.SelectionColor = Color.Blue;
+
 
             button8.Enabled = false;
 
@@ -307,7 +310,8 @@ namespace Converter
             this.dataGridView1.Columns.Add(companyNameColumn1);
 
 
-
+            tableLayoutPanel10.ColumnStyles[3].Width = 0;
+            tableLayoutPanel10.ColumnStyles[2].Width = 2F;
 
             dataGridView1.Columns[0].Width = 200;
             dataGridView1.Columns[1].Width = 200;
@@ -1022,9 +1026,10 @@ namespace Converter
         }
 
         private int indexPositionCursor;
-
+      
         private void chart1_MouseDown_1(object sender, MouseEventArgs e)
         {
+
             if (e.Button == MouseButtons.Right)
             {
                 button6.Enabled = true;
@@ -1032,7 +1037,12 @@ namespace Converter
             }
             if (e.Button == MouseButtons.Left)
             {
-
+                if (e.Y < 405 && e.Y > 0 && e.X > 0 && e.X < 117)  // проверка, что курсор ездит строго в под осью ОХ
+                {
+                    MinMaxX ChangeParametrImage = new MinMaxX();
+                    ChangeParametrImage.Owner = this;
+                    ChangeParametrImage.Show();
+                }
                 //  MessageBox.Show(indexPoint.ToString());
 
 
@@ -1774,13 +1784,13 @@ namespace Converter
             dataGridView3.Columns.Add("Ток(относительный)", "Ток(относительный)");
             dataGridView3.Columns.Add("ПЭ", "ПЭ");
 
-            comboBox6.Items.Clear();
-            comboBox6.Items.Add("Все значения");
-            foreach (string item in MyConst.XintervalNames)
-            {
-                comboBox6.Items.Add(item);
-            }
-            comboBox6.SelectedIndex = 0;
+         ////   comboBox6.Items.Clear();
+           // comboBox6.Items.Add("Все значения");
+           // foreach (string item in MyConst.XintervalNames)
+           // {
+            //    comboBox6.Items.Add(item);
+            //}
+            //comboBox6.SelectedIndex = 0;
 
             try
             {
@@ -1934,6 +1944,14 @@ namespace Converter
                     {
                         textBox14.Text = chart1.ChartAreas[0].AxisY2.PixelPositionToValue(e.Y).ToString();
                     }
+
+                   // if (e.Button == MouseButtons.Left) //проверка нажатия левой кнопки
+                   // {
+                       // label26.Text = string.Format("x= " + e.X);
+                      //  label27.Text = string.Format("y= " + e.Y);
+
+                        
+                  //  }
                 }
             }
             catch (Exception)
@@ -2202,16 +2220,11 @@ namespace Converter
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Перевод_величин ChangeParametr = new Перевод_величин();
-            ChangeParametr.Owner = this;
-            ChangeParametr.Show();
-            //   MessageBox.Show(dataGridView3.Rows[0].Cells[3].Value.ToString());
-
             List<double> MyIlist = new List<double>();
             MyIlist.Clear();
             for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
             {
-                if (ChangeParametr.checkBox1.Checked == false)
+                if (checkBox6.Checked == false)
                 {
                     MyIlist.Add(((double) dataGridView3.Rows[i].Cells[1].Value/
                                  (double) dataGridView3.Rows[0].Cells[1].Value)*
@@ -2222,7 +2235,7 @@ namespace Converter
                                  ((double) dataGridView3.Rows[0].Cells[5].Value -
                                   (double) dataGridView3.Rows[i].Cells[5].Value)));
                 }
-                if (ChangeParametr.checkBox1.Checked == true)
+                if (checkBox6.Checked == true)
                 {
                     MyIlist.Add(((double) dataGridView3.Rows[i].Cells[1].Value/
                                  (double) dataGridView3.Rows[0].Cells[1].Value)*
@@ -2248,20 +2261,20 @@ namespace Converter
 
                 if (Graph._numberseries > 0)
                 {
-                    if (comboBox6.SelectedIndex == 0)
+                   // if (comboBox6.SelectedIndex == 0)
                     {
                         chart1.ChartAreas[0].AxisX.Minimum = chart1.Series[0].Points[0].XValue;
                         chart1.ChartAreas[0].AxisX.Maximum =
                             chart1.Series[0].Points[chart1.Series[0].Points.Count - 1].XValue;
                     }
-                    else
-                    {
+                   // else
+                   // {
                         //   FillChart();
-                        chart1.ChartAreas[0].AxisX.Maximum = chart1.ChartAreas[0].AxisX.Minimum +
-                                                             MyConst.XintervalVal[comboBox6.SelectedIndex];
+                   //     chart1.ChartAreas[0].AxisX.Maximum = chart1.ChartAreas[0].AxisX.Minimum +
+                                                          //   MyConst.XintervalVal[comboBox6.SelectedIndex];
                         //  chart1.ChartAreas[0].AxisX.ScrollBar.Enabled = true;
                         // chart1.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
-                    }
+                  //  }
 
                 }
             }
@@ -2286,6 +2299,34 @@ namespace Converter
                 }
 
             }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            List<double> MyRlist = new List<double>();
+            MyRlist.Clear();
+            for (int i = 1; i < dataGridView3.Rows.Count - 1; i++)
+            {
+                if (checkBox5.Checked == false)
+                {
+                    MyRlist.Add(((double)dataGridView3.Rows[i].Cells[6].Value - (double)dataGridView3.Rows[i - 1].Cells[6].Value) / ((double)dataGridView3.Rows[i].Cells[4].Value - (double)dataGridView3.Rows[i - 1].Cells[4].Value));
+                }
+                if (checkBox5.Checked == true)
+                {
+                    MyRlist.Add(((double)dataGridView3.Rows[i].Cells[6].Value - (double)dataGridView3.Rows[i - 1].Cells[6].Value) / (((double)dataGridView3.Rows[i].Cells[4].Value*3.75) - ((double)dataGridView3.Rows[i - 1].Cells[4].Value)*3.75));
+                }
+            }
+            for (int i = 1; i < MyRlist.Count; i++)
+            {
+                dataGridView3.Rows[i].Cells[7].Value = MyRlist[i];
+            }
+        }
+
+
+
+        private void chart1_AxisScrollBarClicked(object sender, ScrollBarEventArgs e)
+        {
+
         }
     }
     public struct pertubResult
