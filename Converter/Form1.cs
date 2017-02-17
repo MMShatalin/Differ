@@ -253,6 +253,7 @@ namespace Converter
             tabPage6.Text = "Данные для поиска ПЭ и J(отн)";
             tabPage7.Text = "Расчет";
             tabPage8.Text = "ПЭ";
+            tabPage9.Text = "Данные из расчета dp/dH";
             // button10.Enabled = false;
             chart1.ChartAreas[0].CursorX.IsUserEnabled = true;
             chart1.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
@@ -281,7 +282,7 @@ namespace Converter
             button7.Visible = false;
             tabPage3.Text = "Параметры";
             tabPage4.Text = "Данные";
-            button6.Enabled = false;
+           // button6.Enabled = false;
             chart1.ChartAreas[0].BackColor = Color.Gainsboro;
 
             for (int i = 0; i < chart1.Series.Count; i++)
@@ -1464,13 +1465,23 @@ namespace Converter
 
         List<int> ForERORR = new List<int>();
 
+        List<int> indexPositionCursorList = new List<int>(); 
         private void button6_Click(object sender, EventArgs e)
         {
-            ForERORR.Add(0);
-            if (BeginIndex.Count == 0)
-            {
-                pdH.Add(0);
-            }
+           indexPositionCursorList.Add(indexPositionCursor);
+          //  MessageBox.Show(indexPositionCursorList.Count.ToString() + " " + indexPositionCursor);
+            
+            
+            
+            // ForERORR.Add(0);
+           // if (BeginIndex.Count == 0)
+           // {
+             //   pdH.Add(0);
+            //}
+
+
+
+
             //   Time_Per.Add(allSensors[0].MyListRecordsForOneKKS[(int)chart1.ChartAreas[0].CursorX.Position].value1);
 
             //   MessageBox.Show("gv");
@@ -1508,11 +1519,13 @@ namespace Converter
 
         private void button7_Click(object sender, EventArgs e)
         {
+            indexPositionCursorList.Add(indexPositionCursor);
+           // MessageBox.Show(indexPositionCursorList.Count.ToString() + " " + indexPositionCursor);
             //   EndIndex.Add(position);
-            ForERORR.Add(1);
+         //   ForERORR.Add(1);
             //  if(EndIndex.Count == 1)
             // {
-            button8.Enabled = true; //   Time_Per.RemoveAt(1);
+          //  button8.Enabled = true; //   Time_Per.RemoveAt(1);
             // }
             // Razdroblenie_H();
             // Time_Per.Clear();
@@ -1545,94 +1558,75 @@ namespace Converter
 
         private void ReturnTokAndReactivity()
         {
-            for (int i = 0; i < MyAllSensors.Count; i++)
-            {
-                if (comboBox1.Text == MyAllSensors[i].KKS_Name)
-                {
-                    for (int j = BeginIndex[0]; j < EndIndex[EndIndex.Count - 1] + 1; j++)
-                    {
-                        myTok.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value/
-                                  MyAllSensors[i].MyListRecordsForOneKKS[BeginIndex[0]].Value);
-                        time.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
-                    }
-                }
-            }
-
-            for (int i = 0; i < MyAllSensors.Count; i++)
-            {
+            //TODO: ДОБАВЛЕНИЕ ЗНАЧЕНИЙ ТОКА И ВРЕМЕНИ ПО ОТМЕЧЕННЫМ ТОЧКАМ
+           // for (int i = 0; i < MyAllSensors.Count; i++)
+           // {
+             //   if (comboBox1.Text == MyAllSensors[i].KKS_Name)
+              //  {
+               //     for (int j = BeginIndex[0]; j < EndIndex[EndIndex.Count - 1] + 1; j++)
+                //    {
+                //        myTok.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value/
+                  //                MyAllSensors[i].MyListRecordsForOneKKS[BeginIndex[0]].Value);
+                 //       time.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
+                //    }
+              //  }
+          //  }
+            //TODO: ДОБАВЛЕНИЕ ЗНАЧЕНИЙ РЕАКТИВНОСТИ ПО ОТМЕЧЕННЫМ ТОЧКАМ
+          //  for (int i = 0; i < MyAllSensors.Count; i++)
+          //  {
                 //if (comboBox2.Text == MyAllSensors[i].KKS_Name)
-                {
-                    for (int j = BeginIndex[0]; j < EndIndex[EndIndex.Count - 1] + 1; j++)
-                    {
-                        myReactivity.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
-                        chart1.Series[10].Points.AddXY(j, MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
-                    }
-
-                }
-            }
-            double ddH = 0;
-            step = 0;
-            for (int j = 0; j < EndIndex.Count; j++)
-            {
-                for (int i = BeginIndex[j]; i < EndIndex[j]; i++)
-                {
-                    ddH -= (2/
-                            (MyAllSensors[0].MyListRecordsForOneKKS[EndIndex[j]].ValueTimeForDAT -
-                             MyAllSensors[0].MyListRecordsForOneKKS[BeginIndex[j]].ValueTimeForDAT))*
-                           (MyAllSensors[0].MyListRecordsForOneKKS[i + 1].ValueTimeForDAT -
-                            MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
-                    pdH.Add(ddH);
-                }
-                if (j != EndIndex.Count - 1)
-                {
-                    int k = j + 1;
-                    for (int i = EndIndex[j]; i < BeginIndex[k]; i++)
-                    {
-                        pdH.Add(ddH);
-                    }
-                }
-            }
-            chart1.Series[10].ChartType = SeriesChartType.Point;
-            //   chart1.Series[NumberSeries].BorderWidth = 3;
-
-            //         label24.Text ="Просто: dp/dH = " + dRdH() + " beff/см";
-
-            pertubResult t = new pertubResult();
-            t = Search_a_b_p(time, myReactivity, pdH, myTok);
-            //Search_a_b_p(time, myReactivity, pdH,myTok, time.Count, );
+               // {
+                //    for (int j = BeginIndex[0]; j < EndIndex[EndIndex.Count - 1] + 1; j++)
+                //    {
+                 ///       myReactivity.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
+                 ///       chart1.Series[10].Points.AddXY(j, MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
+                //    }
+        //
+               // }
+           // }
+            //TODO: РАСЧЕТ DDH
+           // double ddH = 0;
+           // step = 0;
+           // for (int j = 0; j < EndIndex.Count; j++)
+           // {
+            //    for (int i = BeginIndex[j]; i < EndIndex[j]; i++)
+             //   {
+              //      ddH -= (2/
+               //             (MyAllSensors[0].MyListRecordsForOneKKS[EndIndex[j]].ValueTimeForDAT -
+               //              MyAllSensors[0].MyListRecordsForOneKKS[BeginIndex[j]].ValueTimeForDAT))*
+               //            (MyAllSensors[0].MyListRecordsForOneKKS[i + 1].ValueTimeForDAT -
+               //             MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
+                 //   pdH.Add(ddH);
+              //  }
+              //  if (j != EndIndex.Count - 1)
+               // {
+                //    int k = j + 1;
+                //    for (int i = EndIndex[j]; i < BeginIndex[k]; i++)
+                //    {
+                //        pdH.Add(ddH);
+                //    }
+               // }
+           // }
 
 
+            //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
+         //   pertubResult t = new pertubResult();
+          //  t = Search_a_b_p(time, myReactivity, pdH, myTok);
+         //   Random random = new Random();
+          //  int color = random.Next(255);
+          //  for (int i = 0; i < pdH.Count; i++)
+          //  {
+               // dataGridView4.Rows.Add(time[i], myTok[i], myReactivity[i], pdH[i], t.FF[i]);
+              //  dataGridView4.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise;
+           // }
 
-            /// MessageBox.Show(myTok.Count.ToString() + " " + myReactivity.Count.ToString() + " " + pdH.Count.ToString() + " " + t.FF.Count());
-            //   label25.Text = "Сложно: dp/dH = " + t.aH.ToString() + " beff/см";
-            //   if (dataGridView4.RowCount > 1)
-            //     dataGridView4.Rows.Clear();
-            Random random = new Random();
-            int color = random.Next(255);
-            for (int i = 0; i < pdH.Count; i++)
-            {
-                dataGridView4.Rows.Add(time[i], myTok[i], myReactivity[i], pdH[i], t.FF[i]);
-                dataGridView4.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise;
-            }
-
-            //sr.Write(myOneVozmuchenie.Nt);
-
-            //sr.Write(";" + tempR.b);
-
-            //sr.Write(";" + tempR.aH);
-            //sr.Write(";" + tempR.b / myOneVozmuchenie.Nt);
-            //sr.Write(";" + tempR.tau);
-            //sr.Write(";" + tempR.Ro);
-
-            //      MessageBox.Show(t.aH.ToString());
-
-            dataGridView2.Rows.Add(t.aH, dRdH());
-            dataGridView2.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+         //   dataGridView2.Rows.Add(t.aH, dRdH());
+         //   dataGridView2.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
             BeginIndex.Clear();
             EndIndex.Clear();
             myTok.Clear();
             time.Clear();
-            t.FF.Clear();
+           // t.FF.Clear();
             myReactivity.Clear();
             pdH.Clear();
         }
