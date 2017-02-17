@@ -1048,7 +1048,10 @@ namespace Converter
                 {
                     if (Graph._numberseries>0)
                     {
-                        MinMaxX ChangeParametrImage = new MinMaxX(); ;
+                        MinMaxX ChangeParametrImage = new MinMaxX();
+                        ChangeParametrImage.Owner = this;
+                       // ChangeParametrImage.textBox1.Text = chart1.ChartAreas[0].AxisY.Maximum.ToString();
+                       // ChangeParametrImage.textBox2.Text = chart1.ChartAreas[0].AxisY.Minimum.ToString();
                         ChangeParametrImage.Show();
                         ChangeParametrImage.Location = e.Location;
 
@@ -1528,41 +1531,7 @@ namespace Converter
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView4.Visible = false;
-
-            this.dataGridView4.CellValueNeeded += new
-                DataGridViewCellValueEventHandler(dataGridView42_CellValueNeeded);
-
-            //   dataGridView4.Rows.Clear();
-            customers3.Clear();
-
-
-            for (int k = 0; k < MyAllSensors.Count; k++)
-            {
-                if (comboBox1.Text == MyAllSensors[k].KKS_Name)
-                {
-                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
-                    {
-                        this.customers3.Add(
-                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
-                    }
-                }
-            }
-            if (this.dataGridView4.RowCount == 0)
-            {
-                this.dataGridView4.RowCount = 1;
-            }
-
-            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
-            dataGridView4.Visible = true;
-
-            comboBox1.BackColor = Color.LightBlue;
-
-            if (comboBox2.Text != "" && comboBox3.Text != "" && comboBox4.Text != "" && comboBox5.Text != "")
-            {
-                //  button10.Enabled = true;
-                //  button10.BackColor = Color.Yellow;
-            }
+           
         }
 
         int NOper = -2;
@@ -1980,170 +1949,21 @@ namespace Converter
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            //     dataGridView4.Columns.Add(comboBox2.Text + ", A", comboBox2.Text + ", A");
-
-
-            dataGridView4.Visible = false;
-
-            this.dataGridView4.CellValueNeeded += new
-                DataGridViewCellValueEventHandler(dataGridView41_CellValueNeeded);
-
-            //   dataGridView4.Rows.Clear();
-            customers2.Clear();
-
-
-            for (int k = 0; k < MyAllSensors.Count; k++)
-            {
-                if (comboBox2.Text == MyAllSensors[k].KKS_Name)
-                {
-                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
-                    {
-                        this.customers2.Add(
-                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
-                    }
-                }
-            }
-            if (this.dataGridView4.RowCount == 0)
-            {
-                this.dataGridView4.RowCount = 1;
-            }
-
-            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
-            dataGridView4.Visible = true;
-
-
-
-
-
-
-
-
-            //    dataGridView4.Columns[1].Width = 200;
-            comboBox2.BackColor = Color.LightBlue;
-
-            if (comboBox1.Text != "" && comboBox3.Text != "" && comboBox5.Text != "" && comboBox4.Text != "")
-            {
-                //   button10.Enabled = true;
-                //  button10.BackColor = Color.Yellow;
-            }
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            dataGridView4.Visible = false;
-
-            this.dataGridView4.CellValueNeeded += new
-                DataGridViewCellValueEventHandler(dataGridView43_CellValueNeeded);
-
-            //   dataGridView4.Rows.Clear();
-            customers4.Clear();
-
-
-            for (int k = 0; k < MyAllSensors.Count; k++)
-            {
-                if (comboBox3.Text == MyAllSensors[k].KKS_Name)
-                {
-                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
-                    {
-                        this.customers4.Add(
-                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
-                    }
-                }
-            }
-            if (this.dataGridView4.RowCount == 0)
-            {
-                this.dataGridView4.RowCount = 1;
-            }
-
-            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
-            dataGridView4.Visible = true;
-
-            comboBox3.BackColor = Color.LightBlue;
-
-            if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox5.Text != "" && comboBox4.Text != "")
-            {
-                //  button10.Enabled = true;
-                //  button10.BackColor = Color.Yellow;
-            }
-        }
+          }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView4.Visible = false;
-
-            this.dataGridView4.CellValueNeeded += new
-                DataGridViewCellValueEventHandler(dataGridView44_CellValueNeeded);
-
-            //   dataGridView4.Rows.Clear();
-            customers5.Clear();
-
-
-            for (int k = 0; k < MyAllSensors.Count; k++)
-            {
-                if (comboBox5.Text == MyAllSensors[k].KKS_Name)
-                {
-                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
-                    {
-                        this.customers5.Add(
-                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
-                    }
-                }
-            }
-            if (this.dataGridView4.RowCount == 0)
-            {
-                this.dataGridView4.RowCount = 1;
-            }
-
-            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
-            dataGridView4.Visible = true;
-
-            comboBox5.BackColor = Color.LightBlue;
-
-            if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "" && comboBox4.Text != "")
-            {
-                // button10.Enabled = true;
-                //   button10.BackColor = Color.Yellow;
-            }
+           
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView4.Visible = false;
-
-            this.dataGridView4.CellValueNeeded += new
-                DataGridViewCellValueEventHandler(dataGridView45_CellValueNeeded);
-
-            //   dataGridView4.Rows.Clear();
-            customers6.Clear();
-
-
-            for (int k = 0; k < MyAllSensors.Count; k++)
-            {
-                if (comboBox4.Text == MyAllSensors[k].KKS_Name)
-                {
-                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
-                    {
-                        this.customers6.Add(
-                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
-                    }
-                }
-            }
-            if (this.dataGridView4.RowCount == 0)
-            {
-                this.dataGridView4.RowCount = 1;
-            }
-
-            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
-            dataGridView4.Visible = true;
-
-            comboBox4.BackColor = Color.LightBlue;
-
-            if (comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "" && comboBox5.Text != "")
-            {
-                //   button10.Enabled = true;
-                //   button10.BackColor = Color.Yellow;
-            }
+            
         }
 
         private void button8_Click_1(object sender, EventArgs e)
@@ -2318,20 +2138,28 @@ namespace Converter
         {
             List<double> MyRlist = new List<double>();
             MyRlist.Clear();
-            for (int i = 1; i < dataGridView3.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView3.Rows.Count-1; i++)
             {
-                if (checkBox5.Checked == false)
-                {
-                    MyRlist.Add(((double)dataGridView3.Rows[i].Cells[6].Value - (double)dataGridView3.Rows[i - 1].Cells[6].Value) / ((double)dataGridView3.Rows[i].Cells[4].Value - (double)dataGridView3.Rows[i - 1].Cells[4].Value));
-                }
+                MessageBox.Show(dataGridView3.Rows[i].Cells[2].Value.ToString());
+                //   if (checkBox5.Checked == false)
+                // {
+                //    MyRlist.Add(((double)dataGridView3.Rows[i+1].Cells[6].Value - (double)dataGridView3.Rows[i].Cells[6].Value) / ((double)dataGridView3.Rows[i+1].Cells[4].Value - (double)dataGridView3.Rows[i].Cells[4].Value));
+                // }
                 if (checkBox5.Checked == true)
                 {
-                    MyRlist.Add(((double)dataGridView3.Rows[i].Cells[6].Value - (double)dataGridView3.Rows[i - 1].Cells[6].Value) / (((double)dataGridView3.Rows[i].Cells[4].Value*3.75) - ((double)dataGridView3.Rows[i - 1].Cells[4].Value)*3.75));
+                    if (i > 0)
+                    {
+                        //   MessageBox.Show(dataGridView3.Rows[i+1].Cells[6].Value + " " + (double)dataGridView3.Rows[i].Cells[6].Value + " " + dataGridView3.Rows[i+1].Cells[4].Value + " " + dataGridView3.Rows[i].Cells[4].Value);
+                        MyRlist.Add(((double) dataGridView3.Rows[i].Cells[6].Value -
+                                     (double) dataGridView3.Rows[i-1].Cells[6].Value)/
+                                    (((double) dataGridView3.Rows[i].Cells[4].Value*3.75) -
+                                     ((double) dataGridView3.Rows[i-1].Cells[4].Value)*3.75));
+                    }
                 }
             }
-            for (int i = 1; i < MyRlist.Count; i++)
+            for (int i = 0; i < MyRlist.Count; i++)
             {
-                dataGridView3.Rows[i].Cells[7].Value = MyRlist[i];
+                dataGridView3.Rows[i+1].Cells[7].Value = MyRlist[i];
             }
         }
 
@@ -2345,6 +2173,170 @@ namespace Converter
         private void button13_Click(object sender, EventArgs e)
         {
             MessageBox.Show(chart1.ChartAreas[0].AxisY.Minimum.ToString());
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+            dataGridView4.Visible = false;
+
+            this.dataGridView4.CellValueNeeded += new
+                DataGridViewCellValueEventHandler(dataGridView41_CellValueNeeded);
+
+            customers2.Clear();
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
+            {
+                if (comboBox2.Text == MyAllSensors[k].KKS_Name)
+                {
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
+                    {
+                        this.customers2.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
+                    }
+                }
+            }
+            if (this.dataGridView4.RowCount == 0)
+            {
+                this.dataGridView4.RowCount = 1;
+            }
+
+            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+            dataGridView4.Visible = true;
+
+            comboBox2.BackColor = Color.LightBlue;
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            dataGridView4.Visible = false;
+
+            this.dataGridView4.CellValueNeeded += new
+                DataGridViewCellValueEventHandler(dataGridView42_CellValueNeeded);
+
+            //   dataGridView4.Rows.Clear();
+            customers3.Clear();
+
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
+            {
+                if (comboBox1.Text == MyAllSensors[k].KKS_Name)
+                {
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
+                    {
+                        this.customers3.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
+                    }
+                }
+            }
+            if (this.dataGridView4.RowCount == 0)
+            {
+                this.dataGridView4.RowCount = 1;
+            }
+
+            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+            dataGridView4.Visible = true;
+
+            comboBox1.BackColor = Color.LightBlue;
+        }
+
+        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            dataGridView4.Visible = false;
+
+            this.dataGridView4.CellValueNeeded += new
+                DataGridViewCellValueEventHandler(dataGridView43_CellValueNeeded);
+
+            //   dataGridView4.Rows.Clear();
+            customers4.Clear();
+
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
+            {
+                if (comboBox3.Text == MyAllSensors[k].KKS_Name)
+                {
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
+                    {
+                        this.customers4.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
+                    }
+                }
+            }
+            if (this.dataGridView4.RowCount == 0)
+            {
+                this.dataGridView4.RowCount = 1;
+            }
+
+            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+            dataGridView4.Visible = true;
+
+            comboBox3.BackColor = Color.LightBlue;
+        }
+
+        private void comboBox5_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            dataGridView4.Visible = false;
+
+            this.dataGridView4.CellValueNeeded += new
+                DataGridViewCellValueEventHandler(dataGridView44_CellValueNeeded);
+
+            //   dataGridView4.Rows.Clear();
+            customers5.Clear();
+
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
+            {
+                if (comboBox5.Text == MyAllSensors[k].KKS_Name)
+                {
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
+                    {
+                        this.customers5.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
+                    }
+                }
+            }
+            if (this.dataGridView4.RowCount == 0)
+            {
+                this.dataGridView4.RowCount = 1;
+            }
+
+            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+            dataGridView4.Visible = true;
+
+            comboBox5.BackColor = Color.LightBlue;
+        }
+
+        private void comboBox4_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            dataGridView4.Visible = false;
+
+            this.dataGridView4.CellValueNeeded += new
+                DataGridViewCellValueEventHandler(dataGridView45_CellValueNeeded);
+
+            //   dataGridView4.Rows.Clear();
+            customers6.Clear();
+
+
+            for (int k = 0; k < MyAllSensors.Count; k++)
+            {
+                if (comboBox4.Text == MyAllSensors[k].KKS_Name)
+                {
+                    for (int i = 0; i < MyAllSensors[k].MyListRecordsForOneKKS.Count; i++)
+                    {
+                        this.customers6.Add(
+                            new MyVirtualClass(MyAllSensors[k].MyListRecordsForOneKKS[i].Value.ToString()));
+                    }
+                }
+            }
+            if (this.dataGridView4.RowCount == 0)
+            {
+                this.dataGridView4.RowCount = 1;
+            }
+
+            this.dataGridView4.RowCount = MyAllSensors[0].MyListRecordsForOneKKS.Count;
+            dataGridView4.Visible = true;
+
+            comboBox4.BackColor = Color.LightBlue;
         }
     }
     public struct pertubResult

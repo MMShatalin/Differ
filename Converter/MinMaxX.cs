@@ -21,17 +21,33 @@ namespace Converter
 
         private void MinMaxX_Load(object sender, EventArgs e)
         {
+          //  Form1 main = this.Owner as Form1;
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Form1 main = new Form1();
+            Form1 main = this.Owner as Form1;
 
 
-
-                    main.chart1.ChartAreas[0].AxisY.Maximum = 4;
-
+            try
+            {      
+                if (double.Parse(textBox1.Text) > main.chart1.ChartAreas[0].AxisY.Minimum)
+                {
+                   // MessageBox.Show("1");
+                    main.chart1.ChartAreas[0].AxisY.Maximum = double.Parse(textBox1.Text);
+                }
+                else
+                {
+                //    MessageBox.Show("2");
+                }
+            }
+            catch(Exception ex)
+            {
+             //   MessageBox.Show("3");
+            }
+            
+        
                  //   MinMaxX ChangeParametrImage = new MinMaxX(); ;
                   //  ChangeParametrImage.Show();
                   //  ChangeParametrImage.Location = e.Location;
@@ -45,11 +61,22 @@ namespace Converter
         {
             Form1 main = this.Owner as Form1;
 
-               // if (double.Parse(textBox2.Text) < main.chart1.ChartAreas[0].AxisY.Maximum)
-               // {
-              //      main.chart1.ChartAreas[0].AxisY.Minimum = double.Parse(textBox2.Text);
-              //  }
-
+            try
+            {
+                if (double.Parse(textBox2.Text) < main.chart1.ChartAreas[0].AxisY.Maximum)
+                {
+                  //  MessageBox.Show("1");
+                    main.chart1.ChartAreas[0].AxisY.Minimum = double.Parse(textBox2.Text);
+                }
+                else
+                {
+                 //   MessageBox.Show("2");
+                }
+            }
+            catch (Exception ex)
+            {
+              //  MessageBox.Show("3");
+            }
         }
     }
 }
