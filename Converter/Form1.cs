@@ -1552,35 +1552,6 @@ namespace Converter
        // List<double> myReactivity = new List<double>();
        // double step;
 
-
-        List<double> time = new List<double>();
-
-        private void ReturnTokAndReactivity()
-        {
-         
-
-            //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
-         //   pertubResult t = new pertubResult();
-          //  t = Search_a_b_p(time, myReactivity, pdH, myTok);
-         //   Random random = new Random();
-          //  int color = random.Next(255);
-          //  for (int i = 0; i < pdH.Count; i++)
-          //  {
-               // dataGridView4.Rows.Add(time[i], myTok[i], myReactivity[i], pdH[i], t.FF[i]);
-              //  dataGridView4.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise;
-           // }
-
-         //   dataGridView2.Rows.Add(t.aH, dRdH());
-         //   dataGridView2.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
-      //      BeginIndex.Clear();
-         //   EndIndex.Clear();
-          //  myTok.Clear();
-            time.Clear();
-           // t.FF.Clear();
-       //     myReactivity.Clear();
-         //   pdH.Clear();
-        }
-
         private double dRdH()
         {
             double DroAver = 0;
@@ -1629,28 +1600,28 @@ namespace Converter
             return DroAver;
         }
 
-      //  private pertubResult Search_a_b_p(List<double> MyTimeInterval, List<double> MyReactivity, List<double> dH,
-          //  List<double> TOK)
-       // {
-           // double Ss = 1000;
-           // pertubResult tempR = new pertubResult();
+      private static pertubResult SearchDiffEffect(List<double> myTimeInterval, List<double> myReactivity, List<double> dH,
+         List<double> tok)
+     {
+           double Ss = 1000;
+            pertubResult tempR = new pertubResult();
 
-           // for (int i = 0; i < 400; i++)
-          //  {
-            //    tempR = tempR.Calc(3 + i/200, time, TOK, MyReactivity, dH);
-               // if (tempR.SS > Ss)
-             //   {
-                   // tempR = tempR.Calc(3 + (i - 1)/200, time, TOK, MyReactivity, pdH);
-                //    break;
-             //   }
-             //   Ss = tempR.SS;
-          //  }
-          //  tempR.Ro = tempR.Ro*MyConst.Rect.Beff;
-          //  tempR.aH = tempR.aH*MyConst.Rect.Beff;
-           // tempR.b = tempR.b*MyConst.Rect.Beff;
-           // tempR.SS = tempR.SS*MyConst.Rect.Beff;
-        //    return tempR;
-       // }
+           for (int i = 0; i < 400; i++)
+        {
+                tempR = tempR.Calc(3 + i/200, _tList, _jList, _rList, _dHList);
+                if (tempR.SS > Ss)
+               {
+                   tempR = tempR.Calc(3 + (i - 1) / 200, _tList, _jList, _rList, _dHList);
+                   break;
+            }
+                Ss = tempR.SS;
+            }
+           tempR.Ro = tempR.Ro*MyConst.Rect.Beff;
+           tempR.aH = tempR.aH*MyConst.Rect.Beff;
+           tempR.b = tempR.b*MyConst.Rect.Beff;
+           tempR.SS = tempR.SS*MyConst.Rect.Beff;
+           return tempR;
+        }
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -1889,44 +1860,11 @@ namespace Converter
 
         private string comboBoxText = null;
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-          }
-
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button8_Click_1(object sender, EventArgs e)
-        {
-            dataGridView4.Rows.Clear();
-            dataGridView2.Rows.Clear();
-         //   if (BeginIndex.Count == EndIndex.Count)
-            {
-                ReturnTokAndReactivity();
-            }
-          //  if (BeginIndex.Count != EndIndex.Count)
-            {
-                MessageBox.Show("Введите конечную точку!");
-            }
-        }
-
-        List<double> _jList = new List<double>();
-        List<double> _rList = new List<double>();
-        List<double> _dHList = new List<double>();
-        List<double> _tList = new List<double>();
+       public static List<double> _jList = new List<double>();
+       public static List<double> _rList = new List<double>();
+       public static List<double> _dHList = new List<double>();
+       public static List<double> _tList = new List<double>();
 
 
         private void button8_Click_2(object sender, EventArgs e)
@@ -1988,26 +1926,31 @@ namespace Converter
                         _dHList.Add(ddH);
                     }
                 }
-
             }
+
+
+            //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
+            pertubResult t = new pertubResult();
+             SearchDiffEffect(_tList,_rList,_dHList,_jList);
+             dataGridView2.Rows.Add(t.aH, dRdH());
+            //   dataGridView2.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+
+
             for (int i = 0; i < _jList.Count; i++)
             {
                 dataGridView5.Rows.Add(_tList[i], _jList[i], _rList[i], _dHList[i]);
+                dataGridView5.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise;
             }
 
-        //    MessageBox.Show(_jList.Count.ToString() + _dHList.Count.ToString());
-
-
-            //dataGridView4.Rows.Clear();
-            //dataGridView2.Rows.Clear();
-            //if (BeginIndex.Count == EndIndex.Count)
-            //{
-             ReturnTokAndReactivity();
-            //}
-            //if (BeginIndex.Count != EndIndex.Count)
-            //{
-            //  MessageBox.Show("Введите конечную точку!");
-            //}
+            indexPositionCursorList.Clear();
+            _jList.Clear();
+            _tList.Clear();
+            // t.FF.Clear();
+            _rList.Clear();
+            _dHList.Clear();
+             button8.Enabled = false;
+           //  dataGridView5.Rows.Clear();
+           //  dataGridView2.Rows.Clear();
         }
 
         private int _indexRow = 0;
@@ -2372,32 +2315,9 @@ namespace Converter
         //величина невязки
         public double SS;
 
-
-
-
-
-
-        //List<double> time = new List<double>();
-        //List<double> I = new List<double>();
-        //List<double> P = new List<double>();
-        //List<double> pdH = new List<double>();
-
-        /// <summary>
-        /// основная функция для расчета
-        /// </summary>
-        /// <param name="Tau">постоянная времени разогрева</param>
-        /// <param name="time">массив времени</param>
-        /// <param name="I">массив токов</param>
-        /// <param name="P">массив реактивностей</param>
-        /// <param name="dH">массив перемещений группы</param>
-        /// <returns></returns>
-        /// 
-
         public pertubResult Calc(double Tt, List<double> time, List<double> I, List<double> R, List<double> dH)
         {
             pertubResult myresult = new pertubResult();
-
-
             myresult.FF = new List<double>();
             //тут основной код для вычислений
 
