@@ -1566,12 +1566,12 @@ namespace Converter
                     /////    _tList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
                   /////  }
 
-   
+        double DroAver = 0;
         private double PoPichkam()
                    {
-                       double r = 0;
-            List<double> n = new List<double>();
-            double DroAver = 0;
+                   //    double r = 0;
+          //  List<double> n = new List<double>();
+           // double DroAver = 0;
             for (int i = 0; i < MyAllSensors.Count; i++)
             {
                 if (comboBox1.Text == MyAllSensors[i].KKS_Name)
@@ -1580,28 +1580,33 @@ namespace Converter
                    j < indexPositionCursorList.Count;
                         j++)
                     {
-                      //  MessageBox.Show((MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j]].Value -
-                              //         MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].Value).ToString());
-
-            
-                           DroAver = DroAver +
-                                   (MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j]].Value -
-                                   MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j-1]].Value);
+                        if (j % 2 != 0)
+                        {
 
 
-
-                        //ведь каждый шаг должен в сумме давать 2
-                        //for (int j = myOneVozmuchenie.PerIndex[i, 0] + 1; j <= myOneVozmuchenie.PerIndex[i, 1]; j++)
-                        //{
-                        //    ddH -= (2 / (myOneVozmuchenie.Per[i, 1] - myOneVozmuchenie.Per[i, 0])) * (myInputData.Data[0][j] - myInputData.Data[0][j - 1]);
-                        //    pdH.Add(ddH);
-                        //}
+                            MessageBox.Show(
+                            (MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j]].Value + " " +
+                             MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].Value).ToString());
 
 
+                            DroAver = DroAver +
+                                      (MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j]].Value -
+                                       MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].Value);
+
+
+
+                            //ведь каждый шаг должен в сумме давать 2
+                            //for (int j = myOneVozmuchenie.PerIndex[i, 0] + 1; j <= myOneVozmuchenie.PerIndex[i, 1]; j++)
+                            //{
+                            //    ddH -= (2 / (myOneVozmuchenie.Per[i, 1] - myOneVozmuchenie.Per[i, 0])) * (myInputData.Data[0][j] - myInputData.Data[0][j - 1]);
+                            //    pdH.Add(ddH);
+                            //}
+
+                        }
                     }
                     MessageBox.Show(DroAver.ToString());
 
-                    MessageBox.Show((indexPositionCursorList.Count/2).ToString());
+                  //  MessageBox.Show((indexPositionCursorList.Count/2).ToString());
                     DroAver = DroAver / (indexPositionCursorList.Count/2);
                     MessageBox.Show(DroAver.ToString());
 

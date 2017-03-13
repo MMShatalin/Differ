@@ -463,7 +463,7 @@ namespace SmallPertubation
 
               for (int i = 0; i < myOneVozmuchenie.NPer; i++)
               {
-                 
+                  MessageBox.Show(myInputData.Data[MyConst.r1][myOneVozmuchenie.PerIndex[i, 1]].ToString() + " " + myInputData.Data[MyConst.r1][myOneVozmuchenie.PerIndex[i, 0]]);
                   DroAver = DroAver + (myInputData.Data[MyConst.r1][myOneVozmuchenie.PerIndex[i, 1]] - myInputData.Data[MyConst.r1][myOneVozmuchenie.PerIndex[i, 0]]);
 
                   
@@ -476,10 +476,14 @@ namespace SmallPertubation
 
 
               }
+              MessageBox.Show(myOneVozmuchenie.NPer.ToString());
+              MessageBox.Show(DroAver.ToString());
               DroAver = DroAver / myOneVozmuchenie.NPer;
+              MessageBox.Show(DroAver.ToString());
               DroAver = DroAver / -2;
+              MessageBox.Show(DroAver.ToString());
               DroAver = DroAver * MyConst.Rect.Beff;
-
+              MessageBox.Show(DroAver.ToString());
               sr.Write(";" + DroAver);
 
               sr.WriteLine();
