@@ -214,6 +214,7 @@ namespace SmallPertubation
                 }
                 g = Math.Exp(-dT/Tt);
                 c = (1 - g) * Tt / dT;
+
                 F = F*g + (I[i]-1)*(1-c) + (I[i-1]-1)*(c-g);
                 myresult.FF.Add(F);
                 sH += dH[i];
