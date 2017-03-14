@@ -293,6 +293,7 @@ namespace Converter
 
             dataGridView2.Columns.Add("\u03B1(H) \u03B2/см", "\u03B1(H) \u03B2/см");
             dataGridView2.Columns.Add("По пичкам \u03B2/см", "По пичкам \u03B2/см");
+            dataGridView2.Columns.Add("TAU", "TAU");
 
             this.dataGridView1.VirtualMode = true;
             this.dataGridView4.VirtualMode = true;
@@ -1642,19 +1643,19 @@ namespace Converter
         static pertubResult tempR;
         private static void SearchDiffEffect(List<double> myTimeInterval, List<double> myReactivity, List<double> dH, List<double> tok)
         {
-            double Ss = 1000;
+           // double Ss = 1000;
          //   pertubResult tempR = new pertubResult();
             tempR = new pertubResult();
-            for (int i = 0; i < 400; i++)
-            {
-                tempR = Calc(3 + i/200, _tList, _jList, _rList, _dHList);
-                if (tempR.SS > Ss)
-                {
-                    tempR = Calc(3 + (i - 1)/200, _tList, _jList, _rList, _dHList);
-                    break;
-                }
-                Ss = tempR.SS;
-            }
+           // for (int i = 0; i < 400; i++)
+           // {
+                tempR = Calc(5, _tList, _jList, _rList, _dHList);
+            //    if (tempR.SS > Ss)
+            //    {
+                  //  tempR = Calc(3 + (i - 1)/200, _tList, _jList, _rList, _dHList);
+                   // break;
+                //}
+               // Ss = tempR.SS;
+           // }
             tempR.Ro = tempR.Ro*MyConst.Rect.Beff;
             tempR.aH = tempR.aH*MyConst.Rect.Beff;
             tempR.b = tempR.b*MyConst.Rect.Beff;
@@ -1991,7 +1992,7 @@ namespace Converter
             }
 
          //   MessageBox.Show(tempR.FF.Count.ToString() + " " + _tList.Count.ToString());
-            dataGridView2.Rows.Add(tempR.aH, PoPichkam());
+            dataGridView2.Rows.Add(tempR.aH, PoPichkam(), tempR.tau);
 
             indexPositionCursorList.Clear();
             _jList.Clear();
