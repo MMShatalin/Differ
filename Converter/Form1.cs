@@ -245,7 +245,8 @@ namespace Converter
             dataGridView5.Columns.Add("Время", "Время");
             dataGridView5.Columns.Add("Jотн", "Jотн");
             dataGridView5.Columns.Add("R", "R");
-            dataGridView5.Columns.Add("H12", "H12");
+       //   dataGridView5.Columns.Add("H12", "H12");
+            dataGridView5.Columns.Add("dH12", "dH12");
             dataGridView5.Columns.Add("F", "F");
 
             tabPage5.Text = "Все данные";
@@ -1584,9 +1585,9 @@ namespace Converter
                         {
 
 
-                            MessageBox.Show(
-                            (MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j]].Value + " " +
-                             MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].Value).ToString());
+                       //     MessageBox.Show(
+                          //  (MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j]].Value + " " +
+                          //   MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].Value).ToString());
 
 
                             DroAver = DroAver +
@@ -1604,18 +1605,18 @@ namespace Converter
 
                         }
                     }
-                    MessageBox.Show(DroAver.ToString());
+                //    MessageBox.Show(DroAver.ToString());
 
                   //  MessageBox.Show((indexPositionCursorList.Count/2).ToString());
                     DroAver = DroAver / (indexPositionCursorList.Count/2);
-                    MessageBox.Show(DroAver.ToString());
+                 //   MessageBox.Show(DroAver.ToString());
 
                     DroAver = DroAver/-2;
-                    MessageBox.Show(DroAver.ToString());
+                 //   MessageBox.Show(DroAver.ToString());
 
                     //TODO: ПЕРЕВОД В ПРОЦЕНТЫ ЗАЧЕМ?
                     DroAver = DroAver * MyConst.Rect.Beff;
-                    MessageBox.Show(DroAver.ToString());
+                  //  MessageBox.Show(DroAver.ToString());
 
                     //double sum_dR = 0;
                     //double dRdH = 0;
@@ -1901,6 +1902,7 @@ namespace Converter
         public static List<double> _jList = new List<double>();
         public static List<double> _rList = new List<double>();
         public static List<double> _dHList = new List<double>();
+        public static List<double> _HList = new List<double>();
         public static List<double> _tList = new List<double>();
 
 
@@ -1930,6 +1932,15 @@ namespace Converter
                         _rList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
                     }
                 }
+              //  if (comboBox5.Text == MyAllSensors[i].KKS_Name)
+                //{
+                    //for (int j = indexPositionCursorList[0];
+                    //    j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 1;
+                    //    j++)
+                   // {
+                   //     _HList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
+                   // }
+               // }
             }
 
             //TODO: РАСЧЕТ DDH
@@ -2462,6 +2473,20 @@ namespace Converter
 
 
             return myresult;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog4.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter MyRecord = new StreamWriter(saveFileDialog4.FileName + ".csv", false, Encoding.Default);
+                saveFileDialog4.Filter = "out data (*.csv)|*.csv|All files (*.*)|*.*";
+                saveFileDialog4.DefaultExt = "csv";
+            //    for (int i = 0; i < UPPER; i++)
+            //    {
+                    
+               // }
+            }
         }
 
     }

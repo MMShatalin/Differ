@@ -173,6 +173,7 @@
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button14 = new System.Windows.Forms.Button();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -195,6 +196,7 @@
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.копироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog4 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1860,7 +1862,7 @@
             this.tableLayoutPanel29.ColumnCount = 3;
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.68493F));
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.31507F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 275F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 283F));
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel29.Controls.Add(this.label27, 0, 0);
@@ -1881,9 +1883,9 @@
             this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.Location = new System.Drawing.Point(122, 0);
+            this.label27.Location = new System.Drawing.Point(118, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(109, 25);
+            this.label27.Size = new System.Drawing.Size(105, 25);
             this.label27.TabIndex = 9;
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1896,13 +1898,13 @@
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label26.Location = new System.Drawing.Point(3, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(113, 25);
+            this.label26.Size = new System.Drawing.Size(109, 25);
             this.label26.TabIndex = 8;
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(237, 3);
+            this.button13.Location = new System.Drawing.Point(229, 3);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(75, 19);
             this.button13.TabIndex = 10;
@@ -1924,15 +1926,16 @@
             // tableLayoutPanel20
             // 
             this.tableLayoutPanel20.ColumnCount = 1;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel22, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.tabControl3, 0, 1);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 2;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.45955F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.54045F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.23077F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.76923F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel20.Size = new System.Drawing.Size(1264, 650);
             this.tableLayoutPanel20.TabIndex = 0;
             // 
@@ -1941,12 +1944,14 @@
             this.tableLayoutPanel22.ColumnCount = 1;
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel22.Controls.Add(this.dataGridView2, 0, 0);
+            this.tableLayoutPanel22.Controls.Add(this.button14, 0, 1);
             this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            this.tableLayoutPanel22.RowCount = 1;
+            this.tableLayoutPanel22.RowCount = 2;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(1258, 74);
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(1258, 106);
             this.tableLayoutPanel22.TabIndex = 1;
             // 
             // dataGridView2
@@ -1955,8 +1960,19 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1252, 68);
+            this.dataGridView2.Size = new System.Drawing.Size(1252, 70);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // button14
+            // 
+            this.button14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button14.Location = new System.Drawing.Point(3, 79);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(1252, 24);
+            this.button14.TabIndex = 1;
+            this.button14.Text = "Скопировать в Excel";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // tabControl3
             // 
@@ -1964,10 +1980,10 @@
             this.tabControl3.Controls.Add(this.tabPage6);
             this.tabControl3.Controls.Add(this.tabPage9);
             this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl3.Location = new System.Drawing.Point(3, 83);
+            this.tabControl3.Location = new System.Drawing.Point(3, 115);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1258, 564);
+            this.tabControl3.Size = new System.Drawing.Size(1258, 532);
             this.tabControl3.TabIndex = 2;
             // 
             // tabPage5
@@ -1976,7 +1992,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1250, 538);
+            this.tabPage5.Size = new System.Drawing.Size(1250, 506);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1987,7 +2003,7 @@
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(3, 3);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(1244, 532);
+            this.dataGridView4.Size = new System.Drawing.Size(1244, 500);
             this.dataGridView4.TabIndex = 112;
             // 
             // tabPage6
@@ -1996,7 +2012,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1250, 538);
+            this.tabPage6.Size = new System.Drawing.Size(1250, 506);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2013,7 +2029,7 @@
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
             this.tableLayoutPanel26.RowCount = 1;
             this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel26.Size = new System.Drawing.Size(1244, 532);
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(1244, 500);
             this.tableLayoutPanel26.TabIndex = 1;
             // 
             // dataGridView3
@@ -2022,7 +2038,7 @@
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1154, 526);
+            this.dataGridView3.Size = new System.Drawing.Size(1154, 494);
             this.dataGridView3.TabIndex = 0;
             // 
             // tableLayoutPanel27
@@ -2042,7 +2058,7 @@
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel27.Size = new System.Drawing.Size(78, 526);
+            this.tableLayoutPanel27.Size = new System.Drawing.Size(78, 494);
             this.tableLayoutPanel27.TabIndex = 1;
             // 
             // button12
@@ -2050,9 +2066,9 @@
             this.button12.BackColor = System.Drawing.Color.Silver;
             this.button12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button12.Location = new System.Drawing.Point(3, 78);
+            this.button12.Location = new System.Drawing.Point(3, 73);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(72, 69);
+            this.button12.Size = new System.Drawing.Size(72, 64);
             this.button12.TabIndex = 1;
             this.button12.Text = "ПЭ";
             this.button12.UseVisualStyleBackColor = false;
@@ -2065,7 +2081,7 @@
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button11.Location = new System.Drawing.Point(3, 3);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(72, 69);
+            this.button11.Size = new System.Drawing.Size(72, 64);
             this.button11.TabIndex = 0;
             this.button11.Text = "Ток(отн)";
             this.button11.UseVisualStyleBackColor = false;
@@ -2076,7 +2092,7 @@
             this.tabPage9.Controls.Add(this.dataGridView5);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1250, 538);
+            this.tabPage9.Size = new System.Drawing.Size(1250, 506);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -2087,7 +2103,7 @@
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(0, 0);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(1250, 538);
+            this.dataGridView5.Size = new System.Drawing.Size(1250, 506);
             this.dataGridView5.TabIndex = 1;
             // 
             // openFileDialog1
@@ -2388,6 +2404,8 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog4;
     //    checkBox6.AxisLimitsChanged += new System.EventHandler<AxisLimitsChangedEventArgs>(this.graphChart1_AxisLimitsChanged);
     }
 }
