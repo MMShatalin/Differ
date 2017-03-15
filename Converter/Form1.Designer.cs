@@ -1862,7 +1862,7 @@
             this.tableLayoutPanel29.ColumnCount = 3;
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.68493F));
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.31507F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 283F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 285F));
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel29.Controls.Add(this.label27, 0, 0);
@@ -1883,9 +1883,9 @@
             this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.Location = new System.Drawing.Point(118, 0);
+            this.label27.Location = new System.Drawing.Point(117, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(105, 25);
+            this.label27.Size = new System.Drawing.Size(104, 25);
             this.label27.TabIndex = 9;
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1898,13 +1898,13 @@
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label26.Location = new System.Drawing.Point(3, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(109, 25);
+            this.label26.Size = new System.Drawing.Size(108, 25);
             this.label26.TabIndex = 8;
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(229, 3);
+            this.button13.Location = new System.Drawing.Point(227, 3);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(75, 19);
             this.button13.TabIndex = 10;
