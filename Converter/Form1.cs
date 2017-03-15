@@ -242,6 +242,14 @@ namespace Converter
             добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem.Enabled = false;
             button6.Enabled = false;
 
+
+            comboBox6.Items.Add("Подбор");
+            comboBox6.Items.Add("3");
+            comboBox6.Items.Add("4");
+            comboBox6.Items.Add("5");
+
+            comboBox6.Text = comboBox6.Items[0].ToString();
+
             dataGridView5.Columns.Add("Время", "Время");
             dataGridView5.Columns.Add("Jотн", "Jотн");
             dataGridView5.Columns.Add("R", "R");
@@ -1641,21 +1649,41 @@ namespace Converter
         }
 
         static pertubResult tempR;
-        private static void SearchDiffEffect(List<double> myTimeInterval, List<double> myReactivity, List<double> dH, List<double> tok)
+        private void SearchDiffEffect(List<double> myTimeInterval, List<double> myReactivity, List<double> dH, List<double> tok)
         {
-           // double Ss = 1000;
-         //   pertubResult tempR = new pertubResult();
             tempR = new pertubResult();
-           // for (int i = 0; i < 400; i++)
-           // {
+           // pertubResult tempR = new pertubResult();
+            if (comboBox6.Text == "Подбор")
+            {
+                double Ss = 1000;
+           //     pertubResult tempR = new pertubResult();
+             //   tempR = new pertubResult();
+                for (int i = 0; i < 400; i++)
+                {
+                    tempR = Calc(3 + i/200, _tList, _jList, _rList, _dHList);
+                    if (tempR.SS > Ss)
+                    {
+                        tempR = Calc(3 + (i - 1) / 200, _tList, _jList, _rList, _dHList);
+                        break;
+                    }
+                    Ss = tempR.SS;
+                }
+            }
+            if (comboBox6.Text == "3")
+            {
+              //  tempR = new pertubResult();
+                tempR = Calc(3, _tList, _jList, _rList, _dHList);
+            }
+            if (comboBox6.Text == "4")
+            {
+              //  tempR = new pertubResult();
+                tempR = Calc(4, _tList, _jList, _rList, _dHList);
+            }
+            if (comboBox6.Text == "5")
+            {
+              //  tempR = new pertubResult();
                 tempR = Calc(5, _tList, _jList, _rList, _dHList);
-            //    if (tempR.SS > Ss)
-            //    {
-                  //  tempR = Calc(3 + (i - 1)/200, _tList, _jList, _rList, _dHList);
-                   // break;
-                //}
-               // Ss = tempR.SS;
-           // }
+            }
             tempR.Ro = tempR.Ro*MyConst.Rect.Beff;
             tempR.aH = tempR.aH*MyConst.Rect.Beff;
             tempR.b = tempR.b*MyConst.Rect.Beff;
