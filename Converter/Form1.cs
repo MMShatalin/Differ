@@ -1660,10 +1660,10 @@ namespace Converter
              //   tempR = new pertubResult();
                 for (int i = 0; i < 400; i++)
                 {
-                    tempR = Calc(3 + i/200, _tList, _jList, _rList, _dHList);
+                    tempR = Calc(3 + i/200.0, _tList, _jList, _rList, _dHList);
                     if (tempR.SS > Ss)
                     {
-                        tempR = Calc(3 + (i - 1) / 200, _tList, _jList, _rList, _dHList);
+                        tempR = Calc(3 + (i - 1) / 200.0, _tList, _jList, _rList, _dHList);
                         break;
                     }
                     Ss = tempR.SS;
