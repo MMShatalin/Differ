@@ -2020,6 +2020,7 @@ namespace Converter
             }
 
          //   MessageBox.Show(tempR.FF.Count.ToString() + " " + _tList.Count.ToString());
+            StreamWriter WriterAH = new StreamWriter();
             dataGridView2.Rows.Add(tempR.aH, PoPichkam(), tempR.tau);
 
             indexPositionCursorList.Clear();

@@ -1860,7 +1860,7 @@
             this.tableLayoutPanel29.ColumnCount = 3;
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.68493F));
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.31507F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 289F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel29.Controls.Add(this.comboBox6, 2, 0);
@@ -1876,9 +1876,9 @@
             // 
             this.comboBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(223, 3);
+            this.comboBox6.Location = new System.Drawing.Point(222, 3);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(284, 21);
+            this.comboBox6.Size = new System.Drawing.Size(285, 21);
             this.comboBox6.TabIndex = 16;
             // 
             // tabPage2
