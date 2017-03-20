@@ -252,8 +252,8 @@ namespace Converter
 
             dataGridView5.Columns.Add("Время", "Время");
             dataGridView5.Columns.Add("Jотн", "Jотн");
-            dataGridView5.Columns.Add("R", "R");
-       //   dataGridView5.Columns.Add("H12", "H12");
+            dataGridView5.Columns.Add("Rэкс", "Rэкс");
+            dataGridView5.Columns.Add("Rрасч", "Rрасч");
             dataGridView5.Columns.Add("dH12", "dH12");
             dataGridView5.Columns.Add("F", "F");
 
@@ -1660,10 +1660,10 @@ namespace Converter
              //   tempR = new pertubResult();
                 for (int i = 0; i < 400; i++)
                 {
-                    tempR = Calc(3 + i/200.0, _tList, _jList, _rList, _dHList);
+                    tempR = Calc(3 + i / 200.0, _tList, _jList, _rCalcList, _dHList);
                     if (tempR.SS > Ss)
                     {
-                        tempR = Calc(3 + (i - 1) / 200.0, _tList, _jList, _rList, _dHList);
+                        tempR = Calc(3 + (i - 1) / 200.0, _tList, _jList, _rCalcList, _dHList);
                         break;
                     }
                     Ss = tempR.SS;
@@ -1672,17 +1672,17 @@ namespace Converter
             if (comboBox6.Text == "3")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(3, _tList, _jList, _rList, _dHList);
+                tempR = Calc(3, _tList, _jList, _rCalcList, _dHList);
             }
             if (comboBox6.Text == "4")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(4, _tList, _jList, _rList, _dHList);
+                tempR = Calc(4, _tList, _jList, _rCalcList, _dHList);
             }
             if (comboBox6.Text == "5")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(5, _tList, _jList, _rList, _dHList);
+                tempR = Calc(5, _tList, _jList, _rCalcList, _dHList);
             }
             tempR.Ro = tempR.Ro*MyConst.Rect.Beff;
             tempR.aH = tempR.aH*MyConst.Rect.Beff;
@@ -1929,7 +1929,8 @@ namespace Converter
 
 
         public static List<double> _jList = new List<double>();
-        public static List<double> _rList = new List<double>();
+        public static List<double> _rExpList = new List<double>();
+        public static List<double> _rCalcList = new List<double>();
         public static List<double> _dHList = new List<double>();
         public static List<double> _HList = new List<double>();
         public static List<double> _tList = new List<double>();
@@ -1958,7 +1959,8 @@ namespace Converter
                         j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 1;
                         j++)
                     {
-                        _rList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
+                        _rExpList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
+                        _rCalcList.Add(0);
                     }
                 }
               //  if (comboBox5.Text == MyAllSensors[i].KKS_Name)
@@ -2008,26 +2010,27 @@ namespace Converter
 
             //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
         //    pertubResult t = new pertubResult();
-            SearchDiffEffect(_tList, _rList, _dHList, _jList);
+            SearchDiffEffect(_tList, _rCalcList, _dHList, _jList);
        //     dataGridView2.Rows.Add(t.aH, dRdH());
             //   dataGridView2.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
 
 
             for (int i = 0; i < _jList.Count; i++)
             {
-                dataGridView5.Rows.Add(_tList[i], _jList[i], _rList[i], _dHList[i], tempR.FF[i]);
+                dataGridView5.Rows.Add(_tList[i], _jList[i], _rExpList[i], _rCalcList, _dHList[i], tempR.FF[i]);
                 dataGridView5.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise;
             }
 
          //   MessageBox.Show(tempR.FF.Count.ToString() + " " + _tList.Count.ToString());
-            StreamWriter WriterAH = new StreamWriter();
+        //    StreamWriter WriterAH = new StreamWriter();
             dataGridView2.Rows.Add(tempR.aH, PoPichkam(), tempR.tau);
 
             indexPositionCursorList.Clear();
             _jList.Clear();
             _tList.Clear();
             tempR.FF.Clear();
-            _rList.Clear();
+            _rExpList.Clear();
+            _rCalcList.Clear();
             _dHList.Clear();
             button8.Enabled = false;
             //  dataGridView5.Rows.Clear();
