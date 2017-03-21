@@ -2041,7 +2041,7 @@ namespace Converter
 
         private void button10_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_indexRow.ToString());
+            //MessageBox.Show(_indexRow.ToString());
             List<double> myValue = new List<double>();
             myValue.Clear();
             myValue.Add(MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT);
