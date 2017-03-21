@@ -1625,7 +1625,7 @@ namespace Converter
                  //   MessageBox.Show(DroAver.ToString());
 
                     //TODO: ПЕРЕВОД В ПРОЦЕНТЫ ЗАЧЕМ?
-                    DroAver = DroAver * MyConst.Rect.Beff;
+                    DroAver = DroAver * MyConst._beff;
                   //  MessageBox.Show(DroAver.ToString());
 
                     //double sum_dR = 0;
@@ -1661,10 +1661,10 @@ namespace Converter
              //   tempR = new pertubResult();
                 for (int i = 0; i < 400; i++)
                 {
-                    tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rExpList, _dHList);
+                    tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList);
                     if (tempR.SS > Ss)
                     {
-                        tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rExpList, _dHList);
+                        tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rCalcList, _dHList);
                         break;
                     }
                     Ss = tempR.SS;
@@ -1673,22 +1673,22 @@ namespace Converter
             if (comboBox6.Text == "3")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(3, _tList, _jKorList, _rExpList, _dHList);
+                tempR = Calc(3, _tList, _jKorList, _rCalcList, _dHList);
             }
             if (comboBox6.Text == "4")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(4, _tList, _jKorList, _rExpList, _dHList);
+                tempR = Calc(4, _tList, _jKorList, _rCalcList, _dHList);
             }
             if (comboBox6.Text == "5")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(5, _tList, _jKorList, _rExpList, _dHList);
+                tempR = Calc(5, _tList, _jKorList, _rCalcList, _dHList);
             }
-            tempR.Ro = tempR.Ro*MyConst.Rect.Beff;
-            tempR.aH = tempR.aH*MyConst.Rect.Beff;
-            tempR.b = tempR.b*MyConst.Rect.Beff;
-            tempR.SS = tempR.SS*MyConst.Rect.Beff;
+            tempR.Ro = tempR.Ro * MyConst._beff;
+            tempR.aH = tempR.aH * MyConst._beff;
+            tempR.b = tempR.b*MyConst._beff;
+            tempR.SS = tempR.SS * MyConst._beff;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -2025,8 +2025,7 @@ namespace Converter
                     }
                 }
 
-                Current Y = new Current();
-                Y.AddData(_jKorList, _tList, _rCalcList);
+                
               //  if (comboBox5.Text == MyAllSensors[i].KKS_Name)
                 //{
                     //for (int j = indexPositionCursorList[0];
@@ -2038,19 +2037,28 @@ namespace Converter
                // }
             }
 
-           
+            Current Y = new Current();
+            Y.AddData(_jKorList, _rExpList,_tList, _rCalcList);
 
 
             //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
         //    pertubResult t = new pertubResult();
         SearchDiffEffect(_tList, _rCalcList, _dHList, _jKorList);
+
+            for (int i = 0; i < _tList.Count; i++)
+            {
+                chart1.Series[1].Points.AddXY(
+                 _tList[i],
+                  _rCalcList[i]);
+            }
+ 
        //     dataGridView2.Rows.Add(t.aH, dRdH());
             //   dataGridView2.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
 
-      //  MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + tempR.FF.Count + " " + _dHList.Count);
+       // MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + tempR.FF.Count + " " + _dHList.Count + " " + _rCalcList.Count);
             for (int i = 0; i < _jExpList.Count; i++)
             {
-                dataGridView5.Rows.Add(_tList[i], _jExpList[i], _jKorList[i], _rExpList[i], 0, _dHList[i], tempR.FF[i]);
+                dataGridView5.Rows.Add(_tList[i], _jExpList[i], _jKorList[i], _rExpList[i], _rCalcList[i], _dHList[i], tempR.FF[i]);
                 dataGridView5.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise;
             }
 

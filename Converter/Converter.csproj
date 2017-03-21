@@ -65,7 +65,6 @@
     <Compile Include="MinMaxX.Designer.cs">
       <DependentUpon>MinMaxX.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyConst.cs" />
     <Compile Include="MyListOfSensors.cs" />
     <Compile Include="MyVirtualClass.cs" />
     <Compile Include="OneVozmuchenieData.cs" />

@@ -37,7 +37,7 @@ namespace Converter
         //в методе также должна быть переменная времени
         //в данном случае берем Sensors, а не живые данные
 
-        public void AddData(List<double> I, List<double> Time, List<double> MyListReactivity)
+        public void AddData(List<double> I, List<double> R, List<double> Time, List<double> MyListReactivity)
         {
             this._tok1Old = I[0];
             this.TimeOld = Time[0];
@@ -45,8 +45,8 @@ namespace Converter
             {
                 psi0[i] = this._tok1Old;
             }
-
-            for (int k = 1; k < Time.Count; k++)
+            MyListReactivity.Add(R[0]);
+            for (int k = 1; k < I.Count; k++)
             {
                 double deltaT = Time[k] - TimeOld;
                 //   var dt = R.MyListRecordsForOneKKS[k].Value - _tok1Old;
@@ -80,7 +80,7 @@ namespace Converter
         //параметры запаздывающих нейтронов (относительные групповые доли - альфа)
         public static double[] AApik = { 0.0340, 0.2010, 0.1840, 0.4040, 0.1430, 0.0340 };
         //коэффициент перевода из процентов в бетта эффективность
-        private static double _beff = 0.72;
+        public static double _beff = 0.74;
 
         #endregion
     }

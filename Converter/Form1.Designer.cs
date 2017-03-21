@@ -2152,7 +2152,7 @@
             this.добавитьНаОсьXToolStripMenuItem,
             this.добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(339, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(339, 70);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             this.contextMenuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.checkedListBox1_MouseDown);
             // 
