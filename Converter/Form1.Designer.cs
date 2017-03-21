@@ -166,7 +166,10 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
+            this.label27 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
@@ -179,6 +182,8 @@
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
@@ -1857,13 +1862,15 @@
             // tableLayoutPanel29
             // 
             this.tableLayoutPanel29.BackColor = System.Drawing.Color.NavajoWhite;
-            this.tableLayoutPanel29.ColumnCount = 3;
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.68493F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.31507F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel29.Controls.Add(this.comboBox6, 2, 0);
+            this.tableLayoutPanel29.ColumnCount = 4;
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel29.Controls.Add(this.label27, 0, 0);
+            this.tableLayoutPanel29.Controls.Add(this.comboBox6, 3, 0);
+            this.tableLayoutPanel29.Controls.Add(this.label26, 2, 0);
+            this.tableLayoutPanel29.Controls.Add(this.textBox15, 1, 0);
             this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel29.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel29.Name = "tableLayoutPanel29";
@@ -1872,14 +1879,47 @@
             this.tableLayoutPanel29.Size = new System.Drawing.Size(510, 25);
             this.tableLayoutPanel29.TabIndex = 2;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label27.Location = new System.Drawing.Point(3, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(121, 25);
+            this.label27.TabIndex = 18;
+            this.label27.Text = "ПЭ";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // comboBox6
             // 
             this.comboBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(217, 3);
+            this.comboBox6.Location = new System.Drawing.Point(384, 3);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(290, 21);
+            this.comboBox6.Size = new System.Drawing.Size(123, 21);
             this.comboBox6.TabIndex = 16;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label26.Location = new System.Drawing.Point(257, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(121, 25);
+            this.label26.TabIndex = 17;
+            this.label26.Text = "TAU";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox15.Location = new System.Drawing.Point(130, 3);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(121, 20);
+            this.textBox15.TabIndex = 19;
+            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // tabPage2
             // 
@@ -2014,6 +2054,8 @@
             // 
             this.tableLayoutPanel27.ColumnCount = 1;
             this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel27.Controls.Add(this.button15, 0, 3);
+            this.tableLayoutPanel27.Controls.Add(this.button13, 0, 2);
             this.tableLayoutPanel27.Controls.Add(this.button12, 0, 1);
             this.tableLayoutPanel27.Controls.Add(this.button11, 0, 0);
             this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2029,6 +2071,31 @@
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel27.Size = new System.Drawing.Size(78, 494);
             this.tableLayoutPanel27.TabIndex = 1;
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.Silver;
+            this.button15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button15.Location = new System.Drawing.Point(3, 213);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(72, 64);
+            this.button15.TabIndex = 3;
+            this.button15.Text = "Показать Ikor";
+            this.button15.UseVisualStyleBackColor = false;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.Silver;
+            this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button13.Location = new System.Drawing.Point(3, 143);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(72, 64);
+            this.button13.TabIndex = 2;
+            this.button13.Text = "Заполнить";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click_1);
             // 
             // button12
             // 
@@ -2207,6 +2274,7 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel29.ResumeLayout(false);
+            this.tableLayoutPanel29.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel22.ResumeLayout(false);
@@ -2372,6 +2440,11 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.SaveFileDialog saveFileDialog4;
         private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox textBox15;
     //    checkBox6.AxisLimitsChanged += new System.EventHandler<AxisLimitsChangedEventArgs>(this.graphChart1_AxisLimitsChanged);
     }
 }

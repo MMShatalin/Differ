@@ -241,7 +241,7 @@ namespace Converter
             добавитьНаОсьXToolStripMenuItem.Enabled = false;
             добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem.Enabled = false;
             button6.Enabled = false;
-
+            textBox15.Text = 0.ToString();
 
             comboBox6.Items.Add("Подбор");
             comboBox6.Items.Add("3");
@@ -252,6 +252,7 @@ namespace Converter
 
             dataGridView5.Columns.Add("Время", "Время");
             dataGridView5.Columns.Add("Jотн", "Jотн");
+            dataGridView5.Columns.Add("Jкор", "Jкор");
             dataGridView5.Columns.Add("Rэкс", "Rэкс");
             dataGridView5.Columns.Add("Rрасч", "Rрасч");
             dataGridView5.Columns.Add("dH12", "dH12");
@@ -1660,10 +1661,10 @@ namespace Converter
              //   tempR = new pertubResult();
                 for (int i = 0; i < 400; i++)
                 {
-                    tempR = Calc(3 + i / 200.0, _tList, _jList, _rCalcList, _dHList);
+                    tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rExpList, _dHList);
                     if (tempR.SS > Ss)
                     {
-                        tempR = Calc(3 + (i - 1) / 200.0, _tList, _jList, _rCalcList, _dHList);
+                        tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rExpList, _dHList);
                         break;
                     }
                     Ss = tempR.SS;
@@ -1672,17 +1673,17 @@ namespace Converter
             if (comboBox6.Text == "3")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(3, _tList, _jList, _rCalcList, _dHList);
+                tempR = Calc(3, _tList, _jKorList, _rExpList, _dHList);
             }
             if (comboBox6.Text == "4")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(4, _tList, _jList, _rCalcList, _dHList);
+                tempR = Calc(4, _tList, _jKorList, _rExpList, _dHList);
             }
             if (comboBox6.Text == "5")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(5, _tList, _jList, _rCalcList, _dHList);
+                tempR = Calc(5, _tList, _jKorList, _rExpList, _dHList);
             }
             tempR.Ro = tempR.Ro*MyConst.Rect.Beff;
             tempR.aH = tempR.aH*MyConst.Rect.Beff;
@@ -1751,6 +1752,7 @@ namespace Converter
             dataGridView3.Columns.Add("T, \u2103", "T, \u2103");
             dataGridView3.Columns.Add("Ток(относительный)", "Ток(относительный)");
             dataGridView3.Columns.Add("ПЭ", "ПЭ");
+
 
             try
             {
@@ -1927,17 +1929,59 @@ namespace Converter
 
         private string comboBoxText = null;
 
-
-        public static List<double> _jList = new List<double>();
+        public static List<double> _PEList = new List<double>();
+        public static List<double> _jExpList = new List<double>();
+        public static List<double> _jKorList = new List<double>();
         public static List<double> _rExpList = new List<double>();
         public static List<double> _rCalcList = new List<double>();
         public static List<double> _dHList = new List<double>();
         public static List<double> _HList = new List<double>();
         public static List<double> _tList = new List<double>();
 
-
+        double PE;
         private void button8_Click_2(object sender, EventArgs e)
         {
+           
+         //    indexPE = 0;
+           // MessageBox.Show(_PEList[indexPE].ToString());
+           // indexPE++;
+          //  MessageBox.Show(_PEList[indexPE].ToString());
+
+            //TODO: РАСЧЕТ DDH
+            double ddH = 0;
+            _dHList.Add(ddH);
+            int step = 0;
+
+            for (int j = 1; j < indexPositionCursorList.Count; j++)
+            {
+                if (j % 2 != 0)
+                {
+                    for (int i = indexPositionCursorList[j - 1];
+                        i < indexPositionCursorList[j];
+                        i++)
+                    {
+                        ddH -= (2 /
+                                (MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j]].ValueTimeForDAT -
+                                 MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].ValueTimeForDAT)) *
+                               (MyAllSensors[0].MyListRecordsForOneKKS[i + 1].ValueTimeForDAT -
+                                MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
+                        _dHList.Add(ddH);
+                    }
+                }
+                //        MessageBox.Show(ddH.ToString());
+                if (j % 2 == 0)
+                {
+                    for (int i = indexPositionCursorList[j - 1];
+                        i < indexPositionCursorList[j];
+                        i++)
+                    {
+                        _dHList.Add(ddH);
+                    }
+                }
+            }
+
+
+            int indexDDH =0 ;
             //TODO: ДОБАВЛЕНИЕ ЗНАЧЕНИЙ ТОКА И ВРЕМЕНИ ПО ОТМЕЧЕННЫМ ТОЧКАМ
             for (int i = 0; i < MyAllSensors.Count; i++)
             {
@@ -1947,9 +1991,24 @@ namespace Converter
                         j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 1;
                         j++)
                     {
-                        _jList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value/
-                                   MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value);
+                        double Inext = MyAllSensors[i].MyListRecordsForOneKKS[j].Value/
+                                       MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value;
+                     //   _jExpList.Add(Inext);
+
+                      //  MessageBox.Show(_dHList[indexDDH] + " " + _dHList[indexDDH - 1]);
+                        if (_jExpList.Count>0 && indexDDH>0)
+                        {
+                            _jKorList.Add(Inext - (PE * (_dHList[indexDDH] - _dHList[indexDDH-1])));
+                        }
+                        if (_jExpList.Count == 0)
+                        {
+                            _jKorList.Add(Inext);
+                        }
+                     //   _jKorList.Add(Inext - (PE * (_dHList[indexDDH] - _dHList[indexDDH-1])));
+
+                        _jExpList.Add(Inext);
                         _tList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
+                        indexDDH++;
                     }
                 }
 
@@ -1960,7 +2019,7 @@ namespace Converter
                         j++)
                     {
                         _rExpList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
-                        _rCalcList.Add(0);
+                      // _rExpList.Add(0);
                     }
                 }
               //  if (comboBox5.Text == MyAllSensors[i].KKS_Name)
@@ -1974,50 +2033,19 @@ namespace Converter
                // }
             }
 
-            //TODO: РАСЧЕТ DDH
-            double ddH = 0;
-            _dHList.Add(ddH);
-            int step = 0;
-
-            for (int j = 1; j < indexPositionCursorList.Count; j++)
-            {
-                if (j%2 != 0)
-                {
-                    for (int i = indexPositionCursorList[j - 1];
-                        i < indexPositionCursorList[j];
-                        i++)
-                    {
-                        ddH -= (2/
-                                (MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j]].ValueTimeForDAT -
-                                 MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].ValueTimeForDAT))*
-                               (MyAllSensors[0].MyListRecordsForOneKKS[i + 1].ValueTimeForDAT -
-                                MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
-                        _dHList.Add(ddH);
-                    }
-                }
-                //        MessageBox.Show(ddH.ToString());
-                if (j%2 == 0)
-                {
-                    for (int i = indexPositionCursorList[j - 1];
-                        i < indexPositionCursorList[j];
-                        i++)
-                    {
-                        _dHList.Add(ddH);
-                    }
-                }
-            }
+           
 
 
             //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
         //    pertubResult t = new pertubResult();
-            SearchDiffEffect(_tList, _rCalcList, _dHList, _jList);
+         //   SearchDiffEffect(_tList, _rExpList, _dHList, _jKorList);
        //     dataGridView2.Rows.Add(t.aH, dRdH());
             //   dataGridView2.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
 
 
-            for (int i = 0; i < _jList.Count; i++)
+            for (int i = 0; i < _jExpList.Count; i++)
             {
-                dataGridView5.Rows.Add(_tList[i], _jList[i], _rExpList[i], _rCalcList, _dHList[i], tempR.FF[i]);
+                dataGridView5.Rows.Add(_tList[i], _jExpList[i], _jKorList[i], _rExpList[i], 0, _dHList[i]);
                 dataGridView5.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise;
             }
 
@@ -2026,11 +2054,11 @@ namespace Converter
             dataGridView2.Rows.Add(tempR.aH, PoPichkam(), tempR.tau);
 
             indexPositionCursorList.Clear();
-            _jList.Clear();
+            _jKorList.Clear();
             _tList.Clear();
             tempR.FF.Clear();
             _rExpList.Clear();
-            _rCalcList.Clear();
+            _jExpList.Clear();
             _dHList.Clear();
             button8.Enabled = false;
             //  dataGridView5.Rows.Clear();
@@ -2102,25 +2130,25 @@ namespace Converter
             {
                 if (checkBox6.Checked == false)
                 {
-                    MyIlist.Add(((double) dataGridView3.Rows[i].Cells[1].Value/
-                                 (double) dataGridView3.Rows[0].Cells[1].Value)*
-                                ((double) dataGridView3.Rows[0].Cells[3].Value/
-                                 (double) dataGridView3.Rows[i].Cells[3].Value)*
+                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim())/
+                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim())) *
+                                (double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim())/
+                                 double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim())) *
                                 (1 +
                                  0.01*
-                                 ((double) dataGridView3.Rows[0].Cells[5].Value -
-                                  (double) dataGridView3.Rows[i].Cells[5].Value)));
+                                 (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
+                                  double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
                 }
                 if (checkBox6.Checked == true)
                 {
-                    MyIlist.Add(((double) dataGridView3.Rows[i].Cells[1].Value/
-                                 (double) dataGridView3.Rows[0].Cells[1].Value)*
-                                (((double) dataGridView3.Rows[0].Cells[3].Value*32)/
-                                 ((double) dataGridView3.Rows[i].Cells[3].Value*32))*
+                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim()) /
+                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim()))*
+                                ((double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim())*32)/
+                                 (double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim())*32))*
                                 (1 +
                                  0.01*
-                                 ((double) dataGridView3.Rows[0].Cells[5].Value -
-                                  (double) dataGridView3.Rows[i].Cells[5].Value)));
+                                 (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
+                                  double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
                 }
             }
             for (int i = 0; i < MyIlist.Count; i++)
@@ -2180,30 +2208,35 @@ namespace Converter
 
         private void button12_Click(object sender, EventArgs e)
         {
-            List<double> MyRlist = new List<double>();
-            MyRlist.Clear();
+          //  List<double> MyRlist = new List<double>();
+            _PEList.Clear();
+           // MyRlist.Clear();
             for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
             {
-                MessageBox.Show(dataGridView3.Rows[i].Cells[2].Value.ToString());
-                //   if (checkBox5.Checked == false)
-                // {
-                //    MyRlist.Add(((double)dataGridView3.Rows[i+1].Cells[6].Value - (double)dataGridView3.Rows[i].Cells[6].Value) / ((double)dataGridView3.Rows[i+1].Cells[4].Value - (double)dataGridView3.Rows[i].Cells[4].Value));
-                // }
+              //  MessageBox.Show(dataGridView3.Rows[i].Cells[2].Value.ToString());
+                  if (checkBox5.Checked == false)
+                 {
+                     _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
+                                     double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
+                                    ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())) -
+                                     (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))));
+                 }
                 if (checkBox5.Checked == true)
                 {
                     if (i > 0)
                     {
                         //   MessageBox.Show(dataGridView3.Rows[i+1].Cells[6].Value + " " + (double)dataGridView3.Rows[i].Cells[6].Value + " " + dataGridView3.Rows[i+1].Cells[4].Value + " " + dataGridView3.Rows[i].Cells[4].Value);
-                        MyRlist.Add(((double) dataGridView3.Rows[i].Cells[6].Value -
-                                     (double) dataGridView3.Rows[i - 1].Cells[6].Value)/
-                                    (((double) dataGridView3.Rows[i].Cells[4].Value*3.75) -
-                                     ((double) dataGridView3.Rows[i - 1].Cells[4].Value)*3.75));
+                        _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
+                                     double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
+                                    ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())*3.75) -
+                                     (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim())) * 3.75));
                     }
                 }
             }
-            for (int i = 0; i < MyRlist.Count; i++)
+
+            for (int i = 0; i < _PEList.Count; i++)
             {
-                dataGridView3.Rows[i + 1].Cells[7].Value = MyRlist[i];
+                dataGridView3.Rows[i + 1].Cells[7].Value = _PEList[i];
             }
         }
 
@@ -2520,6 +2553,46 @@ namespace Converter
                     
                // }
             }
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            StreamReader r = new StreamReader("D:\\GitHub\\Differ\\Файл для заполнения таблицы для расчета ПЭ.txt",  Encoding.Default);
+            string line = r.ReadLine();
+     int _indexRow1 = 0;
+         // dataGridView3.Rows.Add();
+          while ((line = r.ReadLine()) != null)
+           {
+               dataGridView3.Rows.Add();
+               for (int i = 0; i < 6; i++)
+               {
+                   dataGridView3.Rows[_indexRow].Cells[i].Value = line.Split('\t')[i].Trim();
+
+              }
+               _indexRow++;
+          }
+
+            r.Close();
+
+
+          //  double rr = double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim());
+        //   double gg = double.Parse(rr);            
+         //  MessageBox.Show(gg.ToString());
+    
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                PE = double.Parse(textBox15.Text);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Не число! Разделитель?");
+            }
+         
         }
 
     }
