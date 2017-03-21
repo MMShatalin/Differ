@@ -2005,10 +2005,12 @@ namespace Converter
                             _jKorList.Add(Inext);
                         }
                      //   _jKorList.Add(Inext - (PE * (_dHList[indexDDH] - _dHList[indexDDH-1])));
-
+                   //     MessageBox.Show(indexDDH.ToString());
                         _jExpList.Add(Inext);
+                      //  MessageBox.Show(_jExpList.Count.ToString());
                         _tList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
                         indexDDH++;
+                       // MessageBox.Show(indexDDH.ToString());
                     }
                 }
 
@@ -2022,6 +2024,9 @@ namespace Converter
                       // _rExpList.Add(0);
                     }
                 }
+
+                Current Y = new Current();
+                Y.AddData(_jKorList, _tList, _rCalcList);
               //  if (comboBox5.Text == MyAllSensors[i].KKS_Name)
                 //{
                     //for (int j = indexPositionCursorList[0];
@@ -2038,14 +2043,14 @@ namespace Converter
 
             //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
         //    pertubResult t = new pertubResult();
-         //   SearchDiffEffect(_tList, _rExpList, _dHList, _jKorList);
+        SearchDiffEffect(_tList, _rCalcList, _dHList, _jKorList);
        //     dataGridView2.Rows.Add(t.aH, dRdH());
             //   dataGridView2.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
 
-
+      //  MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + tempR.FF.Count + " " + _dHList.Count);
             for (int i = 0; i < _jExpList.Count; i++)
             {
-                dataGridView5.Rows.Add(_tList[i], _jExpList[i], _jKorList[i], _rExpList[i], 0, _dHList[i]);
+                dataGridView5.Rows.Add(_tList[i], _jExpList[i], _jKorList[i], _rExpList[i], 0, _dHList[i], tempR.FF[i]);
                 dataGridView5.Rows[i].DefaultCellStyle.BackColor = Color.Turquoise;
             }
 
@@ -2594,6 +2599,8 @@ namespace Converter
             }
          
         }
+
+
 
     }
 }
