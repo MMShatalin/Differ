@@ -165,6 +165,8 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
             this.label27 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
@@ -1707,6 +1709,8 @@
             this.tableLayoutPanel8.Controls.Add(this.comboBox5, 1, 3);
             this.tableLayoutPanel8.Controls.Add(this.comboBox4, 1, 4);
             this.tableLayoutPanel8.Controls.Add(this.comboBox3, 1, 2);
+            this.tableLayoutPanel8.Controls.Add(this.button16, 2, 4);
+            this.tableLayoutPanel8.Controls.Add(this.button17, 2, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 34);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -1858,6 +1862,27 @@
             this.comboBox3.Size = new System.Drawing.Size(213, 21);
             this.comboBox3.TabIndex = 10;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged_1);
+            // 
+            // button16
+            // 
+            this.button16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button16.Location = new System.Drawing.Point(339, 95);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(168, 18);
+            this.button16.TabIndex = 16;
+            this.button16.Text = "button16";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(339, 3);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 17);
+            this.button17.TabIndex = 17;
+            this.button17.Text = "button17";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // tableLayoutPanel29
             // 
@@ -2152,7 +2177,7 @@
             this.добавитьНаОсьXToolStripMenuItem,
             this.добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(339, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(339, 48);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             this.contextMenuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.checkedListBox1_MouseDown);
             // 
@@ -2445,6 +2470,8 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
     //    checkBox6.AxisLimitsChanged += new System.EventHandler<AxisLimitsChangedEventArgs>(this.graphChart1_AxisLimitsChanged);
     }
 }
