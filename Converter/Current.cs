@@ -37,18 +37,18 @@ namespace Converter
         //в методе также должна быть переменная времени
         //в данном случае берем Sensors, а не живые данные
 
-        public void AddData(List<double> ikor, List<double> rexp, List<double> time, List<double> rcor)
+        public void AddData(List<double> I, List<double> R, List<double> Time, List<double> MyListReactivity)
         {
-            this._tok1Old = ikor[0];
-            this.TimeOld = time[0];
+            this._tok1Old = I[0];
+            this.TimeOld = Time[0];
             for (int i = 0; i < 6; i++)
             {
                 psi0[i] = this._tok1Old;
             }
-            rcor.Add(rexp[0]);
-            for (int k = 1; k < ikor.Count; k++)
+            MyListReactivity.Add(R[0]);
+            for (int k = 1; k < I.Count; k++)
             {
-                double deltaT = time[k] - TimeOld;
+                double deltaT = Time[k] - TimeOld;
                 //   var dt = R.MyListRecordsForOneKKS[k].Value - _tok1Old;
                 Ro = 0;
 
@@ -57,14 +57,14 @@ namespace Converter
                     double constTRaspada = MyConst.LMetodiki[i] * deltaT;
                     _one[i] = Math.Exp(-constTRaspada);
                     _two[i] = (1 - _one[i]) / constTRaspada;
-                    psi0[i] = psi0[i] * _one[i] - (ikor[k] - _tok1Old) * (_two[i]) - _tok1Old * _one[i] + ikor[k];
+                    psi0[i] = psi0[i] * _one[i] - (I[k] - _tok1Old) * (_two[i]) - _tok1Old * _one[i] + I[k];
                     double yt = MyConst.AApik[i] * psi0[i];
                     Ro = Ro + yt;
                 }
-                Ro = 1 - Ro / ikor[k];
-                rcor.Add(Ro);
-                _tok1Old = ikor[k];
-                TimeOld = time[k];
+                Ro = 1 - Ro / I[k];
+                MyListReactivity.Add(Ro);
+                _tok1Old = I[k];
+                TimeOld = Time[k];
             }
         }
     }
