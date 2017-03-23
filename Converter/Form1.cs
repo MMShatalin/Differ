@@ -1932,6 +1932,7 @@ namespace Converter
         public static List<double> _PEList = new List<double>();
         public static List<double> _jExpList = new List<double>();
         public static List<double> _jKorList = new List<double>();
+        public static List<double> _jRealList = new List<double>();
         public static List<double> _rExpList = new List<double>();
         public static List<double> _rCalcList = new List<double>();
         public static List<double> _dHList = new List<double>();
@@ -2009,6 +2010,7 @@ namespace Converter
                         //   _jKorList.Add(Inext - (PE * (_dHList[indexDDH] - _dHList[indexDDH-1])));
                         //     MessageBox.Show(indexDDH.ToString());
                         _jExpList.Add(Inext);
+                        _jRealList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
                         //  MessageBox.Show(_jExpList.Count.ToString());
                         _tList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
                         indexDDH++;
@@ -2099,6 +2101,13 @@ namespace Converter
             //   MessageBox.Show(tempR.FF.Count.ToString() + " " + _tList.Count.ToString());
             //    StreamWriter WriterAH = new StreamWriter();
             dataGridView2.Rows.Add(tempR.aH, PoPichkam(), tempR.tau);
+
+            StreamWriter b = new StreamWriter("D:\\1.txt");
+            for (int i = 0; i < _tList.Count; i++)
+            {
+                b.WriteLine(_tList[i] + "\t" + _rCalcList[i] + "\t" + _jExpList[i] * _jRealList[0]);
+            }
+            b.Close();
 
             indexPositionCursorList.Clear();
             _jKorList.Clear();
@@ -2641,6 +2650,16 @@ namespace Converter
                 MessageBox.Show("Не число! Разделитель?");
             }
          
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            StreamWriter b = new StreamWriter("D:\\1.txt");
+            for (int i = 0; i < _tList.Count; i++)
+            {
+                b.WriteLine(_tList[i] + "\t" + _rCalcList[i] + "\t" + _jExpList[i]*_jRealList[0]);
+            }
+            b.Close();
         }
 
 
