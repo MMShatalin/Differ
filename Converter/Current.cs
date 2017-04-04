@@ -37,6 +37,8 @@ namespace Converter
         //в методе также должна быть переменная времени
         //в данном случае берем Sensors, а не живые данные
 
+       // ЭТО ЧИСТО ДЛЯ ТЕСТА
+         
         public void AddData(List<double> I, List<double> R, List<double> Time, List<double> MyListReactivity)
         {
             this._tok1Old = I[0];
