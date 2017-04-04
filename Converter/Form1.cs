@@ -1982,6 +1982,11 @@ namespace Converter
                 }
             }
 
+            for (int i = 0; i < 200; i++)
+            {
+                _dHList.Add(ddH);
+            }
+
 
             int indexDDH = 0;
            
@@ -1991,7 +1996,7 @@ namespace Converter
                 if (comboBox2.Text == MyAllSensors[i].KKS_Name)
                 {
                     for (int j = indexPositionCursorList[0];
-                        j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 1;
+                        j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 201;
                         j++)
                     {
                         double Inext = MyAllSensors[i].MyListRecordsForOneKKS[j].Value/
@@ -2021,7 +2026,7 @@ namespace Converter
                 if (comboBox1.Text == MyAllSensors[i].KKS_Name)
                 {
                     for (int j = indexPositionCursorList[0];
-                        j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 1;
+                        j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 201;
                         j++)
                     {
                         _rExpList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
