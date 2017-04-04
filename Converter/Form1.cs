@@ -1650,6 +1650,9 @@ namespace Converter
         }
 
         static pertubResult tempR;
+
+        StreamWriter lll = new StreamWriter("D:\\дЛЯ ВЫВОДа.txt");
+        StreamWriter lllВ = new StreamWriter("D:\\дЛЯ ПРОВЕРКИ ТЕНДЕНЦИИ.txt");
         private void SearchDiffEffect()
         {
             tempR = new pertubResult();
@@ -1662,14 +1665,23 @@ namespace Converter
                 for (int i = 0; i < 400; i++)
                 {
                     tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList);
+                    lll.WriteLine(tempR.SS + " " + Ss);
                     if (tempR.SS > Ss)
                     {
+                        MessageBox.Show(tempR.SS + " " + Ss);
                         tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rCalcList, _dHList);
+                        //TODO: 400 РАЗ ОБРАБАТЫВАЕТСЯ ОДНО И ТОЖЕ ВОЗМУЩЕНИЕ С РАЗНЫМ ПОДБОРОМ ТАУ. В МЕТОДЕ CALC ВСЕГДА НАБИРАЕТСЯ СУММА КВАДРАТОВ РАЗНОСТЕЙ РЕАКТВИНОСТЕЙ НАЗВАЕМОЙ НЕВЯЗКОЙ. 
+                        //TODO: TEMPR.SS В НЕМ ЖЕ ПРИРАВНИВАЕТСЯ ЭТОЙ СУММЕ. В ИТОГЕ ПО УСЛОВИЮ И ПО ЛОГИКЕ НЕВЯЗКА ИЛИ ЖЕ СВОЙСТВО TEMPR.SS СРАВНИВАЕТСЯ C ЕГО ЖЕ ПРЕДЫДУЩЕМ ЗНАЧЕНИЕМ
+                        //TODO: И КАК ТОЛЬКО ЭТО СВОЙСТВО СТАНОВИТСЯ БОЛЬШЕ ПРЕДЫДУЩЕГО ТО ПРОИСХОДИТ ОТКАТ К ПРЕДЫДУЩЕМУ ЗНАЧЕНИЮ ТАУ И АЛГОРИТМ ПРЕРЫВАЕТСЯ
+                        //TODO: ВОПРОС: МОЖЕТ ЛИ БЫТЬ ПОСЛЕ СРАБАТЫВАНИЯ ВЕЛИЧИНА НЕВЯЗКИ МЕНЬШЕ ТОГО ЧТО БЫЛО ЕСЛИ АЛГОРИТМ НЕ ПРЕРВЕТСЯ ВЕДЬ ИЗ ФАЙЛА ЗАПИСИ ВИДНО ЧТО 
                         break;
                     }
+                    lll.WriteLine(tempR.aH + " " + tempR.tau + " " + tempR.SS);
                     Ss = tempR.SS;
                 }
             }
+            lll.Close();
+            lllВ.Close();
             if (comboBox6.Text == "3")
             {
               //  tempR = new pertubResult();
@@ -2597,12 +2609,21 @@ namespace Converter
                 cnt++;
             } //i
             myresult.SS = sS;
-
-
-
             return myresult;
         }
-
+        //   tempR = new pertubResult();
+           //     for (int i = 0; i < 400; i++)
+            //    {
+               //     tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList);
+                //    if (tempR.SS > Ss)
+                //    {
+                //        MessageBox.Show(tempR.SS + " " + Ss);
+                 //       tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rCalcList, _dHList);
+                 //       break;
+                //    }
+                //    lll.WriteLine(tempR.aH + " " + tempR.tau + " " + tempR.SS);
+                 //   Ss = tempR.SS;
+              //  }
         private void button14_Click(object sender, EventArgs e)
         {
             if (saveFileDialog4.ShowDialog() == DialogResult.OK)
