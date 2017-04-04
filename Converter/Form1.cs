@@ -2001,7 +2001,7 @@ namespace Converter
                         //  MessageBox.Show(_dHList[indexDDH] + " " + _dHList[indexDDH - 1]);
                         if (_jExpList.Count > 0 && indexDDH > 0)
                         {
-                            _jKorList.Add(Inext - (PE*(_dHList[indexDDH] - _dHList[indexDDH - 1])));
+                            _jKorList.Add(Inext - (PE*(_dHList[indexDDH])));
                         }
                         if (_jExpList.Count == 0)
                         {
