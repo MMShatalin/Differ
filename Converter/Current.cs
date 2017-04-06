@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Converter
 {
@@ -36,16 +37,23 @@ namespace Converter
         //токи типа должны быть вычислены до этого в методе
         //в методе также должна быть переменная времени
         //в данном случае берем Sensors, а не живые данные
-
+        StreamWriter Ttt = new StreamWriter("D:\\Test.txt");
         public void AddData(List<double> I, List<double> R, List<double> Time, List<double> MyListReactivity)
         {
             this._tok1Old = I[0];
             this.TimeOld = Time[0];
+
+            Ttt.WriteLine("this._tok1Old =" + this._tok1Old);
+            Ttt.WriteLine("this.TimeOld =" + this.TimeOld);
             for (int i = 0; i < 6; i++)
             {
                 psi0[i] = this._tok1Old;
+                Ttt.Write(psi0[i] + " ");
             }
-            MyListReactivity.Add(R[0]);
+
+            Ttt.WriteLine();
+            Ttt.WriteLine("Лист расчетной реактивности до " + MyListReactivity.Count);
+            MyListReactivity.Add(0);
             for (int k = 1; k < I.Count; k++)
             {
                 double deltaT = Time[k] - TimeOld;
@@ -66,6 +74,8 @@ namespace Converter
                 _tok1Old = I[k];
                 TimeOld = Time[k];
             }
+            Ttt.WriteLine("Лист расчетной реактивности после " + MyListReactivity.Count);
+            Ttt.Close();
         }
     }
 
@@ -76,11 +86,11 @@ namespace Converter
         #region Свойства
 
         //параметры запаздывающих нейтронов (постоянные распада - лямбда, взятые из методик физических испытаний)
-        public static double[] LMetodiki = { 0.0127, 0.0317, 0.1180, 0.3170, 1.4000, 3.9200 };
+        public static double[] LMetodiki = { 0.0127, 0.0317, 0.118, 0.317, 1.4, 3.92 };
         //параметры запаздывающих нейтронов (относительные групповые доли - альфа)
-        public static double[] AApik = { 0.0340, 0.2010, 0.1840, 0.4040, 0.1430, 0.0340 };
+        public static double[] AApik = { 0.034, 0.201, 0.184, 0.4040, 0.143, 0.034 };
         //коэффициент перевода из процентов в бетта эффективность
-        public static double _beff = 0.74;
+        public static double _beff = 0.72;
 
         #endregion
     }
