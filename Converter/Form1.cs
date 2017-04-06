@@ -1661,7 +1661,7 @@ namespace Converter
         List<double> TAUlist = new List<double>();
         List<double> SsList = new List<double>();
         List<double> AHList = new List<double>();
-        List<double> RmodelList = new List<double>();
+      //  List<double> RmodelList = new List<double>();
         private void SearchDiffEffect()
         {
             tempR = new pertubResult();
@@ -1675,11 +1675,12 @@ namespace Converter
                 {
                     for (int i = 0; i < 400; i++)
                     {
-                        tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList);
+                        tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList, flagW);
                       //  lllC.WriteLine(tempR.SS + " " + Ss + " " + tempR.tau + " " + tempR.aH);
                         if (tempR.SS > Ss)
                         {
-                            tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rCalcList, _dHList);
+                            flagW = true;
+                            tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rCalcList, _dHList, flagW);
                             
                             break;
                         }
@@ -1700,7 +1701,7 @@ namespace Converter
 
                     for (int i = 0; i < 400; i++)
                     {
-                        tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList);
+                        tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList, flagW);
                         //  lllВ.WriteLine(tempR.SS + " " + Ss);
                         SsOLD.Add(Ss);
                         SsNEW.Add(tempR.SS);
@@ -1738,7 +1739,7 @@ namespace Converter
                         SsList.Add(SsNEW[i] - SsOLD[i]);
                     }
 
-                    tempR = Calc(TAUlist[indexSS], _tList, _jKorList, _rCalcList, _dHList);
+                    tempR = Calc(TAUlist[indexSS], _tList, _jKorList, _rCalcList, _dHList, flagW);
 
                   //  lllВ.WriteLine(SsNEW[indexSS] + " " + SsOLD[indexSS] + " " + TAUlist[indexSS]);
                    // lll.Close();
@@ -1748,17 +1749,17 @@ namespace Converter
             if (comboBox6.Text == "3")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(3, _tList, _jKorList, _rCalcList, _dHList);
+                tempR = Calc(3, _tList, _jKorList, _rCalcList, _dHList, flagW);
             }
             if (comboBox6.Text == "4")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(4, _tList, _jKorList, _rCalcList, _dHList);
+                tempR = Calc(4, _tList, _jKorList, _rCalcList, _dHList, flagW);
             }
             if (comboBox6.Text == "5")
             {
               //  tempR = new pertubResult();
-                tempR = Calc(5, _tList, _jKorList, _rCalcList, _dHList);
+                tempR = Calc(5, _tList, _jKorList, _rCalcList, _dHList, flagW);
             }
             tempR.Ro = tempR.Ro * MyConst._beff;
             tempR.aH = tempR.aH * MyConst._beff;
@@ -2148,7 +2149,7 @@ namespace Converter
             //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
             //    pertubResult t = new pertubResult();
             SearchDiffEffect();
-            MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + _dHList.Count + " " + _rCalcList.Count + " " + RmodelList.Count);
+            MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + _dHList.Count + " " + _rCalcList.Count + " " + _rmodelList.Count);
 
 
             Series RCalc = new Series();
@@ -2197,12 +2198,12 @@ namespace Converter
             Rmod.Name = "Rmodel" + Graph._numberseries;
             Rmod.ChartType = SeriesChartType.Line;
             Rmod.Points.Clear();
-          //  for (int i = 1; i < _tList.Count; i++)
-           // {
-               // Rmod.Points.AddXY(
-               //     _tList[i],
-                 //   RmodelList[i-1]);
-         //   }
+           for (int i = 1; i < _tList.Count; i++)
+            {
+                Rmod.Points.AddXY(
+                    _tList[i],
+                    _rmodelList[i - 1]);
+            }
 
             Rmod.YAxisType = AxisType.Secondary;
             Rmod.BorderWidth = 3;
@@ -2618,8 +2619,10 @@ namespace Converter
             public double SS;
         }
 
+        static List<double> _rmodelList  = new List<double>();
+        private static bool flagW = false;
       //  private static double Rm;
-        public static pertubResult Calc(double Tt, List<double> time, List<double> I, List<double> R, List<double> dH)
+        public static pertubResult Calc(double Tt, List<double> time, List<double> I, List<double> R, List<double> dH, bool flag)
         {
         //    RmodelList.Clear();
      //       RmodelList.Add();
@@ -2716,10 +2719,10 @@ namespace Converter
                 F = F*g + (I[i] - 1)*(1 - c) + (I[i - 1] - 1)*(c - g);
               
                 Rm = myresult.Ro + myresult.aH*dH[i] + myresult.b*F;
-              //  if (flag)
-                
-                //    RmodelList.Add(Rm);
-               // }
+                if (flagW == true)
+                {
+                    _rmodelList.Add(Rm);
+                }
            
                 sS += (R[i] - Rm)*(R[i] - Rm);
 
@@ -2870,6 +2873,16 @@ namespace Converter
             rCalcAll.Color = Color.Black;
             chart1.Series.Add(rCalcAll);
             Graph._numberseries++;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            StreamWriter eeee = new StreamWriter("D:\\ЛИСТ Rm.txt");
+            for (int i = 0; i < _rmodelList.Count; i++)
+            {
+                eeee.WriteLine(_rmodelList[i]);
+            }
+            eeee.Close();
         }
 
 

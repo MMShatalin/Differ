@@ -203,6 +203,7 @@
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.копироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog4 = new System.Windows.Forms.SaveFileDialog();
+            this.button18 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1694,10 +1695,11 @@
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.BackColor = System.Drawing.Color.Tan;
-            this.tableLayoutPanel8.ColumnCount = 3;
+            this.tableLayoutPanel8.ColumnCount = 4;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.82143F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.17857F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tableLayoutPanel8.Controls.Add(this.checkBox6, 2, 2);
             this.tableLayoutPanel8.Controls.Add(this.checkBox5, 2, 3);
             this.tableLayoutPanel8.Controls.Add(this.comboBox2, 1, 0);
@@ -1713,6 +1715,7 @@
             this.tableLayoutPanel8.Controls.Add(this.checkBox7, 2, 1);
             this.tableLayoutPanel8.Controls.Add(this.button16, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.button17, 2, 4);
+            this.tableLayoutPanel8.Controls.Add(this.button18, 3, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 34);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -1730,9 +1733,9 @@
             // 
             this.checkBox6.AutoSize = true;
             this.checkBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox6.Location = new System.Drawing.Point(339, 49);
+            this.checkBox6.Location = new System.Drawing.Point(318, 49);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(168, 17);
+            this.checkBox6.Size = new System.Drawing.Size(121, 17);
             this.checkBox6.TabIndex = 2;
             this.checkBox6.Text = "в (МВт)";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -1740,7 +1743,7 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(339, 72);
+            this.checkBox5.Location = new System.Drawing.Point(318, 72);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(55, 17);
             this.checkBox5.TabIndex = 1;
@@ -1751,9 +1754,9 @@
             // 
             this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(120, 3);
+            this.comboBox2.Location = new System.Drawing.Point(113, 3);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(213, 21);
+            this.comboBox2.Size = new System.Drawing.Size(199, 21);
             this.comboBox2.TabIndex = 8;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_1);
             // 
@@ -1766,7 +1769,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(3, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 23);
+            this.label1.Size = new System.Drawing.Size(104, 23);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1779,7 +1782,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(3, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 23);
+            this.label5.Size = new System.Drawing.Size(104, 23);
             this.label5.TabIndex = 9;
             this.label5.Text = "N, МВт";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1788,9 +1791,9 @@
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(120, 26);
+            this.comboBox1.Location = new System.Drawing.Point(113, 26);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 21);
+            this.comboBox1.Size = new System.Drawing.Size(199, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
@@ -1803,7 +1806,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 23);
+            this.label4.Size = new System.Drawing.Size(104, 23);
             this.label4.TabIndex = 7;
             this.label4.Text = "J, А";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1817,7 +1820,7 @@
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label25.Location = new System.Drawing.Point(3, 69);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(111, 23);
+            this.label25.Size = new System.Drawing.Size(104, 23);
             this.label25.TabIndex = 13;
             this.label25.Text = "H12, см";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1831,7 +1834,7 @@
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label24.Location = new System.Drawing.Point(3, 92);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(111, 24);
+            this.label24.Size = new System.Drawing.Size(104, 24);
             this.label24.TabIndex = 12;
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1839,9 +1842,9 @@
             // 
             this.comboBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(120, 72);
+            this.comboBox5.Location = new System.Drawing.Point(113, 72);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(213, 21);
+            this.comboBox5.Size = new System.Drawing.Size(199, 21);
             this.comboBox5.TabIndex = 15;
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged_1);
             // 
@@ -1849,9 +1852,9 @@
             // 
             this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(120, 95);
+            this.comboBox4.Location = new System.Drawing.Point(113, 95);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(213, 21);
+            this.comboBox4.Size = new System.Drawing.Size(199, 21);
             this.comboBox4.TabIndex = 14;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged_1);
             // 
@@ -1859,9 +1862,9 @@
             // 
             this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(120, 49);
+            this.comboBox3.Location = new System.Drawing.Point(113, 49);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(213, 21);
+            this.comboBox3.Size = new System.Drawing.Size(199, 21);
             this.comboBox3.TabIndex = 10;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged_1);
             // 
@@ -1869,9 +1872,9 @@
             // 
             this.checkBox7.AutoSize = true;
             this.checkBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox7.Location = new System.Drawing.Point(339, 26);
+            this.checkBox7.Location = new System.Drawing.Point(318, 26);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(168, 17);
+            this.checkBox7.Size = new System.Drawing.Size(121, 17);
             this.checkBox7.TabIndex = 17;
             this.checkBox7.Text = "Без break";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -1879,9 +1882,9 @@
             // button16
             // 
             this.button16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button16.Location = new System.Drawing.Point(339, 3);
+            this.button16.Location = new System.Drawing.Point(318, 3);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(168, 17);
+            this.button16.Size = new System.Drawing.Size(121, 17);
             this.button16.TabIndex = 18;
             this.button16.Text = "Auto";
             this.button16.UseVisualStyleBackColor = true;
@@ -1890,9 +1893,9 @@
             // button17
             // 
             this.button17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button17.Location = new System.Drawing.Point(339, 95);
+            this.button17.Location = new System.Drawing.Point(318, 95);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(168, 18);
+            this.button17.Size = new System.Drawing.Size(121, 18);
             this.button17.TabIndex = 19;
             this.button17.Text = "Пересчитать полностью";
             this.button17.UseVisualStyleBackColor = true;
@@ -2237,6 +2240,16 @@
             this.копироватьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.копироватьToolStripMenuItem.Text = "Копировать";
             // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(445, 3);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(62, 17);
+            this.button18.TabIndex = 20;
+            this.button18.Text = "Rm";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2487,6 +2500,7 @@
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
     //    checkBox6.AxisLimitsChanged += new System.EventHandler<AxisLimitsChangedEventArgs>(this.graphChart1_AxisLimitsChanged);
     }
 }
