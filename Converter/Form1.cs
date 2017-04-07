@@ -14,9 +14,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 //псевдонимы
 using SD = System.Data;
-using Excel = Microsoft.Office.Interop.Excel;
-using SmallPertubation;
-using Cursor = System.Windows.Forms.Cursor;
+
 
 namespace Converter
 {
@@ -305,6 +303,10 @@ namespace Converter
             dataGridView2.Columns.Add("TAU", "TAU");
             dataGridView2.Columns.Add("b", "b");
             dataGridView2.Columns.Add("R0", "R0");
+            dataGridView2.Columns.Add("N", "N");
+            dataGridView2.Columns.Add("\u03B1(N) \u03B2/МВт", "\u03B1(N) \u03B2/МВт");
+            dataGridView2.Columns.Add("H12", "Н12");
+            dataGridView2.Columns.Add("ПЭ", "ПЭ");
 
             this.dataGridView1.VirtualMode = true;
             this.dataGridView4.VirtualMode = true;
@@ -1481,6 +1483,19 @@ namespace Converter
         private void button6_Click(object sender, EventArgs e)
         {
             indexPositionCursorList.Add(indexPositionCursor);
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox3.Text == MyAllSensors[i].KKS_Name)
+                {
+                    N = MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value;
+                }
+               
+                    if (comboBox5.Text == MyAllSensors[i].KKS_Name)
+                    {
+                        H12 = MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value;
+                    }
+                
+            }
             //  MessageBox.Show(indexPositionCursorList.Count.ToString() + " " + indexPositionCursor);
 
 
@@ -2017,7 +2032,8 @@ namespace Converter
 
         double PE;
 
-
+        private double N;
+        private double H12;
      //   StreamWriter rrrr = new StreamWriter("D:\\t");
         
         private void button8_Click_2(object sender, EventArgs e)
@@ -2149,7 +2165,7 @@ namespace Converter
             //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
             //    pertubResult t = new pertubResult();
             SearchDiffEffect();
-            MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + _dHList.Count + " " + _rCalcList.Count + " " + _rmodelList.Count);
+          //  MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + _dHList.Count + " " + _rCalcList.Count + " " + _rmodelList.Count);
 
 
             Series RCalc = new Series();
@@ -2227,7 +2243,7 @@ namespace Converter
 
             //   MessageBox.Show(tempR.FF.Count.ToString() + " " + _tList.Count.ToString());
             //    StreamWriter WriterAH = new StreamWriter();
-            dataGridView2.Rows.Add(tempR.aH, PoPichkam(), tempR.tau, tempR.b, tempR.Ro);
+            dataGridView2.Rows.Add(tempR.aH, PoPichkam(), tempR.tau, tempR.b, tempR.Ro, N, tempR.b / N, H12, PE);
 
             StreamWriter b = new StreamWriter("D:\\1.txt");
             for (int i = 0; i < _tList.Count; i++)
