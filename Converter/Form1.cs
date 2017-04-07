@@ -2205,7 +2205,7 @@ namespace Converter
                     _rmodelList[i - 1]);
             }
 
-            Rmod.YAxisType = AxisType.Secondary;
+          //  Rmod.YAxisType = AxisType.Secondary;
             Rmod.BorderWidth = 3;
             //      dH.Color = Color.Black;
             chart1.Series.Add(Rmod);
@@ -2624,7 +2624,8 @@ namespace Converter
       //  private static double Rm;
         public static pertubResult Calc(double Tt, List<double> time, List<double> I, List<double> R, List<double> dH, bool flag)
         {
-        //    RmodelList.Clear();
+            
+            _rmodelList.Clear();
      //       RmodelList.Add();
             pertubResult myresult = new pertubResult();
             myresult.FF = new List<double>();
@@ -2877,10 +2878,14 @@ namespace Converter
 
         private void button18_Click(object sender, EventArgs e)
         {
-            StreamWriter eeee = new StreamWriter("D:\\ЛИСТ Rm.txt");
-            for (int i = 0; i < _rmodelList.Count; i++)
+            StreamWriter eeee = new StreamWriter("D:\\МОДЕЛЬ.txt");
+            for (int i = 0; i < _timeList.Count; i++)
             {
-                eeee.WriteLine(_rmodelList[i]);
+                eeee.Write(_timeList[i] + " " + _jKorList[i] + " " + _rCalcList[i] + " ");
+                if (i > 0)
+                {
+                    eeee.Write(_timeList[i]-_timeList[i-1]);
+                }
             }
             eeee.Close();
         }
