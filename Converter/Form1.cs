@@ -65,9 +65,6 @@ namespace Converter
         {
             InitializeComponent();
 
-
-
-
             chart1.Series["Series1"].Color = Color.Red;
             chart1.Series["Series2"].Color = Color.Blue;
             chart1.Series["Series3"].Color = Color.Lime;
@@ -82,16 +79,10 @@ namespace Converter
             chart1.ChartAreas[0].AxisX.MinorTickMark.LineDashStyle = ChartDashStyle.Dash;
             chart1.ChartAreas[0].AxisX.MinorTickMark.LineColor = Color.DarkGray;
 
-            //chart1.ChartAreas[0].AxisY.Interval = 0.006;
             chart1.ChartAreas[0].AxisY.MinorTickMark.Enabled = true;
             chart1.ChartAreas[0].AxisY.MinorTickMark.LineDashStyle = ChartDashStyle.Dash;
             chart1.ChartAreas[0].AxisY.MinorTickMark.LineColor = Color.DarkGray;
 
-            //   chart1.ChartAreas[0].AxisX.Minimum = 0;
-            //    chart1.ChartAreas[0].AxisX.Interval =1000;
-
-
-            //  chart1.ChartAreas[0].AxisY2.Interval =10;
             chart1.ChartAreas[0].AxisY2.MinorTickMark.Enabled = true;
             chart1.ChartAreas[0].AxisY2.MinorTickMark.LineDashStyle = ChartDashStyle.Dash;
             chart1.ChartAreas[0].AxisY2.MinorTickMark.LineColor = Color.DarkGray;
@@ -101,44 +92,6 @@ namespace Converter
         }
 
         private MyListOfSensors MyAllSensors = new MyListOfSensors();
-
-
-        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            MINnew.Clear();
-            MAXnew.Clear();
-
-            for (int i = 0; i < MaXes.Count; i++)
-            {
-
-                //textBox1.Text = dataGridView2.Rows[i].Cells[2].Value.ToString();
-                //    MAXnew.Add(Convert.ToDouble(textBox1.Text));
-
-                //  textBox1.Text = dataGridView2.Rows[i].Cells[1].Value.ToString();
-                //  MINnew.Add(Convert.ToDouble(textBox1.Text));
-            } //
-            //textBox1.Text = openFileDialog1.FileName;
-        }
-
-        private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            //  открытьToolStripMenuItem.Enabled = true;
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            //открытьToolStripMenuItem.Enabled = true;
-        }
 
         private void очиститьГрафикToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -178,11 +131,6 @@ namespace Converter
             // checkBox5.Enabled = false;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkedListBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -191,16 +139,6 @@ namespace Converter
                 checkedListBox1.SelectedIndex = checkedListBox1.IndexFromPoint(e.X, e.Y);
             }
         }
-
-        private void добатьбToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-        }
-
-
 
         private List<string> AllLEGENDS = new List<string>();
 
@@ -236,6 +174,12 @@ namespace Converter
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            button2.BackColor = Color.White;
+            button4.BackColor = Color.White;
+            button9.BackColor = Color.White;
+            button19.BackColor = Color.White;
+
+
             добавитьНаОсьXToolStripMenuItem.Enabled = false;
             добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem.Enabled = false;
             button6.Enabled = false;
@@ -298,14 +242,14 @@ namespace Converter
             chart1.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Times New Roman", 14, FontStyle.Regular);
             chart1.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Times New Roman", 14, FontStyle.Regular);
 
-            dataGridView2.Columns.Add("\u03B1(H) \u03B2/см", "\u03B1(H) \u03B2/см");
-            dataGridView2.Columns.Add("По пичкам \u03B2/см", "По пичкам \u03B2/см");
+            dataGridView2.Columns.Add("a(H), %/см", "a(H), %/см");
+     //       dataGridView2.Columns.Add("По пичкам \u03B2/см", "По пичкам \u03B2/см");
             dataGridView2.Columns.Add("TAU", "TAU");
             dataGridView2.Columns.Add("b", "b");
-            dataGridView2.Columns.Add("R0", "R0");
-            dataGridView2.Columns.Add("N", "N");
-            dataGridView2.Columns.Add("\u03B1(N) \u03B2/МВт", "\u03B1(N) \u03B2/МВт");
-            dataGridView2.Columns.Add("H12", "Н12");
+            dataGridView2.Columns.Add("R0, %", "R0, %");
+            dataGridView2.Columns.Add("N, МВт", "N, МВт");
+            dataGridView2.Columns.Add("a(N) %/МВт", "a(N) %/МВт");
+            dataGridView2.Columns.Add("H12, %", "Н12, %");
             dataGridView2.Columns.Add("ПЭ", "ПЭ");
 
             this.dataGridView1.VirtualMode = true;
@@ -768,7 +712,7 @@ namespace Converter
                         {
                             sum = sum +
                                   MyAllSensors[j].MyListRecordsForOneKKS[(int) chart1.ChartAreas[0].CursorX.Position - i
-                                      ].Value;
+                                  ].Value;
                         }
                         aver = sum/NumberPoints;
                         TERT.Add(aver);
@@ -789,9 +733,9 @@ namespace Converter
                 Clipboard.SetDataObject(dgv.GetClipboardContent());
                 Clipboard.GetData(DataFormats.Text);
                 IDataObject dt = Clipboard.GetDataObject();
-                if (dt.GetDataPresent(typeof (string)))
+                if (dt.GetDataPresent(typeof(string)))
                 {
-                    string tb = (string) (dt.GetData(typeof (string)));
+                    string tb = (string) (dt.GetData(typeof(string)));
                     Encoding encoding = Encoding.GetEncoding(1251);
                     byte[] dataStr = encoding.GetBytes(tb);
                     Clipboard.SetDataObject(encoding.GetString(dataStr));
@@ -1058,7 +1002,7 @@ namespace Converter
             }
             if (e.Button == MouseButtons.Left)
             {
-                if (e.Y < 450 && e.Y > 0 && e.X > 0 && e.X < 117)
+                if (e.Y < 450 && e.Y > 0 && e.X > 0 && e.X < 100)
                 {
                     if (Graph._numberseries > 0)
                     {
@@ -1489,12 +1433,12 @@ namespace Converter
                 {
                     N = MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value;
                 }
-               
-                    if (comboBox5.Text == MyAllSensors[i].KKS_Name)
-                    {
-                        H12 = MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value;
-                    }
-                
+
+                if (comboBox5.Text == MyAllSensors[i].KKS_Name)
+                {
+                    H12 = MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value;
+                }
+
             }
             //  MessageBox.Show(indexPositionCursorList.Count.ToString() + " " + indexPositionCursor);
 
@@ -1583,38 +1527,39 @@ namespace Converter
         // List<double> pdH = new List<double>();
         // List<double> myReactivity = new List<double>();
         // double step;
-      //////  if (comboBox2.Text == MyAllSensors[i].KKS_Name)
-             //////   {
-                 ////   for (int j = indexPositionCursorList[0];
-             //      j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 1;
-                //        j++)
-                   /// {
-                    /////    _jList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value/
-                    ////               MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value);
-                    /////    _tList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
-                  /////  }
+        //////  if (comboBox2.Text == MyAllSensors[i].KKS_Name)
+        //////   {
+        ////   for (int j = indexPositionCursorList[0];
+        //      j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 1;
+        //        j++)
+        /// {
+        /////    _jList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value/
+        ////               MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value);
+        /////    _tList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
+        /////  }
 
         double DroAver = 0;
+
         private double PoPichkam()
-                   {
-                   //    double r = 0;
-          //  List<double> n = new List<double>();
-           // double DroAver = 0;
+        {
+            //    double r = 0;
+            //  List<double> n = new List<double>();
+            // double DroAver = 0;
             for (int i = 0; i < MyAllSensors.Count; i++)
             {
                 if (comboBox1.Text == MyAllSensors[i].KKS_Name)
                 {
                     for (int j = 1;
-                   j < indexPositionCursorList.Count;
+                        j < indexPositionCursorList.Count;
                         j++)
                     {
-                        if (j % 2 != 0)
+                        if (j%2 != 0)
                         {
 
 
-                       //     MessageBox.Show(
-                          //  (MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j]].Value + " " +
-                          //   MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].Value).ToString());
+                            //     MessageBox.Show(
+                            //  (MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j]].Value + " " +
+                            //   MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].Value).ToString());
 
 
                             DroAver = DroAver +
@@ -1632,18 +1577,18 @@ namespace Converter
 
                         }
                     }
-                //    MessageBox.Show(DroAver.ToString());
+                    //    MessageBox.Show(DroAver.ToString());
 
-                  //  MessageBox.Show((indexPositionCursorList.Count/2).ToString());
-                    DroAver = DroAver / (indexPositionCursorList.Count/2);
-                 //   MessageBox.Show(DroAver.ToString());
+                    //  MessageBox.Show((indexPositionCursorList.Count/2).ToString());
+                    DroAver = DroAver/(indexPositionCursorList.Count/2);
+                    //   MessageBox.Show(DroAver.ToString());
 
                     DroAver = DroAver/-2;
-                 //   MessageBox.Show(DroAver.ToString());
+                    //   MessageBox.Show(DroAver.ToString());
 
                     //TODO: ПЕРЕВОД В ПРОЦЕНТЫ ЗАЧЕМ?
-                    DroAver = DroAver * MyConst._beff;
-                  //  MessageBox.Show(DroAver.ToString());
+                    DroAver = DroAver*MyConst._beff;
+                    //  MessageBox.Show(DroAver.ToString());
 
                     //double sum_dR = 0;
                     //double dRdH = 0;
@@ -1665,152 +1610,37 @@ namespace Converter
             }
             return DroAver;
         }
-        double DEL = 1;
+
         static pertubResult tempR;
-        int indexSS = 1000;
-        StreamWriter lll = new StreamWriter("D:\\все значения для всех тау.txt");
-        StreamWriter lllВ = new StreamWriter("D:\\конечное значение ss old ss new без break.txt");
-        StreamWriter lllC = new StreamWriter("D:\\конечное значение ss old ss new c break.txt");
-        List<double> SsOLD = new List<double>();
-        List<double> SsNEW = new List<double>();
-        List<double> TAUlist = new List<double>();
-        List<double> SsList = new List<double>();
-        List<double> AHList = new List<double>();
-      //  List<double> RmodelList = new List<double>();
+
         private void SearchDiffEffect()
         {
             tempR = new pertubResult();
-           // pertubResult tempR = new pertubResult();
             if (comboBox6.Text == "Подбор")
             {
                 double Ss = 1000;
-                //     pertubResult tempR = new pertubResult();
-                //   tempR = new pertubResult();
-                if (checkBox7.Checked == false)
+
+                for (int i = 0; i < 400; i++)
                 {
-                    for (int i = 0; i < 400; i++)
+                    tempR = Calc(3 + i/200.0, _tList, _jKorList, _rCalcList, _dHList);
+                    if (tempR.SS > Ss)
                     {
-                        tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList, flagW);
-                      //  lllC.WriteLine(tempR.SS + " " + Ss + " " + tempR.tau + " " + tempR.aH);
-                        if (tempR.SS > Ss)
-                        {
-                            flagW = true;
-                            tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rCalcList, _dHList, flagW);
-                            
-                            break;
-                        }
-                        Ss = tempR.SS;
+                        tempR = Calc(3 + (i - 1)/200.0, _tList, _jKorList, _rCalcList, _dHList);
+                        break;
                     }
-                  //  lllC.Close();
+                    Ss = tempR.SS;
                 }
-
-
-
-                if (checkBox7.Checked == true)
-                {
-                    SsList.Clear();
-                    SsNEW.Clear();
-                    TAUlist.Clear();
-                    SsOLD.Clear();
-                    AHList.Clear();
-
-                    for (int i = 0; i < 400; i++)
-                    {
-                        tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList, flagW);
-                        //  lllВ.WriteLine(tempR.SS + " " + Ss);
-                        SsOLD.Add(Ss);
-                        SsNEW.Add(tempR.SS);
-                        TAUlist.Add(tempR.tau);
-                        AHList.Add(tempR.aH);
-                        //    if (tempR.SS > Ss)
-                        // {
-                        //  MessageBox.Show(tempR.SS + " " + Ss);
-                        // tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rCalcList, _dHList);
-                        //TODO: 400 РАЗ ОБРАБАТЫВАЕТСЯ ОДНО И ТОЖЕ ВОЗМУЩЕНИЕ С РАЗНЫМ ПОДБОРОМ ТАУ. В МЕТОДЕ CALC ВСЕГДА НАБИРАЕТСЯ СУММА КВАДРАТОВ РАЗНОСТЕЙ РЕАКТВИНОСТЕЙ НАЗВАЕМОЙ НЕВЯЗКОЙ. 
-                        //TODO: TEMPR.SS В НЕМ ЖЕ ПРИРАВНИВАЕТСЯ ЭТОЙ СУММЕ. В ИТОГЕ ПО УСЛОВИЮ И ПО ЛОГИКЕ НЕВЯЗКА ИЛИ ЖЕ СВОЙСТВО TEMPR.SS СРАВНИВАЕТСЯ C ЕГО ЖЕ ПРЕДЫДУЩЕМ ЗНАЧЕНИЕМ
-                        //TODO: И КАК ТОЛЬКО ЭТО СВОЙСТВО СТАНОВИТСЯ БОЛЬШЕ ПРЕДЫДУЩЕГО ТО ПРОИСХОДИТ ОТКАТ К ПРЕДЫДУЩЕМУ ЗНАЧЕНИЮ ТАУ И АЛГОРИТМ ПРЕРЫВАЕТСЯ
-                        //TODO: ВОПРОС: МОЖЕТ ЛИ БЫТЬ ПОСЛЕ СРАБАТЫВАНИЯ ВЕЛИЧИНА НЕВЯЗКИ МЕНЬШЕ ТОГО ЧТО БЫЛО ЕСЛИ АЛГОРИТМ НЕ ПРЕРВЕТСЯ ВЕДЬ ИЗ ФАЙЛА ЗАПИСИ ВИДНО ЧТО НЕТ
-                        //    break;
-                        //  }
-                        //  lll.WriteLine(tempR.aH + " " + tempR.tau + " " + tempR.SS);
-                        Ss = tempR.SS;
-                    }
-
-                    for (int i = 0; i < SsOLD.Count; i++)
-                    {
-                      //  lll.WriteLine(SsNEW[i] + " " + SsOLD[i] + " " + TAUlist[i] + " " + AHList[i]);
-                    }
-
-                    for (int i = 0; i < SsOLD.Count; i++)
-                    {
-                        if ((SsNEW[i] - SsOLD[i]) > 0)
-                        {
-                            if (SsNEW[i] - SsOLD[i] < DEL)
-                            {
-                                DEL = SsNEW[i] - SsOLD[i];
-                                indexSS = i-1;
-                            }
-                        }
-                        SsList.Add(SsNEW[i] - SsOLD[i]);
-                    }
-
-                    tempR = Calc(TAUlist[indexSS], _tList, _jKorList, _rCalcList, _dHList, flagW);
-
-                  //  lllВ.WriteLine(SsNEW[indexSS] + " " + SsOLD[indexSS] + " " + TAUlist[indexSS]);
-                   // lll.Close();
-                   // lllВ.Close();
-                }
+                //TODO: 400 РАЗ ОБРАБАТЫВАЕТСЯ ОДНО И ТОЖЕ ВОЗМУЩЕНИЕ С РАЗНЫМ ПОДБОРОМ ТАУ. В МЕТОДЕ CALC ВСЕГДА НАБИРАЕТСЯ СУММА КВАДРАТОВ РАЗНОСТЕЙ РЕАКТВИНОСТЕЙ НАЗВАЕМОЙ НЕВЯЗКОЙ. 
+                //TODO: TEMPR.SS В НЕМ ЖЕ ПРИРАВНИВАЕТСЯ ЭТОЙ СУММЕ. В ИТОГЕ ПО УСЛОВИЮ И ПО ЛОГИКЕ НЕВЯЗКА ИЛИ ЖЕ СВОЙСТВО TEMPR.SS СРАВНИВАЕТСЯ C ЕГО ЖЕ ПРЕДЫДУЩЕМ ЗНАЧЕНИЕМ
+                //TODO: И КАК ТОЛЬКО ЭТО СВОЙСТВО СТАНОВИТСЯ БОЛЬШЕ ПРЕДЫДУЩЕГО ТО ПРОИСХОДИТ ОТКАТ К ПРЕДЫДУЩЕМУ ЗНАЧЕНИЮ ТАУ И АЛГОРИТМ ПРЕРЫВАЕТСЯ
+                //TODO: ВОПРОС: МОЖЕТ ЛИ БЫТЬ ПОСЛЕ СРАБАТЫВАНИЯ ВЕЛИЧИНА НЕВЯЗКИ МЕНЬШЕ ТОГО ЧТО БЫЛО ЕСЛИ АЛГОРИТМ НЕ ПРЕРВЕТСЯ ВЕДЬ ИЗ ФАЙЛА ЗАПИСИ ВИДНО ЧТО НЕТ
             }
-            if (comboBox6.Text == "3")
-            {
-              //  tempR = new pertubResult();
-                tempR = Calc(3, _tList, _jKorList, _rCalcList, _dHList, flagW);
-            }
-            if (comboBox6.Text == "4")
-            {
-              //  tempR = new pertubResult();
-                tempR = Calc(4, _tList, _jKorList, _rCalcList, _dHList, flagW);
-            }
-            if (comboBox6.Text == "5")
-            {
-              //  tempR = new pertubResult();
-                tempR = Calc(5, _tList, _jKorList, _rCalcList, _dHList, flagW);
-            }
-            tempR.Ro = tempR.Ro * MyConst._beff;
-            tempR.aH = tempR.aH * MyConst._beff;
+            tempR.Ro = tempR.Ro*MyConst._beff;
+            tempR.aH = tempR.aH*MyConst._beff;
             tempR.b = tempR.b*MyConst._beff;
-            tempR.SS = tempR.SS * MyConst._beff;
+            tempR.SS = tempR.SS*MyConst._beff;
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-
-            //   tempR.Ro = tempR.Ro * MyConst.Rect.Beff;
-            //   tempR.aH = tempR.aH * MyConst.Rect.Beff;
-            //    tempR.b = tempR.b * MyConst.Rect.Beff;
-            //  tempR.SS = tempR.SS * MyConst.Rect.Beff;
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click_2(object sender, EventArgs e)
         {
@@ -1900,6 +1730,7 @@ namespace Converter
             //  button9.BackColor = Color.Yellow;
             if (flag)
             {
+                button9.BackColor = Color.Red;
                 // button9.BackColor = Color.Yellow;
                 chart1.ChartAreas[0].CursorX.IsUserEnabled = true;
                 chart1.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
@@ -1934,6 +1765,7 @@ namespace Converter
             }
             else
             {
+                button9.BackColor = Color.White;
                 chart1.ChartAreas[0].CursorX.IsUserSelectionEnabled = false;
                 chart1.ChartAreas[0].CursorY.IsUserSelectionEnabled = false;
                 chart1.ChartAreas[0].CursorY.AutoScroll = false;
@@ -1950,32 +1782,21 @@ namespace Converter
             Graph.MinmaxListPrimary.Clear();
             Graph.MinmaxListSecondary.Clear();
 
-            //   NumberSeries = 0;
             Graph._numberseries = 0;
             chart1.Titles.Clear();
-            //     добавитьНаОсьXToolStripMenuItem.Enabled = false;
-
-            //   checkBox4.Enabled = true;
-            //  открытьToolStripMenuItem.Enabled = true;
-            // checkedListBox1.Items.Clear();
             checkedListBox1.Items.Clear();
-            //   MyAllSensors.Clear();
+
             MyAllSensors.Clear();
-            //  chart1.Legends.Clear();
-            //   checkedListBox1.Items.Clear();
-            //   chart1.Series.Clear();
+
             chart1.ChartAreas[0].Position.Auto = true;
             dataGridView4.Rows.Clear();
             dataGridView3.Rows.Clear();
-
 
             for (int i = 0; i < chart1.Series.Count; i++)
             {
                 chart1.Series[i].IsVisibleInLegend = false;
                 chart1.Series[i].Points.Clear();
             }
-
-
         }
 
         private void добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2027,15 +1848,15 @@ namespace Converter
         public static List<double> _rExpList = new List<double>();
         public static List<double> _rCalcList = new List<double>();
         public static List<double> _dHList = new List<double>();
-      //  public static List<double> _HList = new List<double>();
+        //  public static List<double> _HList = new List<double>();
         public static List<double> _tList = new List<double>();
 
         double PE;
 
         private double N;
         private double H12;
-     //   StreamWriter rrrr = new StreamWriter("D:\\t");
-        
+        //   StreamWriter rrrr = new StreamWriter("D:\\t");
+
         private void button8_Click_2(object sender, EventArgs e)
         {
 
@@ -2087,17 +1908,17 @@ namespace Converter
 
 
             int indexDDH = 0;
-           
+
             //TODO: ДОБАВЛЕНИЕ ЗНАЧЕНИЙ ТОКА И ВРЕМЕНИ ПО ОТМЕЧЕННЫМ ТОЧКАМ
             for (int i = 0; i < MyAllSensors.Count; i++)
             {
                 if (comboBox2.Text == MyAllSensors[i].KKS_Name)
                 {
-                    for (int j = indexPositionCursorList[0]-4000;
+                    for (int j = indexPositionCursorList[0] - 4000;
                         j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 201;
                         j++)
                     {
-                        double Inext = MyAllSensors[i].MyListRecordsForOneKKS[j].Value /
+                        double Inext = MyAllSensors[i].MyListRecordsForOneKKS[j].Value/
                                        MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value;
                         //   _jExpList.Add(Inext);
 
@@ -2123,7 +1944,7 @@ namespace Converter
 
                 if (comboBox1.Text == MyAllSensors[i].KKS_Name)
                 {
-                    for (int j = indexPositionCursorList[0]-4000;
+                    for (int j = indexPositionCursorList[0] - 4000;
                         j < indexPositionCursorList[indexPositionCursorList.Count - 1] + 201;
                         j++)
                     {
@@ -2147,25 +1968,25 @@ namespace Converter
             Current Y = new Current();
             Y.AddData(_jKorList, _rExpList, _tList, _rCalcList);
 
-      //  MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count +  " " + _dHList.Count + " " + _rCalcList.Count + " " + RmodelList.Count);
+            //  MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count +  " " + _dHList.Count + " " + _rCalcList.Count + " " + RmodelList.Count);
 
             int y = 0;
             for (int i = 0; i < 4000; i++)
             {
-               _dHList.RemoveAt(y);
-               _jKorList.RemoveAt(y);
-              _rCalcList.RemoveAt(y);
-               _tList.RemoveAt(y);
-               _rExpList.RemoveAt(y);
-               _jExpList.RemoveAt(y);
+                _dHList.RemoveAt(y);
+                _jKorList.RemoveAt(y);
+                _rCalcList.RemoveAt(y);
+                _tList.RemoveAt(y);
+                _rExpList.RemoveAt(y);
+                _jExpList.RemoveAt(y);
 
-          }
+            }
 
-         //   MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + _dHList.Count + " " + _rCalcList.Count);
+            //   MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + _dHList.Count + " " + _rCalcList.Count);
             //TODO: ЭТО УЖЕ РАСЧЕТ ДИФФ-ЭФФЕКТА В КОНЦЕ В САМОМ 
             //    pertubResult t = new pertubResult();
             SearchDiffEffect();
-          //  MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + _dHList.Count + " " + _rCalcList.Count + " " + _rmodelList.Count);
+            //  MessageBox.Show(_jExpList.Count.ToString() + " " + _jKorList.Count + " " + _tList.Count + " " + _rExpList.Count + " " + _dHList.Count + " " + _rCalcList.Count + " " + _rmodelList.Count);
 
 
             Series RCalc = new Series();
@@ -2178,14 +1999,14 @@ namespace Converter
                     _tList[i],
                     _rCalcList[i]);
             }
-        //    StreamWriter TTTTT = new StreamWriter("D:\\Для поправки");
+            //    StreamWriter TTTTT = new StreamWriter("D:\\Для поправки");
 
-           // for (int i = 0; i < _rCalcList.Count; i++)
-           // {
-          //      TTTTT.WriteLine(_rCalcList[i] + " " + _rExpList[i] + " " + (_rCalcList[i]-_rExpList[i]));
-          //  }
+            // for (int i = 0; i < _rCalcList.Count; i++)
+            // {
+            //      TTTTT.WriteLine(_rCalcList[i] + " " + _rExpList[i] + " " + (_rCalcList[i]-_rExpList[i]));
+            //  }
 
-          //  TTTTT.Close();
+            //  TTTTT.Close();
 
             RCalc.BorderWidth = 3;
             chart1.Series.Add(RCalc);
@@ -2205,23 +2026,23 @@ namespace Converter
 
             dH.YAxisType = AxisType.Secondary;
             dH.BorderWidth = 3;
-      //      dH.Color = Color.Black;
+            //      dH.Color = Color.Black;
             chart1.Series.Add(dH);
             Graph._numberseries++;
 
-
+            MessageBox.Show(_rmodelList.Count.ToString());
             Series Rmod = new Series();
             Rmod.Name = "Rmodel" + Graph._numberseries;
             Rmod.ChartType = SeriesChartType.Line;
             Rmod.Points.Clear();
-           for (int i = 1; i < _tList.Count; i++)
+            for (int i = 1; i < _tList.Count; i++)
             {
                 Rmod.Points.AddXY(
                     _tList[i],
                     _rmodelList[i - 1]);
             }
 
-          //  Rmod.YAxisType = AxisType.Secondary;
+            //  Rmod.YAxisType = AxisType.Secondary;
             Rmod.BorderWidth = 3;
             //      dH.Color = Color.Black;
             chart1.Series.Add(Rmod);
@@ -2243,12 +2064,12 @@ namespace Converter
 
             //   MessageBox.Show(tempR.FF.Count.ToString() + " " + _tList.Count.ToString());
             //    StreamWriter WriterAH = new StreamWriter();
-            dataGridView2.Rows.Add(tempR.aH, PoPichkam(), tempR.tau, tempR.b, tempR.Ro, N, tempR.b / N, H12, PE);
+            dataGridView2.Rows.Add(tempR.aH, tempR.tau, tempR.b, tempR.Ro, N, tempR.b/N, H12, PE);
 
             StreamWriter b = new StreamWriter("D:\\1.txt");
             for (int i = 0; i < _tList.Count; i++)
             {
-                b.WriteLine(_tList[i] + "\t" + _rCalcList[i] + "\t" + _jExpList[i] * _jRealList[0]);
+                b.WriteLine(_tList[i] + "\t" + _rCalcList[i] + "\t" + _jExpList[i]*_jRealList[0]);
             }
             b.Close();
 
@@ -2331,9 +2152,9 @@ namespace Converter
                 if (checkBox6.Checked == false)
                 {
                     MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim())/
-                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim())) *
+                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim()))*
                                 (double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim())/
-                                 double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim())) *
+                                 double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim()))*
                                 (1 +
                                  0.01*
                                  (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
@@ -2341,7 +2162,7 @@ namespace Converter
                 }
                 if (checkBox6.Checked == true)
                 {
-                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim()) /
+                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim())/
                                  double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim()))*
                                 ((double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim())*32)/
                                  (double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim())*32))*
@@ -2408,19 +2229,19 @@ namespace Converter
 
         private void button12_Click(object sender, EventArgs e)
         {
-          //  List<double> MyRlist = new List<double>();
+            //  List<double> MyRlist = new List<double>();
             _PEList.Clear();
-           // MyRlist.Clear();
+            // MyRlist.Clear();
             for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
             {
-              //  MessageBox.Show(dataGridView3.Rows[i].Cells[2].Value.ToString());
-                  if (checkBox5.Checked == false)
-                 {
-                     _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
-                                     double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
-                                    ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())) -
-                                     (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))));
-                 }
+                //  MessageBox.Show(dataGridView3.Rows[i].Cells[2].Value.ToString());
+                if (checkBox5.Checked == false)
+                {
+                    _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
+                                 double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
+                                ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())) -
+                                 (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))));
+                }
                 if (checkBox5.Checked == true)
                 {
                     if (i > 0)
@@ -2429,7 +2250,7 @@ namespace Converter
                         _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
                                      double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
                                     ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())*3.75) -
-                                     (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim())) * 3.75));
+                                     (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))*3.75));
                     }
                 }
             }
@@ -2635,14 +2456,13 @@ namespace Converter
             public double SS;
         }
 
-        static List<double> _rmodelList  = new List<double>();
-        private static bool flagW = false;
-      //  private static double Rm;
-        public static pertubResult Calc(double Tt, List<double> time, List<double> I, List<double> R, List<double> dH, bool flag)
+        static List<double> _rmodelList = new List<double>();
+        //  private static double Rm;
+        public static pertubResult Calc(double Tt, List<double> time, List<double> I, List<double> R, List<double> dH)
         {
-            
-            _rmodelList.Clear();
-     //       RmodelList.Add();
+
+
+            //       RmodelList.Add();
             pertubResult myresult = new pertubResult();
             myresult.FF = new List<double>();
             //тут основной код для вычислений
@@ -2710,7 +2530,7 @@ namespace Converter
 
 
             myresult.aH = (SC*SD - SB*SE)/(SA*SD - SB*SB);
-           // MessageBox.Show(myresult.aH.ToString());
+            // MessageBox.Show(myresult.aH.ToString());
             myresult.b = (SA*SE - SB*SC)/(SA*SD - SB*SB);
 
             myresult.Ro = sR/cnt - myresult.aH*sH/cnt - myresult.b*sF/cnt;
@@ -2723,6 +2543,7 @@ namespace Converter
             cnt = 0;
             sS = 0;
 
+            _rmodelList.Clear();
             for (int i = 1; i < time.Count; i++)
             {
                 dT = time[i] - time[i - 1];
@@ -2734,44 +2555,71 @@ namespace Converter
                 g = Math.Exp(-dT/Tt);
                 c = (1 - g)*Tt/dT;
                 F = F*g + (I[i] - 1)*(1 - c) + (I[i - 1] - 1)*(c - g);
-              
+
                 Rm = myresult.Ro + myresult.aH*dH[i] + myresult.b*F;
-                if (flagW == true)
-                {
-                    _rmodelList.Add(Rm);
-                }
-           
+
+                _rmodelList.Add(Rm);
+
                 sS += (R[i] - Rm)*(R[i] - Rm);
 
                 cnt++;
             } //i
             myresult.SS = sS;
+
+
             return myresult;
         }
+
         //   tempR = new pertubResult();
-           //     for (int i = 0; i < 400; i++)
-            //    {
-               //     tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList);
-                //    if (tempR.SS > Ss)
-                //    {
-                //        MessageBox.Show(tempR.SS + " " + Ss);
-                 //       tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rCalcList, _dHList);
-                 //       break;
-                //    }
-                //    lll.WriteLine(tempR.aH + " " + tempR.tau + " " + tempR.SS);
-                 //   Ss = tempR.SS;
-              //  }
+        //     for (int i = 0; i < 400; i++)
+        //    {
+        //     tempR = Calc(3 + i / 200.0, _tList, _jKorList, _rCalcList, _dHList);
+        //    if (tempR.SS > Ss)
+        //    {
+        //        MessageBox.Show(tempR.SS + " " + Ss);
+        //       tempR = Calc(3 + (i - 1) / 200.0, _tList, _jKorList, _rCalcList, _dHList);
+        //       break;
+        //    }
+        //    lll.WriteLine(tempR.aH + " " + tempR.tau + " " + tempR.SS);
+        //   Ss = tempR.SS;
+        //  }
         private void button14_Click(object sender, EventArgs e)
         {
+
             if (saveFileDialog4.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter MyRecord = new StreamWriter(saveFileDialog4.FileName + ".csv", false, Encoding.Default);
+                StreamWriter MyRecord = new StreamWriter(saveFileDialog4.FileName + ".csv", false,
+                    Encoding.Default);
                 saveFileDialog4.Filter = "out data (*.csv)|*.csv|All files (*.*)|*.*";
                 saveFileDialog4.DefaultExt = "csv";
-            //    for (int i = 0; i < UPPER; i++)
-            //    {
-                    
-               // }
+
+                foreach (DataGridViewColumn column in dataGridView2.Columns)
+                {
+                    MyRecord.Write(column.HeaderText + ";");
+                }
+
+                MyRecord.WriteLine();
+
+                try
+                {
+                    foreach (DataGridViewRow row in dataGridView2.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            //Add the Data rows.
+                            MyRecord.Write(cell.Value + ";");
+                        }
+                        MyRecord.WriteLine();
+                        //Add new line.
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                //Exporting to CSV.
+
+                MyRecord.Close();
             }
         }
 
@@ -2906,8 +2754,18 @@ namespace Converter
             eeee.Close();
         }
 
-
-
+        private void button19_Click(object sender, EventArgs e)
+        {
+            Graph.MinmaxListPrimary.Clear();
+            Graph.MinmaxListSecondary.Clear();
+            Graph._numberseries = 0;
+            chart1.ChartAreas[0].Position.Auto = true;
+            for (int i = 0; i < chart1.Series.Count; i++)
+            {
+                chart1.Series[i].IsVisibleInLegend = false;
+                chart1.Series[i].Points.Clear();
+            }
+        }
     }
 }
     
