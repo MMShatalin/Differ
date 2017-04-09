@@ -174,6 +174,12 @@ namespace Converter
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            comboBox2.Text = "Выберите параметр тока, А";
+            comboBox1.Text = "Выберите параметр реактивности, bэфф";
+            comboBox3.Text = "Выберите параметр мощности, %";
+            comboBox5.Text = "Выберите параметр положения группы, см";
+            comboBox4.Text = "Выберите параметр температуры, \u2103";
+
             button2.BackColor = Color.White;
             button4.BackColor = Color.White;
             button9.BackColor = Color.White;
@@ -183,14 +189,9 @@ namespace Converter
             добавитьНаОсьXToolStripMenuItem.Enabled = false;
             добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem.Enabled = false;
             button6.Enabled = false;
-            textBox15.Text = 0.ToString();
+            comboBox6.Text = 0.ToString();
 
-            comboBox6.Items.Add("Подбор");
-            comboBox6.Items.Add("3");
-            comboBox6.Items.Add("4");
-            comboBox6.Items.Add("5");
-
-            comboBox6.Text = comboBox6.Items[0].ToString();
+       
 
             dataGridView5.Columns.Add("Время", "Время");
             dataGridView5.Columns.Add("Jотн", "Jотн");
@@ -272,8 +273,8 @@ namespace Converter
             dataGridView1.Columns[0].Width = 200;
             dataGridView1.Columns[1].Width = 200;
 
-            label24.Text = "T, \u2103";
-            label1.Text = "\u03C1, %";
+         // label24.Text = "T, \u2103";
+         // label1.Text = "\u03C1, %";
         }
 
         private void dataGridView1_CellValueNeeded(object sender,
@@ -1616,8 +1617,7 @@ namespace Converter
         private void SearchDiffEffect()
         {
             tempR = new pertubResult();
-            if (comboBox6.Text == "Подбор")
-            {
+           
                 double Ss = 1000;
 
                 for (int i = 0; i < 400; i++)
@@ -1634,7 +1634,7 @@ namespace Converter
                 //TODO: TEMPR.SS В НЕМ ЖЕ ПРИРАВНИВАЕТСЯ ЭТОЙ СУММЕ. В ИТОГЕ ПО УСЛОВИЮ И ПО ЛОГИКЕ НЕВЯЗКА ИЛИ ЖЕ СВОЙСТВО TEMPR.SS СРАВНИВАЕТСЯ C ЕГО ЖЕ ПРЕДЫДУЩЕМ ЗНАЧЕНИЕМ
                 //TODO: И КАК ТОЛЬКО ЭТО СВОЙСТВО СТАНОВИТСЯ БОЛЬШЕ ПРЕДЫДУЩЕГО ТО ПРОИСХОДИТ ОТКАТ К ПРЕДЫДУЩЕМУ ЗНАЧЕНИЮ ТАУ И АЛГОРИТМ ПРЕРЫВАЕТСЯ
                 //TODO: ВОПРОС: МОЖЕТ ЛИ БЫТЬ ПОСЛЕ СРАБАТЫВАНИЯ ВЕЛИЧИНА НЕВЯЗКИ МЕНЬШЕ ТОГО ЧТО БЫЛО ЕСЛИ АЛГОРИТМ НЕ ПРЕРВЕТСЯ ВЕДЬ ИЗ ФАЙЛА ЗАПИСИ ВИДНО ЧТО НЕТ
-            }
+
             tempR.Ro = tempR.Ro*MyConst._beff;
             tempR.aH = tempR.aH*MyConst._beff;
             tempR.b = tempR.b*MyConst._beff;
@@ -1864,7 +1864,7 @@ namespace Converter
             // MessageBox.Show(_PEList[indexPE].ToString());
             // indexPE++;
             //  MessageBox.Show(_PEList[indexPE].ToString());
-
+            PE = double.Parse(comboBox6.Text);
             //TODO: РАСЧЕТ DDH
             double ddH = 0;
             _dHList.Add(ddH);
@@ -2057,7 +2057,7 @@ namespace Converter
             {
                 dataGridView5.Rows.Add(_tList[i], _jExpList[i], _jKorList[i], _rExpList[i], _rCalcList[i], _dHList[i],
                     tempR.FF[i]);
-                dataGridView5.Rows[i].DefaultCellStyle.BackColor = Color.BurlyWood;
+                dataGridView5.Rows[i].DefaultCellStyle.BackColor = Color.NavajoWhite;
             }
 
 
@@ -2649,19 +2649,7 @@ namespace Converter
     
         }
 
-        private void textBox15_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PE = double.Parse(textBox15.Text);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Не число! Разделитель?");
-            }
-         
-        }
+     
 
         private void button16_Click(object sender, EventArgs e)
         {
@@ -2677,83 +2665,7 @@ namespace Converter
             comboBox4.Text = "Tcold";
         }
 
-        private void button17_Click(object sender, EventArgs e)
-        {
-            for (int j = 0; j < MyAllSensors[0].MyListRecordsForOneKKS.Count; j++)
-            {
-                _dHList.Add(0.001);
-            }
-
-
-            List<double> Iall = new List<double>();
-            List<double> Tall = new List<double>();
-            Current r = new Current();
-
-            int indexDDH = 0;
-            for (int i = 0; i < MyAllSensors.Count; i++)
-            {
-                if (comboBox2.Text == MyAllSensors[i].KKS_Name)
-                {
-                   for (int j = 0; j < MyAllSensors[i].MyListRecordsForOneKKS.Count; j++)
-                    {
-
-                     //   Iall.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value/MyAllSensors[i].MyListRecordsForOneKKS[0].Value);
-                     //   Tall.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
-
-                        double Inext = MyAllSensors[i].MyListRecordsForOneKKS[j].Value /
-                                       MyAllSensors[i].MyListRecordsForOneKKS[0].Value;
-                   
-                        if (_jExpList.Count > 0 && indexDDH > 0)
-                        {
-                            _jKorList.Add(Inext - (PE * (_dHList[indexDDH])));
-                        }
-                        if (_jExpList.Count == 0)
-                        {
-                            _jKorList.Add(Inext);
-                        }
-
-                        _jExpList.Add(Inext);
-                        _jRealList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].Value);
-
-                        _tList.Add(MyAllSensors[i].MyListRecordsForOneKKS[j].ValueTimeForDAT);
-                        indexDDH++;
-                    }
-
-                }
-            }
-           
-            r.AddData(_jKorList, _rExpList, _tList, _rCalcList);
-
-            Series rCalcAll = new Series();
-            rCalcAll.Name = "RcorrALL" + Graph._numberseries;
-            rCalcAll.ChartType = SeriesChartType.Line;
-            rCalcAll.Points.Clear();
-            for (int i = 0; i < _jKorList.Count; i++)
-            {
-                rCalcAll.Points.AddXY(
-                    _tList[i],
-                    _rCalcList[i]);
-            }
-            rCalcAll.BorderWidth = 1;
-            rCalcAll.Color = Color.Black;
-            chart1.Series.Add(rCalcAll);
-            Graph._numberseries++;
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            StreamWriter eeee = new StreamWriter("D:\\МОДЕЛЬ.txt");
-            for (int i = 0; i < _timeList.Count; i++)
-            {
-                eeee.Write(_timeList[i] + " " + _jKorList[i] + " " + _rCalcList[i] + " ");
-                if (i > 0)
-                {
-                    eeee.Write(_timeList[i]-_timeList[i-1]);
-                }
-            }
-            eeee.Close();
-        }
-
+  
         private void button19_Click(object sender, EventArgs e)
         {
             Graph.MinmaxListPrimary.Clear();
@@ -2766,6 +2678,42 @@ namespace Converter
                 chart1.Series[i].Points.Clear();
             }
         }
+
+        private void comboBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ',')
+                if (comboBox6.Text.Contains(',') ||
+                    comboBox6.Text == String.Empty)
+                {
+                    e.Handled = true;
+                    return;
+                }
+                else
+                {
+                    e.Handled = false;
+                    return;
+                }
+
+            if (e.KeyChar == '-')
+                if (comboBox6.Text.Contains('-') ||
+                    comboBox6.Text == String.Empty)
+                {
+                    e.Handled = true;
+                    return;
+                }
+                else
+                {
+                    e.Handled = false;
+                    return;
+                }
+
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
+
+     
     }
 }
     
