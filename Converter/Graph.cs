@@ -50,7 +50,7 @@ namespace Converter
             }
 
 
-            chart.Series[_numberseries].BorderWidth = 3;
+            chart.Series[_numberseries].BorderWidth = 2;
             if (flagAxis == true)
             {
                 chart.Series[_numberseries].YAxisType = AxisType.Primary;

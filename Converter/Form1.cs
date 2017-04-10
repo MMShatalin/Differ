@@ -96,7 +96,7 @@ namespace Converter
         private void очиститьГрафикToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Form2 main = this.Owner as Form2;
-            checkedListBox1.Items.Clear();
+            listBox1.Items.Clear();
             MyAllSensors.Clear();
             AllLEGENDS.Clear();
 
@@ -110,10 +110,7 @@ namespace Converter
             }
 
             //убирает все галочки с чеклистбоксов
-            for (int i = 0; i < checkedListBox1.Items.Count; i++)
-            {
-                checkedListBox1.SetItemChecked(i, false);
-            }
+
             chart1.Titles.Clear();
 
             for (int i = 1; i < chart1.Series.Count - 2; i++)
@@ -135,8 +132,8 @@ namespace Converter
         {
             if (e.Button == MouseButtons.Right)
             {
-                checkedListBox1.ContextMenuStrip = contextMenuStrip1;
-                checkedListBox1.SelectedIndex = checkedListBox1.IndexFromPoint(e.X, e.Y);
+                listBox1.ContextMenuStrip = contextMenuStrip1;
+                listBox1.SelectedIndex = listBox1.IndexFromPoint(e.X, e.Y);
             }
         }
 
@@ -153,7 +150,7 @@ namespace Converter
         private void добавитьНаОсьXToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flagAxis = true;
-            Graph.CreateLine(MyAllSensors, checkedListBox1.Text, chart1, flagAxis);
+            Graph.CreateLine(MyAllSensors, listBox1.Text, chart1, flagAxis);
             Min = chart1.ChartAreas[0].AxisY.Minimum;
             Max = chart1.ChartAreas[0].AxisY.Maximum;
 
@@ -165,6 +162,8 @@ namespace Converter
                 _timeList.Add(MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
                 _indexList.Add(i);
             }
+            button1.Enabled = true;
+            button5.Enabled = true;
         }
 
         private double prosent;
@@ -174,6 +173,9 @@ namespace Converter
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            button1.Enabled = false;
+            button5.Enabled = false;
+            button10.Enabled = false;
             comboBox2.Text = "Выберите параметр тока, А";
             comboBox1.Text = "Выберите параметр реактивности, bэфф";
             comboBox3.Text = "Выберите параметр мощности, %";
@@ -191,7 +193,7 @@ namespace Converter
             button6.Enabled = false;
             comboBox6.Text = 0.ToString();
 
-       
+
 
             dataGridView5.Columns.Add("Время", "Время");
             dataGridView5.Columns.Add("Jотн", "Jотн");
@@ -244,7 +246,7 @@ namespace Converter
             chart1.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Times New Roman", 14, FontStyle.Regular);
 
             dataGridView2.Columns.Add("a(H), %/см", "a(H), %/см");
-     //       dataGridView2.Columns.Add("По пичкам \u03B2/см", "По пичкам \u03B2/см");
+            //       dataGridView2.Columns.Add("По пичкам \u03B2/см", "По пичкам \u03B2/см");
             dataGridView2.Columns.Add("TAU", "TAU");
             dataGridView2.Columns.Add("b", "b");
             dataGridView2.Columns.Add("R0, %", "R0, %");
@@ -273,8 +275,8 @@ namespace Converter
             dataGridView1.Columns[0].Width = 200;
             dataGridView1.Columns[1].Width = 200;
 
-         // label24.Text = "T, \u2103";
-         // label1.Text = "\u03C1, %";
+            // label24.Text = "T, \u2103";
+            // label1.Text = "\u03C1, %";
         }
 
         private void dataGridView1_CellValueNeeded(object sender,
@@ -488,52 +490,7 @@ namespace Converter
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                dataGridView1.Visible = false;
-                //   Sencors myOneKKS = new Sencors();
-                Sensors myOneKKS = new Sensors();
-                //e.Node.Parent.Index
-                //  List<double> MyParametr = new List<double>();
-                //    MessageBox.Show(MyListSensors.Count.ToString());
-                //    MessageBox.Show(MyListSensors[0].Count.ToString() + " " + MyListSensors[1].Count.ToString());
-                MyListOfSensors N = new MyListOfSensors();
-                myOneKKS = N.getOneKKSByIndex(checkedListBox1.SelectedIndex, MyAllSensors);
 
-                //     List<double> MyParametr = new List<double>();
-
-
-
-                //     myOneKKS = MyListSensors[1].getOneKKSByIndex(treeView1.SelectedNode.Index);
-
-                //  myOneKKS = MyAllSensors.getOneKKSByIndex(treeView1.SelectedNode.Index);
-                //         MessageBox.Show(myOneKKS.KKS_Name);
-                this.dataGridView1.CellValueNeeded += new
-                    DataGridViewCellValueEventHandler(dataGridView1_CellValueNeeded);
-
-                dataGridView1.Rows.Clear();
-                customers.Clear();
-
-                for (int i = 0; i < myOneKKS.MyListRecordsForOneKKS.Count; i++)
-                {
-                    this.customers.Add(
-                        new MyVirtualClass(myOneKKS.MyListRecordsForOneKKS[i].DateTime.ToString("HH:mm:ss.fff"),
-                            myOneKKS.MyListRecordsForOneKKS[i].Value.ToString()));
-
-                }
-                if (this.dataGridView1.RowCount == 0)
-                {
-                    this.dataGridView1.RowCount = 1;
-                    //  .ToString("dd.MM.yy HH:mm:ss.fff")
-                }
-
-                this.dataGridView1.RowCount = myOneKKS.MyListRecordsForOneKKS.Count;
-                dataGridView1.Visible = true;
-            }
-            catch
-            {
-                //  MessageBox.Show(ex0.Message);
-            }
         }
 
         private void chart1_MouseDown(object sender, MouseEventArgs e)
@@ -799,7 +756,7 @@ namespace Converter
             int indexGrafic;
             for (int j = 0; j < AllLEGENDS.Count; j++)
             {
-                if ((string) checkedListBox1.Text.Split('\t')[0] == AllLEGENDS[j])
+                if ((string) listBox1.Text.Split('\t')[0] == AllLEGENDS[j])
                 {
                     indexGrafic = j;
                     chart1.Series[indexGrafic].Points.Clear();
@@ -904,27 +861,35 @@ namespace Converter
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button7.Enabled = true;
-            button6.Enabled = true;
-            indexPositionCursor--;
-            chart1.ChartAreas[0].CursorX.Position =
-                MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT;
-            textBox3.Text = MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].DateTime.ToString();
-            textBox4.Text = chart1.ChartAreas[0].CursorX.Position.ToString();
-            for (int j = 0; j < MyAllSensors.Count; j++)
+            try
             {
-                if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+                button7.Enabled = true;
+                button6.Enabled = true;
+                button10.Enabled = true;
+                indexPositionCursor--;
+                chart1.ChartAreas[0].CursorX.Position =
+                    MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT;
+                textBox3.Text = MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].DateTime.ToString();
+                textBox4.Text = chart1.ChartAreas[0].CursorX.Position.ToString();
+                for (int j = 0; j < MyAllSensors.Count; j++)
                 {
-                    chart1.Series[19].ChartType = SeriesChartType.Point;
-                    chart1.Series[19].Color = Color.Black;
-                    chart1.Series[19].Points.Clear();
-                    DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position,
-                        MyAllSensors[j].MyListRecordsForOneKKS[indexPositionCursor].Value);
-                    dp.MarkerStyle = MarkerStyle.Cross;
-                    dp.MarkerSize = 10;
-                    dp.IsValueShownAsLabel = true;
-                    chart1.Series[19].Points.Add(dp);
+                    if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+                    {
+                        chart1.Series[19].ChartType = SeriesChartType.Point;
+                        chart1.Series[19].Color = Color.Black;
+                        chart1.Series[19].Points.Clear();
+                        DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position,
+                            MyAllSensors[j].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                        dp.MarkerStyle = MarkerStyle.Cross;
+                        dp.MarkerSize = 10;
+                        dp.IsValueShownAsLabel = true;
+                        chart1.Series[19].Points.Add(dp);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                
             }
 
         }
@@ -940,27 +905,37 @@ namespace Converter
         //   myOneVozmuchenie.N_Per=0;
         private void button5_Click(object sender, EventArgs e)
         {
-            button6.Enabled = true;
-            button7.Enabled = true;
-            indexPositionCursor++;
-            chart1.ChartAreas[0].CursorX.Position =
-                MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT;
-            textBox3.Text = MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].DateTime.ToString();
-            textBox4.Text = chart1.ChartAreas[0].CursorX.Position.ToString();
-            for (int j = 0; j < MyAllSensors.Count; j++)
+            try
             {
-                if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+
+
+                button10.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+                indexPositionCursor++;
+                chart1.ChartAreas[0].CursorX.Position =
+                    MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT;
+                textBox3.Text = MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].DateTime.ToString();
+                textBox4.Text = chart1.ChartAreas[0].CursorX.Position.ToString();
+                for (int j = 0; j < MyAllSensors.Count; j++)
                 {
-                    chart1.Series[19].ChartType = SeriesChartType.Point;
-                    chart1.Series[19].Color = Color.Black;
-                    chart1.Series[19].Points.Clear();
-                    DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position,
-                        MyAllSensors[j].MyListRecordsForOneKKS[indexPositionCursor].Value);
-                    dp.MarkerStyle = MarkerStyle.Cross;
-                    dp.MarkerSize = 10;
-                    dp.IsValueShownAsLabel = true;
-                    chart1.Series[19].Points.Add(dp);
+                    if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+                    {
+                        chart1.Series[19].ChartType = SeriesChartType.Point;
+                        chart1.Series[19].Color = Color.Black;
+                        chart1.Series[19].Points.Clear();
+                        DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position,
+                            MyAllSensors[j].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                        dp.MarkerStyle = MarkerStyle.Cross;
+                        dp.MarkerSize = 10;
+                        dp.IsValueShownAsLabel = true;
+                        chart1.Series[19].Points.Add(dp);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                
             }
         }
 
@@ -994,70 +969,78 @@ namespace Converter
 
         private void chart1_MouseDown_1(object sender, MouseEventArgs e)
         {
-            button6.Enabled = false;
-            button7.Enabled = false;
-            if (e.Button == MouseButtons.Right)
+            try
             {
-                button6.Enabled = true;
-                chart1.ContextMenuStrip = contextMenuStrip2;
+
+                button6.Enabled = false;
+                button7.Enabled = false;
+                if (e.Button == MouseButtons.Right)
+                {
+                    button6.Enabled = true;
+                    chart1.ContextMenuStrip = contextMenuStrip2;
+                }
+                if (e.Button == MouseButtons.Left)
+                {
+                    if (e.Y < 450 && e.Y > 0 && e.X > 0 && e.X < 100)
+                    {
+                        if (Graph._numberseries > 0)
+                        {
+                            MinMaxX ChangeParametrImage = new MinMaxX();
+                            ChangeParametrImage.Owner = this;
+                            // ChangeParametrImage.textBox1.Text = chart1.ChartAreas[0].AxisY.Maximum.ToString();
+                            // ChangeParametrImage.textBox2.Text = chart1.ChartAreas[0].AxisY.Minimum.ToString();
+                            ChangeParametrImage.Show();
+                            ChangeParametrImage.Location = e.Location;
+
+                            ChangeParametrImage.textBox1.Text = chart1.ChartAreas[0].AxisY.Maximum.ToString();
+                            ChangeParametrImage.textBox2.Text = chart1.ChartAreas[0].AxisY.Minimum.ToString();
+                        }
+                    }
+                    //  MessageBox.Show(indexPoint.ToString());
+
+
+                    //for (int j = 0; j < MyAllSensors.Count; j++)
+                    //  {
+                    //  if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+                    // {
+                    //    chart1.Series[19].ChartType = SeriesChartType.Point;
+                    //     chart1.Series[19].Color = Color.Black;
+                    //    chart1.Series[19].Points.Clear();
+                    //    position = (int)chart1.ChartAreas[0].CursorX.Position;
+
+                    //    //MessageBox.Show(((int)chart1.ChartAreas[0].CursorX.Position).ToString());
+                    //    textBox3.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].ValueTimeForDAT.ToString();
+                    ////     textBox4.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].DateTime.ToString("HH:mm:ss");
+                    //   DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position, MyAllSensors[j].MyListRecordsForOneKKS[position].Value);
+                    //   dp.MarkerStyle = MarkerStyle.Cross;
+                    //  dp.MarkerSize = 10;
+                    //  dp.IsValueShownAsLabel = true;
+                    //  chart1.Series[19].Points.Add(dp);
+                    //}
+                    // }
+                    //  chart1.ChartAreas[0].CursorX.Position++;
+                    try
+                    {
+                        position = chart1.ChartAreas[0].CursorX.Position;
+                        //   MessageBox.Show(position.ToString());
+                        List<double> dTDoubles = new List<double>();
+                        dTDoubles.Clear();
+                        for (int i = 0; i < _timeList.Count; i++)
+                        {
+                            dTDoubles.Add(Math.Abs(_timeList[i] - position));
+                        }
+                        indexPositionCursor = dTDoubles.IndexOf(dTDoubles.Min());
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
             }
-            if (e.Button == MouseButtons.Left)
+            catch (Exception ex)
             {
-                if (e.Y < 450 && e.Y > 0 && e.X > 0 && e.X < 100)
-                {
-                    if (Graph._numberseries > 0)
-                    {
-                        MinMaxX ChangeParametrImage = new MinMaxX();
-                        ChangeParametrImage.Owner = this;
-                        // ChangeParametrImage.textBox1.Text = chart1.ChartAreas[0].AxisY.Maximum.ToString();
-                        // ChangeParametrImage.textBox2.Text = chart1.ChartAreas[0].AxisY.Minimum.ToString();
-                        ChangeParametrImage.Show();
-                        ChangeParametrImage.Location = e.Location;
-
-                        ChangeParametrImage.textBox1.Text = chart1.ChartAreas[0].AxisY.Maximum.ToString();
-                        ChangeParametrImage.textBox2.Text = chart1.ChartAreas[0].AxisY.Minimum.ToString();
-                    }
-                }
-                //  MessageBox.Show(indexPoint.ToString());
-
-
-                //for (int j = 0; j < MyAllSensors.Count; j++)
-                //  {
-                //  if (comboBox1.Text == MyAllSensors[j].KKS_Name)
-                // {
-                //    chart1.Series[19].ChartType = SeriesChartType.Point;
-                //     chart1.Series[19].Color = Color.Black;
-                //    chart1.Series[19].Points.Clear();
-                //    position = (int)chart1.ChartAreas[0].CursorX.Position;
-
-                //    //MessageBox.Show(((int)chart1.ChartAreas[0].CursorX.Position).ToString());
-                //    textBox3.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].ValueTimeForDAT.ToString();
-                ////     textBox4.Text = MyAllSensors[j].MyListRecordsForOneKKS[position].DateTime.ToString("HH:mm:ss");
-                //   DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position, MyAllSensors[j].MyListRecordsForOneKKS[position].Value);
-                //   dp.MarkerStyle = MarkerStyle.Cross;
-                //  dp.MarkerSize = 10;
-                //  dp.IsValueShownAsLabel = true;
-                //  chart1.Series[19].Points.Add(dp);
-                //}
-                // }
-                //  chart1.ChartAreas[0].CursorX.Position++;
-                try
-                {
-                    position = chart1.ChartAreas[0].CursorX.Position;
-                    //   MessageBox.Show(position.ToString());
-                    List<double> dTDoubles = new List<double>();
-                    dTDoubles.Clear();
-                    for (int i = 0; i < _timeList.Count; i++)
-                    {
-                        dTDoubles.Add(Math.Abs(_timeList[i] - position));
-                    }
-                    indexPositionCursor = dTDoubles.IndexOf(dTDoubles.Min());
-                }
-                catch
-                {
-
-                }
-
+                
             }
 
         }
@@ -1655,6 +1638,8 @@ namespace Converter
             if (MyAllSensors.Count > 0)
             {
                 добавитьНаОсьXToolStripMenuItem.Enabled = true;
+         
+               
             }
             dataGridView4.Columns.Clear();
             dataGridView4.Columns.Add("Время", "Время");
@@ -1706,7 +1691,7 @@ namespace Converter
 
             dataGridView4.Columns[indexData4].Width = 100;
 
-            checkedListBox1.Items.Clear();
+            listBox1.Items.Clear();
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             comboBox3.Items.Clear();
@@ -1714,7 +1699,7 @@ namespace Converter
             comboBox5.Items.Clear();
             foreach (Sensors item in MyAllSensors)
             {
-                checkedListBox1.Items.Add(item.KKS_Name);
+                listBox1.Items.Add(item.KKS_Name);
                 comboBox1.Items.Add(item.KKS_Name);
                 comboBox2.Items.Add(item.KKS_Name);
                 comboBox3.Items.Add(item.KKS_Name);
@@ -1778,13 +1763,15 @@ namespace Converter
         {
             добавитьНаОсьXToolStripMenuItem.Enabled = false;
             добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem.Enabled = false;
-
+            button1.Enabled = false;
+            button5.Enabled = false;
+            button10.Enabled = false;
             Graph.MinmaxListPrimary.Clear();
             Graph.MinmaxListSecondary.Clear();
 
             Graph._numberseries = 0;
             chart1.Titles.Clear();
-            checkedListBox1.Items.Clear();
+            listBox1.Items.Clear();
 
             MyAllSensors.Clear();
 
@@ -1802,7 +1789,7 @@ namespace Converter
         private void добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flagAxis = false;
-            Graph.CreateLine(MyAllSensors, checkedListBox1.Text, chart1, flagAxis);
+            Graph.CreateLine(MyAllSensors, listBox1.Text, chart1, flagAxis);
             button6.Enabled = true;
         }
 
@@ -2090,6 +2077,7 @@ namespace Converter
 
         private void button10_Click(object sender, EventArgs e)
         {
+
             //MessageBox.Show(_indexRow.ToString());
             List<double> myValue = new List<double>();
             myValue.Clear();
@@ -2145,37 +2133,7 @@ namespace Converter
 
         private void button11_Click(object sender, EventArgs e)
         {
-            List<double> MyIlist = new List<double>();
-            MyIlist.Clear();
-            for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
-            {
-                if (checkBox6.Checked == false)
-                {
-                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim())/
-                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim()))*
-                                (double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim())/
-                                 double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim()))*
-                                (1 +
-                                 0.01*
-                                 (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
-                                  double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
-                }
-                if (checkBox6.Checked == true)
-                {
-                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim())/
-                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim()))*
-                                ((double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim())*32)/
-                                 (double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim())*32))*
-                                (1 +
-                                 0.01*
-                                 (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
-                                  double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
-                }
-            }
-            for (int i = 0; i < MyIlist.Count; i++)
-            {
-                dataGridView3.Rows[i].Cells[6].Value = MyIlist[i];
-            }
+            
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
@@ -2229,6 +2187,38 @@ namespace Converter
 
         private void button12_Click(object sender, EventArgs e)
         {
+            List<double> MyIlist = new List<double>();
+            MyIlist.Clear();
+            for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
+            {
+                if (checkBox6.Checked == false)
+                {
+                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim()) /
+                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim())) *
+                                (double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim()) /
+                                 double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim())) *
+                                (1 +
+                                 0.01 *
+                                 (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
+                                  double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
+                }
+                if (checkBox6.Checked == true)
+                {
+                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim()) /
+                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim())) *
+                                ((double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim()) * 32) /
+                                 (double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim()) * 32)) *
+                                (1 +
+                                 0.01 *
+                                 (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
+                                  double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
+                }
+            }
+            for (int i = 0; i < MyIlist.Count; i++)
+            {
+                dataGridView3.Rows[i].Cells[6].Value = MyIlist[i];
+            }
+            
             //  List<double> MyRlist = new List<double>();
             _PEList.Clear();
             // MyRlist.Clear();
@@ -2237,10 +2227,13 @@ namespace Converter
                 //  MessageBox.Show(dataGridView3.Rows[i].Cells[2].Value.ToString());
                 if (checkBox5.Checked == false)
                 {
-                    _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
-                                 double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
-                                ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())) -
-                                 (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))));
+                    if (i > 0)
+                    {
+                        _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
+                                     double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
+                                    ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())) -
+                                     (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))));
+                    }
                 }
                 if (checkBox5.Checked == true)
                 {
@@ -2258,6 +2251,12 @@ namespace Converter
             for (int i = 0; i < _PEList.Count; i++)
             {
                 dataGridView3.Rows[i + 1].Cells[7].Value = _PEList[i];
+            }
+
+            comboBox6.Items.Clear();
+            for (int i = 0; i < _PEList.Count; i++)
+            {
+                comboBox6.Items.Add(_PEList[i]);
             }
         }
 
@@ -2672,11 +2671,17 @@ namespace Converter
             Graph.MinmaxListSecondary.Clear();
             Graph._numberseries = 0;
             chart1.ChartAreas[0].Position.Auto = true;
+
             for (int i = 0; i < chart1.Series.Count; i++)
             {
                 chart1.Series[i].IsVisibleInLegend = false;
                 chart1.Series[i].Points.Clear();
             }
+
+            button1.Enabled = false;
+            button5.Enabled = false;
+            button10.Enabled = false;
+
         }
 
         private void comboBox6_KeyPress(object sender, KeyPressEventArgs e)
@@ -2713,6 +2718,73 @@ namespace Converter
             }
         }
 
+        private void listBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                listBox1.ContextMenuStrip = contextMenuStrip1;
+                listBox1.SelectedIndex = listBox1.IndexFromPoint(e.X, e.Y);
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridView1.Visible = false;
+                //   Sencors myOneKKS = new Sencors();
+                Sensors myOneKKS = new Sensors();
+                //e.Node.Parent.Index
+                //  List<double> MyParametr = new List<double>();
+                //    MessageBox.Show(MyListSensors.Count.ToString());
+                //    MessageBox.Show(MyListSensors[0].Count.ToString() + " " + MyListSensors[1].Count.ToString());
+                MyListOfSensors N = new MyListOfSensors();
+                myOneKKS = N.getOneKKSByIndex(listBox1.SelectedIndex, MyAllSensors);
+
+                //     List<double> MyParametr = new List<double>();
+
+
+
+                //     myOneKKS = MyListSensors[1].getOneKKSByIndex(treeView1.SelectedNode.Index);
+
+                //  myOneKKS = MyAllSensors.getOneKKSByIndex(treeView1.SelectedNode.Index);
+                //         MessageBox.Show(myOneKKS.KKS_Name);
+                this.dataGridView1.CellValueNeeded += new
+                    DataGridViewCellValueEventHandler(dataGridView1_CellValueNeeded);
+
+                dataGridView1.Rows.Clear();
+                customers.Clear();
+
+                for (int i = 0; i < myOneKKS.MyListRecordsForOneKKS.Count; i++)
+                {
+                    this.customers.Add(
+                        new MyVirtualClass(myOneKKS.MyListRecordsForOneKKS[i].DateTime.ToString("HH:mm:ss.fff"),
+                            myOneKKS.MyListRecordsForOneKKS[i].Value.ToString()));
+
+                }
+                if (this.dataGridView1.RowCount == 0)
+                {
+                    this.dataGridView1.RowCount = 1;
+                    //  .ToString("dd.MM.yy HH:mm:ss.fff")
+                }
+
+                this.dataGridView1.RowCount = myOneKKS.MyListRecordsForOneKKS.Count;
+                dataGridView1.Visible = true;
+            }
+            catch
+            {
+                //  MessageBox.Show(ex0.Message);
+            }
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            dataGridView3.Rows.Clear();
+            _indexRow = 0;
+            
+        }
+
+   
      
     }
 }
