@@ -1842,15 +1842,30 @@ namespace Converter
 
         private double N;
         private double H12;
+
         //   StreamWriter rrrr = new StreamWriter("D:\\t");
 
         private void button8_Click_2(object sender, EventArgs e)
         {
+            bool HFlag = false;
+            for (int i = 0; i < MyAllSensors.Count; i++)
+            {
+                if (comboBox1.Text == MyAllSensors[i].KKS_Name)
+                {
+                    if (MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[1]].Value < MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value)
+                    {
+                        HFlag = false;
+                    }
+                    if (MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[1]].Value > MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursorList[0]].Value)
+                    {
+                        HFlag = true;
+                    }
+                }
+            }
 
-            //    indexPE = 0;
-            // MessageBox.Show(_PEList[indexPE].ToString());
-            // indexPE++;
-            //  MessageBox.Show(_PEList[indexPE].ToString());
+
+
+
             PE = double.Parse(comboBox6.Text);
             //TODO: РАСЧЕТ DDH
             double ddH = 0;
@@ -1860,40 +1875,81 @@ namespace Converter
             {
                 _dHList.Add(ddH);
             }
-            for (int j = 1; j < indexPositionCursorList.Count; j++)
+
+            if (HFlag==false)
             {
-                if (j%2 != 0)
+
+                for (int j = 1; j < indexPositionCursorList.Count; j++)
                 {
-                    for (int i = indexPositionCursorList[j - 1];
-                        i < indexPositionCursorList[j];
-                        i++)
+                    if (j%2 != 0)
                     {
-                        ddH -= (2/
-                                (MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j]].ValueTimeForDAT -
-                                 MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]].ValueTimeForDAT))*
-                               (MyAllSensors[0].MyListRecordsForOneKKS[i + 1].ValueTimeForDAT -
-                                MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
-                        _dHList.Add(ddH);
+                        for (int i = indexPositionCursorList[j - 1];
+                            i < indexPositionCursorList[j];
+                            i++)
+                        {
+                            ddH -= (2/
+                                    (MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j]].ValueTimeForDAT -
+                                     MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]]
+                                         .ValueTimeForDAT))*
+                                   (MyAllSensors[0].MyListRecordsForOneKKS[i + 1].ValueTimeForDAT -
+                                    MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
+                            _dHList.Add(ddH);
+                        }
+                    }
+                    //        MessageBox.Show(ddH.ToString());
+                    if (j%2 == 0)
+                    {
+                        for (int i = indexPositionCursorList[j - 1];
+                            i < indexPositionCursorList[j];
+                            i++)
+                        {
+                            _dHList.Add(ddH);
+                        }
                     }
                 }
-                //        MessageBox.Show(ddH.ToString());
-                if (j%2 == 0)
+
+                for (int i = 0; i < 200; i++)
                 {
-                    for (int i = indexPositionCursorList[j - 1];
-                        i < indexPositionCursorList[j];
-                        i++)
-                    {
-                        _dHList.Add(ddH);
-                    }
+                    _dHList.Add(ddH);
                 }
             }
-
-            for (int i = 0; i < 200; i++)
+            if (HFlag)
             {
-                _dHList.Add(ddH);
+
+                for (int j = 1; j < indexPositionCursorList.Count; j++)
+                {
+                    if (j % 2 != 0)
+                    {
+                        for (int i = indexPositionCursorList[j - 1];
+                            i < indexPositionCursorList[j];
+                            i++)
+                        {
+                            ddH += (2 /
+                                    (MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j]].ValueTimeForDAT -
+                                     MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursorList[j - 1]]
+                                         .ValueTimeForDAT)) *
+                                   (MyAllSensors[0].MyListRecordsForOneKKS[i + 1].ValueTimeForDAT -
+                                    MyAllSensors[0].MyListRecordsForOneKKS[i].ValueTimeForDAT);
+                            _dHList.Add(ddH);
+                        }
+                    }
+                    //        MessageBox.Show(ddH.ToString());
+                    if (j % 2 == 0)
+                    {
+                        for (int i = indexPositionCursorList[j - 1];
+                            i < indexPositionCursorList[j];
+                            i++)
+                        {
+                            _dHList.Add(ddH);
+                        }
+                    }
+                }
+
+                for (int i = 0; i < 200; i++)
+                {
+                    _dHList.Add(ddH);
+                }
             }
-
-
             int indexDDH = 0;
 
             //TODO: ДОБАВЛЕНИЕ ЗНАЧЕНИЙ ТОКА И ВРЕМЕНИ ПО ОТМЕЧЕННЫМ ТОЧКАМ
