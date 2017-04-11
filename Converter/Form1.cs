@@ -759,19 +759,51 @@ namespace Converter
                 button7.Visible = true;
                 button7.Enabled = false;
                 button7.BackColor = Color.Yellow;
-      
+
+                for (int j = 0; j < MyAllSensors.Count; j++)
+                {
+                    if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+                    {
+                        chart1.Series[18].ChartType = SeriesChartType.Point;
+                        chart1.Series[18].Color = Color.Blue;
+                        DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position,
+                            MyAllSensors[j].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                        dp.MarkerStyle = MarkerStyle.Cross;
+                        dp.MarkerSize = 11;
+                        dp.IsValueShownAsLabel = true;
+                        chart1.Series[18].Points.Add(dp);
+                    }
+                }
+         //   indexPositionCursor = indexPositionCursor + 15;
+
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             indexPositionCursorList.Add(indexPositionCursor);
-         
+   //      indexPositionCursor =
             button6.Visible = true;
             button7.Visible = false;
             button6.Enabled = false;
             button6.BackColor = Color.Yellow;
             button8.Enabled = true;
-          }
+
+             for (int j = 0; j < MyAllSensors.Count; j++)
+                {
+                    if (comboBox1.Text == MyAllSensors[j].KKS_Name)
+                    {
+                        chart1.Series[18].ChartType = SeriesChartType.Point;
+                        chart1.Series[18].Color = Color.Blue;
+                        DataPoint dp = new DataPoint(chart1.ChartAreas[0].CursorX.Position,
+                            MyAllSensors[j].MyListRecordsForOneKKS[indexPositionCursor].Value);
+                        dp.MarkerStyle = MarkerStyle.Cross;
+                        dp.MarkerSize = 11;
+                        dp.IsValueShownAsLabel = true;
+                        chart1.Series[18].Points.Add(dp);
+                    }
+                }
+             indexPositionCursor = indexPositionCursor + 15;
+        }
    
         double DroAver = 0;
 
@@ -924,7 +956,7 @@ namespace Converter
         {
             if (flag)
             {
-                button9.BackColor = Color.Red;
+                button9.BackColor = Color.Black;
                 chart1.ChartAreas[0].CursorX.IsUserEnabled = true;
                 chart1.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
                 chart1.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
