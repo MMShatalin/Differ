@@ -86,11 +86,11 @@ namespace Converter
         #region Свойства
 
         //параметры запаздывающих нейтронов (постоянные распада - лямбда, взятые из методик физических испытаний)
-        public static double[] LMetodiki = { 0.0127, 0.0317, 0.118, 0.317, 1.4, 3.92 };
+        public static double[] LMetodiki = new double[6];
         //параметры запаздывающих нейтронов (относительные групповые доли - альфа)
-        public static double[] AApik = { 0.034, 0.201, 0.184, 0.4040, 0.143, 0.034 };
+        public static double[] AApik = new double[6];
         //коэффициент перевода из процентов в бетта эффективность
-        public static double _beff = 0.72;
+        public static double _beff;
 
         #endregion
     }

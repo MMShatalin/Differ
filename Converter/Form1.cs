@@ -130,10 +130,30 @@ namespace Converter
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            numericUpDown7.Value = (decimal)0.0127;
+            numericUpDown8.Value = (decimal)0.0317;
+            numericUpDown9.Value = (decimal)0.118;
+            numericUpDown10.Value = (decimal)0.317;
+            numericUpDown11.Value = (decimal)1.4;
+            numericUpDown12.Value = (decimal)3.92;
+
+            numericUpDown13.Value = (decimal)0.034;
+            numericUpDown14.Value = (decimal)0.201;
+            numericUpDown15.Value = (decimal)0.184;
+            numericUpDown16.Value = (decimal)0.4040;
+            numericUpDown17.Value = (decimal)0.143;
+            numericUpDown18.Value = (decimal)0.034;
+
+            numericUpDown19.Value = (decimal)0.72;
+
+
+
+            tabPage6.Text = "Константы";
+            // tabPage8.vis
             checkBox3.Checked = true;
             button1.Enabled = false;
             button5.Enabled = false;
-            button10.Enabled = false;
+         //   button10.Enabled = false;
             comboBox2.Text = "Выберите параметр тока, А";
             comboBox1.Text = "Выберите параметр реактивности, bэфф";
             comboBox3.Text = "Выберите параметр мощности, %";
@@ -162,9 +182,9 @@ namespace Converter
             dataGridView5.Columns.Add("F", "F");
 
             tabPage5.Text = "Все данные";
-            tabPage6.Text = "Данные для поиска ПЭ и J(отн)";
+           // tabPage6.Text = "Данные для поиска ПЭ и J(отн)";
             tabPage7.Text = "Расчет";
-            tabPage8.Text = "ПЭ";
+      //      tabPage8.Text = "ПЭ";
             tabPage9.Text = "Данные из расчета dp/dH";
 
             chart1.ChartAreas[0].CursorX.IsUserEnabled = true;
@@ -465,7 +485,7 @@ namespace Converter
             {
                 button7.Enabled = true;
                 button6.Enabled = true;
-                button10.Enabled = true;
+            //    button10.Enabled = true;
                 indexPositionCursor--;
                 chart1.ChartAreas[0].CursorX.Position =
                     MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT;
@@ -501,7 +521,7 @@ namespace Converter
             {
 
 
-                button10.Enabled = true;
+              //  button10.Enabled = true;
                 button6.Enabled = true;
                 button7.Enabled = true;
                 indexPositionCursor++;
@@ -589,7 +609,6 @@ namespace Converter
                     {
 
                     }
-
                 }
             }
             catch (Exception ex)
@@ -891,15 +910,15 @@ namespace Converter
             dataGridView4.Columns.Add("H12, см", "H12, см");
             dataGridView4.Columns.Add("T, \u2103", "T, \u2103");
 
-            dataGridView3.Columns.Clear();
-            dataGridView3.Columns.Add("Время", "Время");
-            dataGridView3.Columns.Add("Ток(эксперимент), А", "Ток(эксперимент), А");
-            dataGridView3.Columns.Add("\u03C1, %", "\u03C1, %");
-            dataGridView3.Columns.Add("N, МВт", "N, МВт");
-            dataGridView3.Columns.Add("H12, см", "H12, см");
-            dataGridView3.Columns.Add("T, \u2103", "T, \u2103");
-            dataGridView3.Columns.Add("Ток(относительный)", "Ток(относительный)");
-            dataGridView3.Columns.Add("ПЭ", "ПЭ");
+            //dataGridView3.Columns.Clear();
+            //dataGridView3.Columns.Add("Время", "Время");
+            //dataGridView3.Columns.Add("Ток(эксперимент), А", "Ток(эксперимент), А");
+            //dataGridView3.Columns.Add("\u03C1, %", "\u03C1, %");
+            //dataGridView3.Columns.Add("N, МВт", "N, МВт");
+            //dataGridView3.Columns.Add("H12, см", "H12, см");
+            //dataGridView3.Columns.Add("T, \u2103", "T, \u2103");
+            //dataGridView3.Columns.Add("Ток(относительный)", "Ток(относительный)");
+            //dataGridView3.Columns.Add("ПЭ", "ПЭ");
 
 
             try
@@ -996,7 +1015,7 @@ namespace Converter
             добавитьНаДополнительнуюОсьYОтВремениToolStripMenuItem.Enabled = false;
             button1.Enabled = false;
             button5.Enabled = false;
-            button10.Enabled = false;
+         //   button10.Enabled = false;
             Graph.MinmaxListPrimary.Clear();
             Graph.MinmaxListSecondary.Clear();
 
@@ -1008,7 +1027,7 @@ namespace Converter
 
             chart1.ChartAreas[0].Position.Auto = true;
             dataGridView4.Rows.Clear();
-            dataGridView3.Rows.Clear();
+        //    dataGridView3.Rows.Clear();
 
             for (int i = 0; i < chart1.Series.Count; i++)
             {
@@ -1068,6 +1087,22 @@ namespace Converter
 
         private void button8_Click_2(object sender, EventArgs e)
         {
+            MyConst.LMetodiki[0] = (double)numericUpDown7.Value;
+            MyConst.LMetodiki[1] = (double)numericUpDown8.Value;
+            MyConst.LMetodiki[2] = (double)numericUpDown9.Value;
+            MyConst.LMetodiki[3] = (double)numericUpDown10.Value;
+            MyConst.LMetodiki[4] = (double)numericUpDown11.Value;
+            MyConst.LMetodiki[5] = (double)numericUpDown12.Value;
+
+            MyConst.AApik[0] = (double)numericUpDown13.Value;
+            MyConst.AApik[1] = (double)numericUpDown14.Value;
+            MyConst.AApik[2] = (double)numericUpDown15.Value;
+            MyConst.AApik[3] = (double)numericUpDown16.Value;
+            MyConst.AApik[4] = (double)numericUpDown17.Value;
+            MyConst.AApik[5] = (double)numericUpDown18.Value;
+
+            MyConst._beff = (double)numericUpDown19.Value;
+
             bool HFlag = false;
             for (int i = 0; i < MyAllSensors.Count; i++)
             {
@@ -1299,127 +1334,127 @@ namespace Converter
 
         private void button10_Click(object sender, EventArgs e)
         {
-            List<double> myValue = new List<double>();
-            myValue.Clear();
-            myValue.Add(MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT);
-            for (int i = 0; i < MyAllSensors.Count; i++)
-            {
-                if (comboBox2.Text == MyAllSensors[i].KKS_Name)
-                {
-                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
-                    break;
-                }
-            }
-            for (int i = 0; i < MyAllSensors.Count; i++)
-            {
-                if (comboBox1.Text == MyAllSensors[i].KKS_Name)
-                {
-                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
-                    break;
-                }
-            }
-            for (int i = 0; i < MyAllSensors.Count; i++)
-            {
-                if (comboBox3.Text == MyAllSensors[i].KKS_Name)
-                {
-                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
-                    break;
-                }
-            }
-            for (int i = 0; i < MyAllSensors.Count; i++)
-            {
-                if (comboBox5.Text == MyAllSensors[i].KKS_Name)
-                {
-                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
-                    break;
-                }
-            }
-            for (int i = 0; i < MyAllSensors.Count; i++)
-            {
-                if (comboBox4.Text == MyAllSensors[i].KKS_Name)
-                {
-                    myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
-                    break;
-                }
-            }
-            dataGridView3.Rows.Add();
-            for (int i = 0; i < myValue.Count; i++)
-            {
-                dataGridView3.Rows[_indexRow].Cells[i].Value = myValue[i];
+            //List<double> myValue = new List<double>();
+            //myValue.Clear();
+            //myValue.Add(MyAllSensors[0].MyListRecordsForOneKKS[indexPositionCursor].ValueTimeForDAT);
+            //for (int i = 0; i < MyAllSensors.Count; i++)
+            //{
+            //    if (comboBox2.Text == MyAllSensors[i].KKS_Name)
+            //    {
+            //        myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+            //        break;
+            //    }
+            //}
+            //for (int i = 0; i < MyAllSensors.Count; i++)
+            //{
+            //    if (comboBox1.Text == MyAllSensors[i].KKS_Name)
+            //    {
+            //        myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+            //        break;
+            //    }
+            //}
+            //for (int i = 0; i < MyAllSensors.Count; i++)
+            //{
+            //    if (comboBox3.Text == MyAllSensors[i].KKS_Name)
+            //    {
+            //        myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+            //        break;
+            //    }
+            //}
+            //for (int i = 0; i < MyAllSensors.Count; i++)
+            //{
+            //    if (comboBox5.Text == MyAllSensors[i].KKS_Name)
+            //    {
+            //        myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+            //        break;
+            //    }
+            //}
+            //for (int i = 0; i < MyAllSensors.Count; i++)
+            //{
+            //    if (comboBox4.Text == MyAllSensors[i].KKS_Name)
+            //    {
+            //        myValue.Add(MyAllSensors[i].MyListRecordsForOneKKS[indexPositionCursor].Value);
+            //        break;
+            //    }
+            //}
+            //dataGridView3.Rows.Add();
+            //for (int i = 0; i < myValue.Count; i++)
+            //{
+            //    dataGridView3.Rows[_indexRow].Cells[i].Value = myValue[i];
 
-            }
-            _indexRow++;
+            //}
+            //_indexRow++;
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            List<double> MyIlist = new List<double>();
-            MyIlist.Clear();
-            for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
-            {
-                if (checkBox6.Checked == false)
-                {
-                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim()) /
-                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim())) *
-                                (double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim()) /
-                                 double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim())) *
-                                (1 +
-                                 0.01 *
-                                 (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
-                                  double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
-                }
-                if (checkBox6.Checked == true)
-                {
-                    MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim()) /
-                                 double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim())) *
-                                ((double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim()) * 32) /
-                                 (double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim()) * 32)) *
-                                (1 +
-                                 0.01 *
-                                 (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
-                                  double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
-                }
-            }
-            for (int i = 0; i < MyIlist.Count; i++)
-            {
-                dataGridView3.Rows[i].Cells[6].Value = MyIlist[i];
-            }
+            //List<double> MyIlist = new List<double>();
+            //MyIlist.Clear();
+            //for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
+            //{
+            //    if (checkBox6.Checked == false)
+            //    {
+            //        MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim()) /
+            //                     double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim())) *
+            //                    (double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim()) /
+            //                     double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim())) *
+            //                    (1 +
+            //                     0.01 *
+            //                     (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
+            //                      double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
+            //    }
+            //    if (checkBox6.Checked == true)
+            //    {
+            //        MyIlist.Add((double.Parse(dataGridView3.Rows[i].Cells[1].Value.ToString().Trim()) /
+            //                     double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString().Trim())) *
+            //                    ((double.Parse(dataGridView3.Rows[0].Cells[3].Value.ToString().Trim()) * 32) /
+            //                     (double.Parse(dataGridView3.Rows[i].Cells[3].Value.ToString().Trim()) * 32)) *
+            //                    (1 +
+            //                     0.01 *
+            //                     (double.Parse(dataGridView3.Rows[0].Cells[5].Value.ToString().Trim()) -
+            //                      double.Parse(dataGridView3.Rows[i].Cells[5].Value.ToString().Trim()))));
+            //    }
+            //}
+            //for (int i = 0; i < MyIlist.Count; i++)
+            //{
+            //    dataGridView3.Rows[i].Cells[6].Value = MyIlist[i];
+            //}
  
-            _PEList.Clear();
-            for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
-            {
-                if (checkBox5.Checked == false)
-                {
-                    if (i > 0)
-                    {
-                        _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
-                                     double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
-                                    ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())) -
-                                     (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))));
-                    }
-                }
-                if (checkBox5.Checked == true)
-                {
-                    if (i > 0)
-                    {
-                        _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
-                                     double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
-                                    ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())*3.75) -
-                                     (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))*3.75));
-                    }
-                }
-            }
+            //_PEList.Clear();
+            //for (int i = 0; i < dataGridView3.Rows.Count - 1; i++)
+            //{
+            //    if (checkBox5.Checked == false)
+            //    {
+            //        if (i > 0)
+            //        {
+            //            _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
+            //                         double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
+            //                        ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())) -
+            //                         (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))));
+            //        }
+            //    }
+            //    if (checkBox5.Checked == true)
+            //    {
+            //        if (i > 0)
+            //        {
+            //            _PEList.Add((double.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString().Trim()) -
+            //                         double.Parse(dataGridView3.Rows[i - 1].Cells[6].Value.ToString().Trim()))/
+            //                        ((double.Parse(dataGridView3.Rows[i].Cells[4].Value.ToString().Trim())*3.75) -
+            //                         (double.Parse(dataGridView3.Rows[i - 1].Cells[4].Value.ToString().Trim()))*3.75));
+            //        }
+            //    }
+            //}
 
-            for (int i = 0; i < _PEList.Count; i++)
-            {
-                dataGridView3.Rows[i + 1].Cells[7].Value = _PEList[i];
-            }
+            //for (int i = 0; i < _PEList.Count; i++)
+            //{
+            //    dataGridView3.Rows[i + 1].Cells[7].Value = _PEList[i];
+            //}
 
-            comboBox6.Items.Clear();
-            for (int i = 0; i < _PEList.Count; i++)
-            {
-                comboBox6.Items.Add(_PEList[i]);
-            }
+            //comboBox6.Items.Clear();
+            //for (int i = 0; i < _PEList.Count; i++)
+            //{
+            //    comboBox6.Items.Add(_PEList[i]);
+            //}
         }
 
         private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -1751,21 +1786,21 @@ namespace Converter
 
         private void button13_Click_1(object sender, EventArgs e)
         {
-            StreamReader r = new StreamReader("D:\\GitHub\\Differ\\Файл для заполнения таблицы для расчета ПЭ.txt",  Encoding.Default);
-            string line = r.ReadLine();
-     int _indexRow1 = 0;
-          while ((line = r.ReadLine()) != null)
-           {
-               dataGridView3.Rows.Add();
-               for (int i = 0; i < 6; i++)
-               {
-                   dataGridView3.Rows[_indexRow].Cells[i].Value = line.Split('\t')[i].Trim();
+     //       StreamReader r = new StreamReader("D:\\GitHub\\Differ\\Файл для заполнения таблицы для расчета ПЭ.txt",  Encoding.Default);
+     //       string line = r.ReadLine();
+     //int _indexRow1 = 0;
+     //     while ((line = r.ReadLine()) != null)
+     //      {
+     //          dataGridView3.Rows.Add();
+     //          for (int i = 0; i < 6; i++)
+     //          {
+     //              dataGridView3.Rows[_indexRow].Cells[i].Value = line.Split('\t')[i].Trim();
 
-              }
-               _indexRow++;
-          }
+     //         }
+     //          _indexRow++;
+     //     }
 
-            r.Close();  
+     //       r.Close();  
         }
 
         private void button16_Click_1(object sender, EventArgs e)
@@ -1780,6 +1815,10 @@ namespace Converter
   
         private void button19_Click(object sender, EventArgs e)
         {
+            //progressBar1.Value = 
+          //  progressBar1.Maximum = chart1.Series.Count;
+          //  progressBar1.Step = 1;
+           // progressBar1.Minimum = 0;
             Graph.MinmaxListPrimary.Clear();
             Graph.MinmaxListSecondary.Clear();
             Graph._numberseries = 0;
@@ -1787,14 +1826,12 @@ namespace Converter
 
             for (int i = 0; i < chart1.Series.Count; i++)
             {
+              //  progressBar1.PerformStep();
                 chart1.Series[i].IsVisibleInLegend = false;
                 chart1.Series[i].Points.Clear();
             }
-
             button1.Enabled = false;
             button5.Enabled = false;
-            button10.Enabled = false;
-
         }
 
         private void comboBox6_KeyPress(object sender, KeyPressEventArgs e)
@@ -1877,7 +1914,7 @@ namespace Converter
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            dataGridView3.Rows.Clear();
+          //  dataGridView3.Rows.Clear();
             _indexRow = 0;
             
         }
@@ -2069,6 +2106,16 @@ namespace Converter
             {
 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel27_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

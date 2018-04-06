@@ -85,3 +85,14 @@ D:\Обучение программиста\Мои проекты\DAT Viewer\DA
 D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\obj\Release\Converter.csproj.GenerateResource.Cache
 D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\bin\Release\Converter.exe
 D:\Обучение программиста\Мои проекты\DAT Viewer\DAT Viewer\Converter\Converter\bin\Release\Converter.pdb
+D:\GitHub\Differ\Converter\bin\Release\Converter.exe.config
+D:\GitHub\Differ\Converter\obj\Release\Converter.exe
+D:\GitHub\Differ\Converter\obj\Release\Converter.pdb
+D:\GitHub\Differ\Converter\bin\Release\Converter.exe
+D:\GitHub\Differ\Converter\bin\Release\Converter.pdb
+D:\GitHub\Differ\Converter\obj\Release\Converter.csprojResolveAssemblyReference.cache
+D:\GitHub\Differ\Converter\obj\Release\Converter.Form1.resources
+D:\GitHub\Differ\Converter\obj\Release\Converter.MinMaxX.resources
+D:\GitHub\Differ\Converter\obj\Release\Converter.Properties.Resources.resources
+D:\GitHub\Differ\Converter\obj\Release\Converter.Перевод_величин.resources
+D:\GitHub\Differ\Converter\obj\Release\Converter.csproj.GenerateResource.Cache

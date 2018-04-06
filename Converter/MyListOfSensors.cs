@@ -155,7 +155,7 @@ namespace Converter
               
                 OriginalKKS = line.Split('\t').ToList();
 
-                MessageBox.Show(OriginalKKS[0]);
+              //  MessageBox.Show(OriginalKKS[0]);
   
                 for (int i = 1; i < OriginalKKS.Count; i++)
                 {
